@@ -282,50 +282,7 @@
                 <button class="gallery-nav-btn next" aria-label="Scroll gallery right" data-dir="1"><span class="material-symbols-outlined">chevron_right</span></button>
             </div>
 
-            <h4 class="font-bold text-xl text-center mb-10">How the System Works</h4>
-            <div class="glass-card rounded-2xl p-6 md:p-12 mb-16 space-y-8">
-                <div class="flow-row justify-center">
-                    <span class="step-chip"><span class="material-symbols-outlined">bolt</span>Visits Website</span><span class="arrow-h">&rarr;</span>
-                    <span class="step-chip"><span class="material-symbols-outlined">edit_note</span>Fills Contact Form</span><span class="arrow-h">&rarr;</span>
-                    <span class="step-chip"><span class="material-symbols-outlined">person_add</span>Contact Created/Updated in GHL</span><span class="arrow-h">&rarr;</span>
-                    <span class="step-chip"><span class="material-symbols-outlined">mail</span>Welcome Email Sent</span>
-                </div>
-                <div class="decision-box max-w-md mx-auto">
-                    <span class="eyebrow">Decision</span>Does the customer book an appointment?
-                </div>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="branch-col">
-                        <span class="branch-label yes">Yes &mdash; Appointment Booked</span>
-                        <div class="flow-row">
-                            <span class="step-chip"><span class="material-symbols-outlined">event</span>Added to Calendar</span><span class="arrow-h">&rarr;</span>
-                            <span class="step-chip"><span class="material-symbols-outlined">mark_email_read</span>Booking Confirmation</span><span class="arrow-h">&rarr;</span>
-                            <span class="step-chip"><span class="material-symbols-outlined">view_kanban</span>Opportunity Moved in Pipeline</span><span class="arrow-h">&rarr;</span>
-                            <span class="step-chip"><span class="material-symbols-outlined">receipt_long</span>Service Invoice Sent</span><span class="arrow-h">&rarr;</span>
-                            <span class="step-chip"><span class="material-symbols-outlined">payments</span>Invoice Paid</span><span class="arrow-h">&rarr;</span>
-                            <span class="step-chip is-result"><span class="material-symbols-outlined">task_alt</span>Moved to Completed / Paid Stage</span>
-                        </div>
-                    </div>
-                    <div class="branch-col">
-                        <span class="branch-label no">No &mdash; Not Booked</span>
-                        <div class="flow-row">
-                            <span class="step-chip"><span class="material-symbols-outlined">hourglass_bottom</span>Wait Follow-Up Period</span><span class="arrow-h">&rarr;</span>
-                            <span class="step-chip"><span class="material-symbols-outlined">fact_check</span>Check Booking Status</span><span class="arrow-h">&rarr;</span>
-                            <span class="step-chip"><span class="material-symbols-outlined">repeat</span>Activate No-Response Nurture</span><span class="arrow-h">&rarr;</span>
-                            <span class="step-chip is-result"><span class="material-symbols-outlined">task_alt</span>Follow Up Until Booked, Responds or Exits</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="branch-col">
-                    <span class="branch-label" style="color:#aeb9d0">After-Business-Hours Branch</span>
-                    <div class="flow-row">
-                        <span class="step-chip"><span class="material-symbols-outlined">nights_stay</span>Message Received Outside Hours</span><span class="arrow-h">&rarr;</span>
-                        <span class="step-chip"><span class="material-symbols-outlined">schedule</span>Detect Business Closed</span><span class="arrow-h">&rarr;</span>
-                        <span class="step-chip"><span class="material-symbols-outlined">bolt</span>Trigger After-Hours Workflow</span><span class="arrow-h">&rarr;</span>
-                        <span class="step-chip"><span class="material-symbols-outlined">mail</span>Send Acknowledgement</span><span class="arrow-h">&rarr;</span>
-                        <span class="step-chip is-result"><span class="material-symbols-outlined">task_alt</span>Conversation Prepared for Team Follow-Up</span>
-                    </div>
-                </div>
-            </div>
+            
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-16">
                 <div class="wf-card"><span class="label">Card 1</span><h4>New Lead Welcome Workflow</h4><p class="text-xs text-on-surface-variant mb-2"><strong class="text-on-surface">Trigger:</strong> Customer submits the website contact form</p><ul><li>Create or update the contact</li><li>Save lead information</li><li>Send welcome email</li><li>Include appointment booking link</li><li>Create or update the opportunity</li></ul><p class="text-xs text-primary"><strong>Result:</strong> The new lead receives an immediate response and a clear next step.</p></div>
@@ -430,58 +387,7 @@
                 <button class="gallery-nav-btn next" aria-label="Scroll gallery right" data-dir="1"><span class="material-symbols-outlined">chevron_right</span></button>
             </div>
 
-            <h4 class="font-bold text-xl text-center mb-10">How the System Works</h4>
-            <div class="glass-card rounded-2xl p-6 md:p-12 mb-16 space-y-8">
-                <div class="flow-row justify-center">
-                    <span class="step-chip"><span class="material-symbols-outlined">bolt</span>Visits Registration Page</span><span class="arrow-h">&rarr;</span>
-                    <span class="step-chip"><span class="material-symbols-outlined">edit_note</span>Fills Registration Form</span><span class="arrow-h">&rarr;</span>
-                    <span class="step-chip"><span class="material-symbols-outlined">person_add</span>Contact Created/Updated</span><span class="arrow-h">&rarr;</span>
-                    <span class="step-chip"><span class="material-symbols-outlined">mail</span>Welcome Email Sent</span><span class="arrow-h">&rarr;</span>
-                    <span class="step-chip"><span class="material-symbols-outlined">hourglass_bottom</span>Waits Until Webinar Ends</span>
-                </div>
-                <div class="decision-box max-w-md mx-auto">
-                    <span class="eyebrow">Decision</span>Did the contact attend the webinar?
-                </div>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="branch-col">
-                        <span class="branch-label yes">Yes &mdash; Attended</span>
-                        <div class="flow-row mb-4">
-                            <span class="step-chip"><span class="material-symbols-outlined">mail</span>Consultation-Selection Form Sent</span><span class="arrow-h">&rarr;</span>
-                            <span class="step-chip"><span class="material-symbols-outlined">how_to_reg</span>Form Completed</span>
-                        </div>
-                        <div class="decision-box mb-4"><span class="eyebrow">Decision</span>Which service did the contact select?</div>
-                        <div class="grid sm:grid-cols-2 gap-4">
-                            <div class="branch-col">
-                                <span class="branch-label yes text-xs">Strategy Call</span>
-                                <div class="flow-row">
-                                    <span class="step-chip">Save Service</span><span class="arrow-h">&rarr;</span>
-                                    <span class="step-chip">Trigger Workflow</span><span class="arrow-h">&rarr;</span>
-                                    <span class="step-chip">Send Calendar Link</span><span class="arrow-h">&rarr;</span>
-                                    <span class="step-chip">Slot Selected</span><span class="arrow-h">&rarr;</span>
-                                    <span class="step-chip is-result">Booking Confirmed</span>
-                                </div>
-                            </div>
-                            <div class="branch-col">
-                                <span class="branch-label yes text-xs">Funding Call</span>
-                                <div class="flow-row">
-                                    <span class="step-chip">Save Service</span><span class="arrow-h">&rarr;</span>
-                                    <span class="step-chip">Trigger Workflow</span><span class="arrow-h">&rarr;</span>
-                                    <span class="step-chip">Send Calendar Link</span><span class="arrow-h">&rarr;</span>
-                                    <span class="step-chip">Slot Selected</span><span class="arrow-h">&rarr;</span>
-                                    <span class="step-chip is-result">Booking Confirmed</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="branch-col">
-                        <span class="branch-label no">No &mdash; Did Not Attend</span>
-                        <div class="flow-row">
-                            <span class="step-chip is-result">Kept in General Follow-Up Path</span>
-                        </div>
-                        <p class="text-xs text-on-surface-variant mt-3">No attendee-only consultation form is sent.</p>
-                    </div>
-                </div>
-            </div>
+            
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
                 <div class="wf-card"><span class="label">Card 1</span><h4>Webinar Registration Workflow</h4><p class="text-xs text-on-surface-variant mb-2"><strong class="text-on-surface">Trigger:</strong> Customer submits the registration form</p><ul><li>Create or update the contact</li><li>Save registration information</li><li>Apply the relevant webinar tag</li><li>Send the welcome email</li><li>Add contact to the webinar workflow</li></ul><p class="text-xs text-primary"><strong>Result:</strong> Every new registrant receives an immediate response and enters the correct automation.</p></div>
@@ -610,75 +516,7 @@
                 <button class="gallery-nav-btn next" aria-label="Scroll gallery right" data-dir="1"><span class="material-symbols-outlined">chevron_right</span></button>
             </div>
 
-            <h4 class="font-bold text-xl text-center mb-10">How the System Works</h4>
-            <div class="glass-card rounded-2xl p-6 md:p-12 mb-16 space-y-10">
-                <div class="decision-box max-w-md mx-auto">Customer visits the Noor website, then submits either the general contact form or a service-specific form.</div>
-
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="branch-col">
-                        <span class="branch-label yes">Branch 1 &mdash; General Contact Form</span>
-                        <div class="flow-row mb-4">
-                            <span class="step-chip"><span class="material-symbols-outlined">person_add</span>Contact Created/Updated</span><span class="arrow-h">&rarr;</span>
-                            <span class="step-chip"><span class="material-symbols-outlined">mail</span>Welcome Email + Booking Link</span>
-                        </div>
-                        <div class="decision-box mb-4"><span class="eyebrow">Decision</span>Did the customer book?</div>
-                        <div class="grid gap-4">
-                            <div class="branch-col">
-                                <span class="branch-label yes text-xs">Yes</span>
-                                <div class="flow-row"><span class="step-chip">Calendar + Confirmation</span><span class="arrow-h">&rarr;</span><span class="step-chip is-result">Pipeline Updated, Awaiting Status</span></div>
-                            </div>
-                            <div class="branch-col">
-                                <span class="branch-label no text-xs">No</span>
-                                <div class="flow-row"><span class="step-chip">Wait + Recheck</span><span class="arrow-h">&rarr;</span><span class="step-chip is-result">No-Booking Nurture Sequence</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="branch-col">
-                        <span class="branch-label yes">Branch 2 &mdash; Service-Specific Form</span>
-                        <div class="flow-row">
-                            <span class="step-chip"><span class="material-symbols-outlined">person_add</span>Contact Created/Updated</span><span class="arrow-h">&rarr;</span>
-                            <span class="step-chip">Service Saved to Record</span><span class="arrow-h">&rarr;</span>
-                            <span class="step-chip">Service Workflow Triggered</span><span class="arrow-h">&rarr;</span>
-                            <span class="step-chip">Relevant Communication Sent</span><span class="arrow-h">&rarr;</span>
-                            <span class="step-chip is-result">Guided to Booking &amp; Confirmation</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="branch-col">
-                    <span class="branch-label" style="color:#aeb9d0">Appointment Showed Branch</span>
-                    <div class="flow-row"><span class="step-chip">Status &rarr; Showed</span><span class="arrow-h">&rarr;</span><span class="step-chip">Workflow Triggered</span><span class="arrow-h">&rarr;</span><span class="step-chip is-result">Pabau Membership Link Sent</span></div>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="branch-col">
-                        <span class="branch-label yes">Pabau Membership Purchase</span>
-                        <div class="flow-row">
-                            <span class="step-chip is-integration"><span class="material-symbols-outlined">cloud_sync</span>Purchase Webhook</span><span class="arrow-h">&rarr;</span>
-                            <span class="step-chip">Find/Update Customer</span><span class="arrow-h">&rarr;</span>
-                            <span class="step-chip">Save Membership Info</span><span class="arrow-h">&rarr;</span>
-                            <span class="step-chip">Apply Membership Active Tag</span><span class="arrow-h">&rarr;</span>
-                            <span class="step-chip is-result">Pipeline / Status Updated</span>
-                        </div>
-                    </div>
-                    <div class="branch-col">
-                        <span class="branch-label no">Pabau Membership Cancellation</span>
-                        <div class="flow-row">
-                            <span class="step-chip is-integration"><span class="material-symbols-outlined">cloud_sync</span>Cancellation Webhook</span><span class="arrow-h">&rarr;</span>
-                            <span class="step-chip">Update Customer Record</span><span class="arrow-h">&rarr;</span>
-                            <span class="step-chip">Remove Active Tag</span><span class="arrow-h">&rarr;</span>
-                            <span class="step-chip">Apply Cancelled Tag</span><span class="arrow-h">&rarr;</span>
-                            <span class="step-chip is-result">Pipeline Stage Updated</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="branch-col">
-                    <span class="branch-label" style="color:#aeb9d0">Communication Preference &amp; Pipeline / Review Flow</span>
-                    <div class="flow-row mb-2"><span class="step-chip">Preference Form Submitted</span><span class="arrow-h">&rarr;</span><span class="step-chip is-result">Phone / Text / Email Saved</span></div>
-                    <div class="flow-row"><span class="step-chip">Pipeline Progresses</span><span class="arrow-h">&rarr;</span><span class="step-chip">Reaches Member Stage</span><span class="arrow-h">&rarr;</span><span class="step-chip">Review Workflow Triggered</span><span class="arrow-h">&rarr;</span><span class="step-chip is-result">Reputation Management Review Request</span></div>
-                </div>
-            </div>
+            
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
                 <div class="wf-card"><span class="label">Card 1</span><h4>General Contact Form Welcome Workflow</h4><p class="text-xs text-on-surface-variant mb-2"><strong class="text-on-surface">Trigger:</strong> Customer submits the general contact form</p><ul><li>Create or update the contact</li><li>Save submitted information</li><li>Send the welcome email</li><li>Include the booking link</li><li>Create or update the opportunity</li></ul><p class="text-xs text-primary"><strong>Result:</strong> Every new enquiry receives an immediate response and a clear booking path.</p></div>
@@ -837,99 +675,7 @@
                 <button class="gallery-nav-btn next" aria-label="Scroll gallery right" data-dir="1"><span class="material-symbols-outlined">chevron_right</span></button>
             </div>
 
-            <h4 class="font-bold text-xl text-center mb-10">How the System Works</h4>
-            <div class="glass-card rounded-2xl p-6 md:p-12 mb-16 space-y-10">
-                <div class="branch-col">
-                    <span class="branch-label" style="color:#aeb9d0">Lead Capture Flow</span>
-                    <div class="flow-row">
-                        <span class="step-chip"><span class="material-symbols-outlined">bolt</span>Visits Website</span><span class="arrow-h">&rarr;</span>
-                        <span class="step-chip">Submits Contact Form</span><span class="arrow-h">&rarr;</span>
-                        <span class="step-chip"><span class="material-symbols-outlined">person_add</span>Contact Created in GHL</span><span class="arrow-h">&rarr;</span>
-                        <span class="step-chip"><span class="material-symbols-outlined">mail</span>Welcome Email + Booking Link</span><span class="arrow-h">&rarr;</span>
-                        <span class="step-chip is-integration"><span class="material-symbols-outlined">bolt</span>Zapier Detects New Contact</span><span class="arrow-h">&rarr;</span>
-                        <span class="step-chip is-result"><span class="material-symbols-outlined">folder</span>Client Folder Created in Drive</span>
-                    </div>
-                </div>
-                <div class="branch-col">
-                    <span class="branch-label" style="color:#aeb9d0">Booking Flow</span>
-                    <div class="flow-row mb-4">
-                        <span class="step-chip">Appointment Booked</span><span class="arrow-h">&rarr;</span>
-                        <span class="step-chip">Confirmation Sent</span><span class="arrow-h">&rarr;</span>
-                        <span class="step-chip">Opportunity Created/Updated</span><span class="arrow-h">&rarr;</span>
-                        <span class="step-chip is-integration">ClickUp Task Created</span><span class="arrow-h">&rarr;</span>
-                        <span class="step-chip is-integration">Google Sheets Updated</span>
-                    </div>
-                    <div class="decision-box max-w-md"><span class="eyebrow">Decision</span>Did the customer attend the appointment?</div>
-                    <div class="grid md:grid-cols-2 gap-6 mt-4">
-                        <div class="branch-col">
-                            <span class="branch-label yes text-xs">Yes &mdash; Showed</span>
-                            <div class="flow-row"><span class="step-chip">Team Presents Services</span><span class="arrow-h">&rarr;</span><span class="step-chip is-result">Services Selected &rarr; Contract Sent</span></div>
-                        </div>
-                        <div class="branch-col">
-                            <span class="branch-label no text-xs">No &mdash; Not Attended</span>
-                            <div class="flow-row"><span class="step-chip is-result">Kept in Follow-Up / Rescheduling Path</span></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="branch-col">
-                    <span class="branch-label" style="color:#aeb9d0">Contract Flow</span>
-                    <div class="flow-row mb-4"><span class="step-chip">Contract Sent</span></div>
-                    <div class="decision-box max-w-md mb-4"><span class="eyebrow">Decision</span>Did the customer sign the contract?</div>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="branch-col">
-                            <span class="branch-label yes text-xs">Yes &mdash; Signed</span>
-                            <div class="flow-row"><span class="step-chip is-integration">ClickUp Updated</span><span class="arrow-h">&rarr;</span><span class="step-chip is-integration">Google Sheets Updated</span><span class="arrow-h">&rarr;</span><span class="step-chip is-result">Invoice Sent</span></div>
-                        </div>
-                        <div class="branch-col">
-                            <span class="branch-label no text-xs">No &mdash; Not Signed</span>
-                            <div class="flow-row"><span class="step-chip is-result">Kept in Contract Follow-Up Stage</span></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="branch-col">
-                    <span class="branch-label" style="color:#aeb9d0">Invoice Flow</span>
-                    <div class="flow-row mb-4"><span class="step-chip">Invoice Sent Workflow Triggered</span></div>
-                    <div class="decision-box max-w-md mb-4"><span class="eyebrow">Decision</span>Has the invoice been paid?</div>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="branch-col">
-                            <span class="branch-label no text-xs">No &mdash; Unpaid</span>
-                            <div class="flow-row"><span class="step-chip">Invoice Follow-Up Workflow</span><span class="arrow-h">&rarr;</span><span class="step-chip is-result">Reminder Sent, Status Rechecked</span></div>
-                        </div>
-                        <div class="branch-col">
-                            <span class="branch-label yes text-xs">Yes &mdash; Paid</span>
-                            <div class="flow-row"><span class="step-chip">Payment Updated</span><span class="arrow-h">&rarr;</span><span class="step-chip">Stage &rarr; Onboarding</span><span class="arrow-h">&rarr;</span><span class="step-chip is-result">Onboarding Form Email Sent</span></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="branch-col">
-                    <span class="branch-label" style="color:#aeb9d0">Onboarding Flow</span>
-                    <div class="flow-row">
-                        <span class="step-chip">Onboarding Form Submitted</span><span class="arrow-h">&rarr;</span>
-                        <span class="step-chip">Saved in GHL</span><span class="arrow-h">&rarr;</span>
-                        <span class="step-chip is-integration">ClickUp + Sheets Updated</span><span class="arrow-h">&rarr;</span>
-                        <span class="step-chip">Launch Booking Link Sent</span><span class="arrow-h">&rarr;</span>
-                        <span class="step-chip is-result">Onboarding Call Booked &amp; Launch Plan Set</span>
-                    </div>
-                </div>
-                <div class="branch-col">
-                    <span class="branch-label" style="color:#aeb9d0">Project Delivery Flow</span>
-                    <div class="flow-row">
-                        <span class="step-chip">Setup &amp; Delivery Complete</span><span class="arrow-h">&rarr;</span>
-                        <span class="step-chip">Stage &rarr; Active Client</span><span class="arrow-h">&rarr;</span>
-                        <span class="step-chip is-integration">ClickUp Updated</span><span class="arrow-h">&rarr;</span>
-                        <span class="step-chip is-result">Review Request via Reputation Management</span>
-                    </div>
-                </div>
-                <div class="branch-col">
-                    <span class="branch-label" style="color:#aeb9d0">Monthly Reporting Flow</span>
-                    <div class="flow-row">
-                        <span class="step-chip">Client Becomes Active</span><span class="arrow-h">&rarr;</span>
-                        <span class="step-chip is-integration">AgencyAnalytics + BrightLocal Data</span><span class="arrow-h">&rarr;</span>
-                        <span class="step-chip is-integration">Zapier Report Automation</span><span class="arrow-h">&rarr;</span>
-                        <span class="step-chip is-result">Monthly Report Emailed to Client</span>
-                    </div>
-                </div>
-            </div>
+            
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-16">
                 <div class="wf-card"><span class="label">Card 1</span><h4>Website Lead Welcome Workflow</h4><p class="text-xs text-on-surface-variant mb-2"><strong class="text-on-surface">Trigger:</strong> Website contact form submitted</p><ul><li>Create/update contact + opportunity</li><li>Send welcome email + booking link</li><li>Trigger Google Drive folder automation</li></ul><p class="text-xs text-primary"><strong>Result:</strong> Every new lead receives an immediate response and enters the sales process.</p></div>
