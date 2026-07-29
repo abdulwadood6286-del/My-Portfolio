@@ -809,7 +809,11 @@
             </a>
         </div>
 
-        <form action="mailto:abdulwadood6286@gmail.com" class="glass-card p-8 md:p-12 rounded-3xl grid grid-cols-1 md:grid-cols-2 gap-6" method="post">
+        <form action="https://api.web3forms.com/submit" class="glass-card p-8 md:p-12 rounded-3xl grid grid-cols-1 md:grid-cols-2 gap-6" method="POST" id="contact-form">
+            <input type="hidden" name="access_key" value="a020f55b-bbf4-4310-b41c-e4d21f5f66d2">
+            <input type="hidden" name="subject" value="New Portfolio Contact Form Submission">
+            <input type="hidden" name="from_name" value="Portfolio Contact Form">
+            <input type="checkbox" name="botcheck" class="hidden" style="display:none">
             <div class="flex flex-col gap-2">
                 <label class="text-xs font-mono uppercase tracking-widest text-on-surface-variant" for="name">Name</label>
                 <input class="bg-surface-variant border border-outline-variant rounded-lg px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 text-sm" id="name" name="name" placeholder="Jane Doe" required type="text"/>
@@ -822,7 +826,8 @@
                 <label class="text-xs font-mono uppercase tracking-widest text-on-surface-variant" for="message">What do you need automated?</label>
                 <textarea class="bg-surface-variant border border-outline-variant rounded-lg px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 text-sm" id="message" name="message" placeholder="Tell me about your leads, your current tools, and where things break down." required rows="5"></textarea>
             </div>
-            <button class="md:col-span-2 px-8 py-4 bg-primary text-background font-bold rounded-xl text-base hover:scale-[1.02] transition-transform" type="submit">Send Message</button>
+            <button class="md:col-span-2 px-8 py-4 bg-primary text-background font-bold rounded-xl text-base hover:scale-[1.02] transition-transform" type="submit" id="submit-btn">Send Message</button>
+            <p id="form-result" class="md:col-span-2 text-center text-sm"></p>
         </form>
     </div>
 </section>
@@ -1003,6 +1008,44 @@
                 lightbox.style.display = 'flex';
             });
         });
+
+        // contact form submission via Web3Forms (no page reload)
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            const submitBtn = document.getElementById('submit-btn');
+            const resultEl = document.getElementById('form-result');
+            contactForm.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending...';
+                resultEl.textContent = '';
+                resultEl.style.color = '';
+
+                const formData = new FormData(contactForm);
+                try {
+                    const response = await fetch(contactForm.action, {
+                        method: 'POST',
+                        headers: { 'Accept': 'application/json' },
+                        body: formData
+                    });
+                    const data = await response.json();
+                    if (data.success) {
+                        resultEl.textContent = "Thanks! Your message has been sent — I'll get back to you within a day.";
+                        resultEl.style.color = '#80ABFF';
+                        contactForm.reset();
+                    } else {
+                        resultEl.textContent = 'Something went wrong. Please try again or email me directly.';
+                        resultEl.style.color = '#ff8080';
+                    }
+                } catch (error) {
+                    resultEl.textContent = 'Something went wrong. Please try again or email me directly.';
+                    resultEl.style.color = '#ff8080';
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Message';
+                }
+            });
+        }
     });
 </script>
 </body>
