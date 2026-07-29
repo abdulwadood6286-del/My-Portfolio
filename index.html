@@ -1009,6 +1009,26 @@
             });
         });
 
+        // thank-you popup modal
+        const thankYouModal = document.createElement('div');
+        thankYouModal.style.cssText = 'display:none;position:fixed;inset:0;background:rgba(6,14,32,0.85);z-index:200;align-items:center;justify-content:center;padding:24px;';
+        thankYouModal.innerHTML = `
+            <div class="glass-card" style="max-width:420px;width:100%;border-radius:24px;padding:40px 32px;text-align:center;position:relative;border:1px solid rgba(128,171,255,0.25);" onclick="event.stopPropagation();">
+                <button id="thankyou-close" aria-label="Close" style="position:absolute;top:16px;right:16px;background:none;border:none;color:#aeb9d0;cursor:pointer;">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+                <div style="width:64px;height:64px;border-radius:50%;background:rgba(128,171,255,0.12);border:1px solid rgba(128,171,255,0.4);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+                    <span class="material-symbols-outlined" style="font-size:32px;color:#80ABFF;">check_circle</span>
+                </div>
+                <h3 style="font-size:1.4rem;font-weight:700;color:#dae2fd;margin-bottom:10px;">Thank you!</h3>
+                <p style="font-size:0.9rem;color:#aeb9d0;line-height:1.5;">Your message has been sent successfully. I'll get back to you within a day.</p>
+            </div>`;
+        document.body.appendChild(thankYouModal);
+        function closeThankYou() { thankYouModal.style.display = 'none'; }
+        thankYouModal.addEventListener('click', closeThankYou);
+        thankYouModal.querySelector('#thankyou-close').addEventListener('click', closeThankYou);
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeThankYou(); });
+
         // contact form submission via Web3Forms (no page reload)
         const contactForm = document.getElementById('contact-form');
         if (contactForm) {
@@ -1030,9 +1050,8 @@
                     });
                     const data = await response.json();
                     if (data.success) {
-                        resultEl.textContent = "Thanks! Your message has been sent — I'll get back to you within a day.";
-                        resultEl.style.color = '#80ABFF';
                         contactForm.reset();
+                        thankYouModal.style.display = 'flex';
                     } else {
                         resultEl.textContent = 'Something went wrong. Please try again or email me directly.';
                         resultEl.style.color = '#ff8080';
