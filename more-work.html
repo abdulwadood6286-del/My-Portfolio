@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>More Work | Abdul Wadood &mdash; GoHighLevel CRM &amp; Automation Specialist</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=JetBrains+Mono:wght@100..800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    html { font-size: 92%; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20; vertical-align: middle; }
+    html { scroll-behavior: smooth; }
+    body { background-color: #060e20; }
+    .glass-card { background: rgba(23, 31, 51, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(128, 171, 255, 0.1); }
+    .browser-frame { border: 1px solid #2d3449; border-radius: 8px; overflow: hidden; background: #0b1326; transition: box-shadow .2s ease, border-color .2s ease, transform .2s ease; cursor: zoom-in; }
+    .browser-frame:hover { border-color: rgba(128,171,255,0.5); box-shadow: 0 0 24px rgba(128,171,255,0.12); transform: translateY(-3px); }
+    .browser-header { background: #1a1f2e; border-bottom: 1px solid #2d3449; padding: 8px 12px; display: flex; align-items: center; }
+    .browser-dot { height: 6px; width: 6px; border-radius: 50%; margin-right: 4px; }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #060e20; }
+    ::-webkit-scrollbar-thumb { background: #2d3449; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3e495d; }
+    .section-reveal { transition: opacity 1s ease, transform 1s ease; opacity: 0; transform: translateY(2.5rem); }
+    .section-reveal.is-visible { opacity: 1; transform: translateY(0); }
+    #mobile-menu { transition: max-height .35s ease, opacity .3s ease; }
+    input:focus, textarea:focus, button:focus-visible, a:focus-visible { outline: 2px solid #80ABFF; outline-offset: 2px; }
+    .gallery-frame-label { font-size: 9px; font-family: 'JetBrains Mono', monospace; color: #aeb9d0; text-align: center; padding: 6px 4px; line-height: 1.25; }
+    .status-chip { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .08em; font-weight: 700; }
+    .status-chip.approved { background: rgba(34,197,94,0.12); border: 1px solid rgba(34,197,94,0.4); color: #4ade80; }
+    .whatsapp-fab { position: fixed; bottom: 22px; right: 22px; z-index: 60; width: 52px; height: 52px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 18px rgba(37,211,102,0.45); animation: pulse-wa 2.4s ease-in-out infinite; }
+    .whatsapp-fab:hover { animation-play-state: paused; transform: scale(1.06); }
+    @keyframes pulse-wa { 0%, 100% { box-shadow: 0 4px 18px rgba(37,211,102,0.45); } 50% { box-shadow: 0 4px 26px rgba(37,211,102,0.75); } }
+    @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .section-reveal { transition: none; opacity: 1; transform: none; }
+        .whatsapp-fab { animation: none !important; }
+    }
+</style>
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    primary: "#80ABFF",
+                    background: "#060e20",
+                    surface: "#0b1326",
+                    "surface-variant": "#171f33",
+                    "outline-variant": "#2d3449",
+                    "on-surface": "#dae2fd",
+                    "on-surface-variant": "#aeb9d0"
+                },
+                fontFamily: { sans: ["Geist", "sans-serif"], mono: ["JetBrains Mono", "monospace"] }
+            }
+        }
+    }
+</script>
+</head>
+<body class="text-on-surface font-sans selection:bg-primary/30 selection:text-white">
+
+<!-- ============ NAVIGATION ============ -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-outline-variant">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <a class="flex items-center gap-2" href="index.html#top">
+            <span class="material-symbols-outlined text-primary">hub</span>
+            <span class="font-mono text-sm uppercase tracking-widest font-bold">Abdul Wadood</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+            <a class="text-on-surface-variant hover:text-primary transition-colors" href="index.html#work">CRM Work</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors" href="#websites">Websites</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors" href="#a2p">A2P Registrations</a>
+            <div class="flex items-center gap-4 ml-4">
+                <a href="index.html#contact" class="px-4 py-2 border border-outline-variant hover:bg-surface-variant rounded-lg transition-all">Contact</a>
+                <a href="index.html#contact" class="px-4 py-2 bg-primary text-background font-bold rounded-lg hover:opacity-90 transition-all">Book a Call</a>
+            </div>
+        </div>
+        <button aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu" id="menu-toggle" class="md:hidden p-2 text-on-surface">
+            <span class="material-symbols-outlined" id="menu-icon">menu</span>
+        </button>
+    </div>
+    <div class="md:hidden max-h-0 overflow-hidden opacity-0" id="mobile-menu">
+        <div class="flex flex-col gap-1 px-6 pb-6 pt-2">
+            <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="index.html#work">CRM Work</a>
+            <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#websites">Websites</a>
+            <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#a2p">A2P Registrations</a>
+            <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="index.html#contact">Contact</a>
+            <a href="index.html#contact" class="mt-4 px-4 py-3 bg-primary text-background font-bold rounded-lg text-center">Book a Call</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ============ PAGE HEADER ============ -->
+<header class="pt-40 pb-16 px-6">
+    <div class="max-w-5xl mx-auto text-center">
+        <a href="index.html#top" class="inline-flex items-center gap-2 text-xs font-mono text-on-surface-variant hover:text-primary transition-colors mb-8">
+            <span class="material-symbols-outlined text-sm">arrow_back</span> Back to Main Portfolio
+        </a>
+        <div class="inline-flex items-center px-3 py-1 bg-surface-variant border border-primary/20 rounded-full mb-6">
+            <span class="w-2 h-2 rounded-full bg-primary mr-2 animate-pulse"></span>
+            <span class="font-mono text-[10px] uppercase tracking-tighter text-primary">ADDITIONAL WORK &amp; CREDENTIALS</span>
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold leading-[1.15] mb-6">More Work &amp; Compliance Credentials</h1>
+        <p class="text-on-surface-variant text-base max-w-2xl mx-auto leading-relaxed">A closer look at additional websites and landing pages I've built, plus my approved A2P 10DLC registrations that keep client SMS campaigns compliant and deliverable.</p>
+    </div>
+</header>
+
+<!-- ============ WEBSITES BUILT ============ -->
+<section class="py-16 px-6 section-reveal" id="websites">
+    <div class="max-w-7xl mx-auto">
+        <span class="font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded">WEBSITES &amp; LANDING PAGES</span>
+        <h2 class="text-2xl md:text-3xl font-bold mt-4 mb-2">Pages I've Built</h2>
+        <p class="text-on-surface-variant text-sm mb-10 max-w-2xl">A collection of websites and landing pages designed and shipped for clients. Replace the placeholders below with screenshots and links as you add each project.</p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="browser-frame">
+                <div class="browser-header"><span class="browser-dot bg-red-500"></span><span class="browser-dot bg-yellow-500"></span><span class="browser-dot bg-green-500"></span></div>
+                <div class="aspect-video bg-surface-variant/50 flex items-center justify-center relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your website screenshot -->
+<img src="PASTE-IMAGE-URL-HERE" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-4xl text-primary/20">language</span>
+                </div>
+                <p class="gallery-frame-label border-t border-outline-variant">Website Name &mdash; Add description here</p>
+            </div>
+            <div class="browser-frame">
+                <div class="browser-header"><span class="browser-dot bg-red-500"></span><span class="browser-dot bg-yellow-500"></span><span class="browser-dot bg-green-500"></span></div>
+                <div class="aspect-video bg-surface-variant/50 flex items-center justify-center relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your website screenshot -->
+<img src="PASTE-IMAGE-URL-HERE" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-4xl text-primary/20">language</span>
+                </div>
+                <p class="gallery-frame-label border-t border-outline-variant">Website Name &mdash; Add description here</p>
+            </div>
+            <div class="browser-frame">
+                <div class="browser-header"><span class="browser-dot bg-red-500"></span><span class="browser-dot bg-yellow-500"></span><span class="browser-dot bg-green-500"></span></div>
+                <div class="aspect-video bg-surface-variant/50 flex items-center justify-center relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your website screenshot -->
+<img src="PASTE-IMAGE-URL-HERE" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-4xl text-primary/20">language</span>
+                </div>
+                <p class="gallery-frame-label border-t border-outline-variant">Website Name &mdash; Add description here</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ A2P REGISTRATIONS ============ -->
+<section class="py-16 px-6 bg-surface section-reveal" id="a2p">
+    <div class="max-w-7xl mx-auto">
+        <span class="font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded">COMPLIANCE &amp; MESSAGING</span>
+        <h2 class="text-2xl md:text-3xl font-bold mt-4 mb-2">A2P 10DLC Registrations Approved</h2>
+        <p class="text-on-surface-variant text-sm mb-10 max-w-2xl">Application-to-Person (A2P) 10DLC brand and campaign registrations I've successfully submitted and gotten approved, ensuring clients' SMS automations are compliant and don't get filtered by carriers.</p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="glass-card rounded-2xl p-6">
+                <div class="flex items-start justify-between mb-4">
+                    <span class="material-symbols-outlined text-primary text-2xl">verified_user</span>
+                    <span class="status-chip approved"><span class="material-symbols-outlined text-xs">check_circle</span>Approved</span>
+                </div>
+                <h4 class="font-bold text-sm mb-1">Client / Brand Name</h4>
+                <p class="text-xs text-on-surface-variant leading-relaxed">Add a short note about the campaign use-case, e.g. appointment reminders, marketing, or two-way support.</p>
+            </div>
+            <div class="glass-card rounded-2xl p-6">
+                <div class="flex items-start justify-between mb-4">
+                    <span class="material-symbols-outlined text-primary text-2xl">verified_user</span>
+                    <span class="status-chip approved"><span class="material-symbols-outlined text-xs">check_circle</span>Approved</span>
+                </div>
+                <h4 class="font-bold text-sm mb-1">Client / Brand Name</h4>
+                <p class="text-xs text-on-surface-variant leading-relaxed">Add a short note about the campaign use-case, e.g. appointment reminders, marketing, or two-way support.</p>
+            </div>
+            <div class="glass-card rounded-2xl p-6">
+                <div class="flex items-start justify-between mb-4">
+                    <span class="material-symbols-outlined text-primary text-2xl">verified_user</span>
+                    <span class="status-chip approved"><span class="material-symbols-outlined text-xs">check_circle</span>Approved</span>
+                </div>
+                <h4 class="font-bold text-sm mb-1">Client / Brand Name</h4>
+                <p class="text-xs text-on-surface-variant leading-relaxed">Add a short note about the campaign use-case, e.g. appointment reminders, marketing, or two-way support.</p>
+            </div>
+        </div>
+
+        <p class="text-xs text-on-surface-variant mt-8 max-w-2xl">Want to add a screenshot of the approval itself? Drop it into a browser-frame block just like the website gallery above &mdash; ask and it can be wired in for you.</p>
+    </div>
+</section>
+
+<!-- ============ CONTACT CTA ============ -->
+<section class="py-20 px-6 text-center">
+    <div class="max-w-2xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">Want something similar built?</h2>
+        <p class="text-on-surface-variant text-sm mb-8">Whether it's a landing page, a full CRM system, or A2P-compliant SMS campaigns &mdash; let's talk.</p>
+        <a href="index.html#contact" class="px-8 py-4 bg-primary text-background font-bold rounded-xl text-base hover:scale-105 transition-transform inline-block">Get in Touch</a>
+    </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="py-16 px-6 border-t border-outline-variant">
+    <div class="max-w-7xl mx-auto text-center">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+            <a href="index.html#top" class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary">hub</span>
+                <span class="font-mono text-sm uppercase tracking-widest font-bold">Abdul Wadood</span>
+            </a>
+            <div class="flex flex-col md:flex-row items-center gap-2 md:gap-6 text-sm text-on-surface-variant">
+                <a class="hover:text-primary transition-colors" href="https://wa.me/923026641717" target="_blank" rel="noopener">WhatsApp: +92 302 6641717</a>
+            </div>
+            <p class="font-mono text-[10px] text-on-surface-variant uppercase">&copy; 2026 Abdul Wadood. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- ============ WHATSAPP FLOATING BUTTON ============ -->
+<a href="https://wa.me/923026641717" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" class="whatsapp-fab">
+    <span class="material-symbols-outlined" style="color:#0b1326;font-size:26px;">chat</span>
+</a>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('is-visible'); });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.section-reveal').forEach(el => observer.observe(el));
+
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        let menuOpen = false;
+        function closeMenu() {
+            menuOpen = false;
+            mobileMenu.style.maxHeight = '0px';
+            mobileMenu.style.opacity = '0';
+            menuIcon.textContent = 'menu';
+            menuToggle.setAttribute('aria-expanded', 'false');
+        }
+        menuToggle.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            menuToggle.setAttribute('aria-expanded', String(menuOpen));
+            if (menuOpen) {
+                mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+                mobileMenu.style.opacity = '1';
+                menuIcon.textContent = 'close';
+            } else {
+                closeMenu();
+            }
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+
+        // lightbox for website screenshots
+        const lightbox = document.createElement('div');
+        lightbox.style.cssText = 'display:none;position:fixed;inset:0;background:rgba(6,14,32,0.92);z-index:100;align-items:center;justify-content:center;cursor:default;padding:24px;';
+        lightbox.innerHTML = `
+            <button id="lightbox-close" aria-label="Close" style="position:absolute;top:20px;right:20px;width:40px;height:40px;border-radius:50%;background:rgba(23,31,51,0.9);border:1px solid #2d3449;color:#dae2fd;display:flex;align-items:center;justify-content:center;cursor:pointer;">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            <div style="max-width:900px;width:100%;text-align:center;" onclick="event.stopPropagation();">
+                <img id="lightbox-img" style="display:none;max-width:100%;max-height:80vh;border-radius:12px;border:1px solid #2d3449;margin:0 auto;" />
+                <div id="lightbox-placeholder" style="display:none;border:1px solid #2d3449;border-radius:12px;background:#0b1326;padding:48px 24px;">
+                    <span class="material-symbols-outlined" style="font-size:48px;color:#80ABFF;opacity:.4;">image</span>
+                    <p style="margin-top:8px;color:#aeb9d0;font-size:11px;">Replace this placeholder with the real screenshot.</p>
+                </div>
+                <p id="lightbox-label" style="margin-top:16px;color:#dae2fd;font-family:'JetBrains Mono', monospace;font-size:13px;"></p>
+            </div>`;
+        document.body.appendChild(lightbox);
+        lightbox.addEventListener('click', () => { lightbox.style.display = 'none'; });
+        lightbox.querySelector('#lightbox-close').addEventListener('click', (e) => { e.stopPropagation(); lightbox.style.display = 'none'; });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') lightbox.style.display = 'none'; });
+
+        const lightboxImg = lightbox.querySelector('#lightbox-img');
+        const lightboxPlaceholder = lightbox.querySelector('#lightbox-placeholder');
+        const lightboxLabel = lightbox.querySelector('#lightbox-label');
+
+        document.querySelectorAll('.browser-frame').forEach(frame => {
+            frame.addEventListener('click', () => {
+                const img = frame.querySelector('img');
+                const label = frame.querySelector('.gallery-frame-label');
+                lightboxLabel.textContent = label ? label.textContent : '';
+                const hasRealImage = img && img.src
+                    && !img.src.includes('PASTE-IMAGE-URL-HERE')
+                    && img.complete && img.naturalWidth > 0
+                    && getComputedStyle(img).display !== 'none';
+                if (hasRealImage) {
+                    lightboxImg.src = img.src;
+                    lightboxImg.style.display = 'block';
+                    lightboxPlaceholder.style.display = 'none';
+                } else {
+                    lightboxImg.style.display = 'none';
+                    lightboxPlaceholder.style.display = 'block';
+                }
+                lightbox.style.display = 'flex';
+            });
+        });
+    });
+</script>
+</body>
+</html>
