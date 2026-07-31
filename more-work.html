@@ -38,7 +38,7 @@
 
     /* --- image protection --- */
     img { -webkit-user-drag: none; user-drag: none; -webkit-user-select: none; -moz-user-select: none; user-select: none; -webkit-touch-callout: none; }
-    .watermark-tag { position: absolute; bottom: 6px; right: 8px; font-size: 9px; font-family: 'JetBrains Mono', monospace; color: rgba(255,255,255,0.4); pointer-events: none; letter-spacing: .05em; text-shadow: 0 1px 2px rgba(0,0,0,0.7); z-index: 1; }
+    .watermark-tile { position: absolute; inset: 0; pointer-events: none; z-index: 5; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='130'%3E%3Ctext x='0' y='75' font-family='monospace' font-size='16' fill='white' fill-opacity='0.32' transform='rotate(-28 120 65)'%3E%C2%A9 Abdul Wadood%3C/text%3E%3C/svg%3E"); background-repeat: repeat; }
 </style>
 <script id="tailwind-config">
     tailwind.config = {
@@ -275,7 +275,10 @@
                 <span class="material-symbols-outlined">close</span>
             </button>
             <div style="max-width:900px;width:100%;text-align:center;" onclick="event.stopPropagation();">
-                <img id="lightbox-img" style="display:none;max-width:100%;max-height:80vh;border-radius:12px;border:1px solid #2d3449;margin:0 auto;" />
+                <div id="lightbox-img-wrap" style="position:relative;display:inline-block;max-width:100%;">
+                    <img id="lightbox-img" style="display:none;max-width:100%;max-height:80vh;border-radius:12px;border:1px solid #2d3449;margin:0 auto;" />
+                    <div id="lightbox-watermark" class="watermark-tile" style="display:none;border-radius:12px;"></div>
+                </div>
                 <div id="lightbox-placeholder" style="display:none;border:1px solid #2d3449;border-radius:12px;background:#0b1326;padding:48px 24px;">
                     <span class="material-symbols-outlined" style="font-size:48px;color:#80ABFF;opacity:.4;">image</span>
                     <p style="margin-top:8px;color:#aeb9d0;font-size:11px;">Replace this placeholder with the real screenshot.</p>
@@ -290,6 +293,7 @@
         const lightboxImg = lightbox.querySelector('#lightbox-img');
         const lightboxPlaceholder = lightbox.querySelector('#lightbox-placeholder');
         const lightboxLabel = lightbox.querySelector('#lightbox-label');
+        const lightboxWatermark = lightbox.querySelector('#lightbox-watermark');
 
         document.querySelectorAll('.browser-frame').forEach(frame => {
             frame.addEventListener('click', () => {
@@ -304,9 +308,11 @@
                     lightboxImg.src = img.src;
                     lightboxImg.style.display = 'block';
                     lightboxPlaceholder.style.display = 'none';
+                    lightboxWatermark.style.display = 'block';
                 } else {
                     lightboxImg.style.display = 'none';
                     lightboxPlaceholder.style.display = 'block';
+                    lightboxWatermark.style.display = 'none';
                 }
                 lightbox.style.display = 'flex';
             });
@@ -324,10 +330,9 @@
         });
         document.querySelectorAll('.browser-frame').forEach(frame => {
             const container = frame.querySelector('.relative');
-            if (container && !container.querySelector('.watermark-tag')) {
-                const wm = document.createElement('span');
-                wm.className = 'watermark-tag';
-                wm.textContent = '© Abdul Wadood';
+            if (container && !container.querySelector('.watermark-tile')) {
+                const wm = document.createElement('div');
+                wm.className = 'watermark-tile';
                 container.appendChild(wm);
             }
         });
