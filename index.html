@@ -95,6 +95,10 @@
         .section-reveal { transition: none; opacity: 1; transform: none; }
         .hero-orb, .whatsapp-fab, .hero-fade-1, .hero-fade-2, .hero-fade-3, .hero-fade-4 { animation: none !important; }
     }
+
+    /* --- image protection --- */
+    img { -webkit-user-drag: none; user-drag: none; -webkit-user-select: none; -moz-user-select: none; user-select: none; -webkit-touch-callout: none; }
+    .watermark-tag { position: absolute; bottom: 6px; right: 8px; font-size: 9px; font-family: 'JetBrains Mono', monospace; color: rgba(255,255,255,0.4); pointer-events: none; letter-spacing: .05em; text-shadow: 0 1px 2px rgba(0,0,0,0.7); z-index: 1; }
 </style>
 <script id="tailwind-config">
     tailwind.config = {
@@ -129,6 +133,7 @@
             <a class="text-on-surface-variant hover:text-primary transition-colors" href="#work">Work</a>
             <a class="text-on-surface-variant hover:text-primary transition-colors" href="#process">Process</a>
             <a class="text-on-surface-variant hover:text-primary transition-colors" href="#skills">Skills</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors" href="#experience">Experience</a>
             <div class="flex items-center gap-4 ml-4">
                 <a href="#contact" class="px-4 py-2 border border-outline-variant hover:bg-surface-variant rounded-lg transition-all">Contact</a>
                 <a href="#contact" class="px-4 py-2 bg-primary text-background font-bold rounded-lg hover:opacity-90 transition-all">Book a Call</a>
@@ -143,6 +148,7 @@
             <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#work">Work</a>
             <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#process">Process</a>
             <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#skills">Skills</a>
+            <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#experience">Experience</a>
             <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#contact">Contact</a>
             <a href="#contact" class="mt-4 px-4 py-3 bg-primary text-background font-bold rounded-lg text-center">Book a Call</a>
         </div>
@@ -158,9 +164,9 @@
         <div class="hero-orb three"></div>
     </div>
     <div class="max-w-5xl mx-auto relative z-10 text-center">
-        <div class="inline-flex items-center px-3 py-1 bg-surface-variant border border-primary/20 rounded-full mb-8 hero-fade-1">
+        <div class="inline-flex items-center px-3 py-1.5 bg-background/90 border border-primary/40 rounded-full mb-8 hero-fade-1 shadow-lg">
             <span class="w-2 h-2 rounded-full bg-primary mr-2 animate-pulse"></span>
-            <span class="font-mono text-[10px] uppercase tracking-tighter text-primary">GOHIGHLEVEL CRM &amp; AUTOMATION SPECIALIST</span>
+            <span class="font-mono text-[10px] font-bold uppercase tracking-tighter" style="color:#B8D9FF;">GOHIGHLEVEL CRM &amp; AUTOMATION SPECIALIST</span>
         </div>
         <h1 class="text-4xl md:text-6xl font-bold leading-[1.1] mb-8 hero-fade-2">
             I build powerful CRM systems<br/>that capture leads, <span class="text-primary">automate follow-ups</span><br/>and <span class="text-primary">drive more bookings.</span>
@@ -202,11 +208,11 @@
                 <div class="space-y-6 order-2 lg:order-1">
                     <div class="bg-surface-variant border border-outline-variant p-6 rounded-2xl">
                         <h4 class="text-primary font-bold mb-3 flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-sm">report_problem</span>Problem</h4>
-                        <p class="text-on-surface-variant text-xs leading-relaxed">Element 6 Auto SPA needed a connected system to capture website enquiries, respond to new leads, encourage appointment booking, manage pipeline movement, send invoices, track payments, and follow up with contacts who did not book. The business also needed an automated response for customers who sent messages outside normal business hours.</p>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">Element 6 Auto SPA needed a connected system to capture website enquiries, respond to new leads, encourage appointment booking, manage pipeline movement, send invoices, track payments, and follow up with contacts who did not book. The business also needed an automated response for customers who sent messages outside normal business hours.</p>
                     </div>
                     <div class="bg-surface-variant border border-outline-variant p-6 rounded-2xl">
                         <h4 class="text-primary font-bold mb-3 flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-sm">lightbulb</span>Solution</h4>
-                        <p class="text-on-surface-variant text-xs leading-relaxed mb-3">Built a complete GoHighLevel customer journey beginning from the website contact form. The system includes:</p>
+                        <p class="text-on-surface-variant text-sm leading-relaxed mb-3">Built a complete GoHighLevel customer journey beginning from the website contact form. The system includes:</p>
                         <ul class="text-xs text-on-surface-variant space-y-1.5 list-disc pl-5">
                             <li>Website lead capture</li>
                             <li>Welcome email with appointment booking link</li>
@@ -220,7 +226,7 @@
                     </div>
                     <div class="bg-surface-variant border border-outline-variant p-6 rounded-2xl">
                         <h4 class="text-primary font-bold mb-3 flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-sm">check_circle</span>Result</h4>
-                        <p class="text-on-surface-variant text-xs leading-relaxed">Every new enquiry now enters one connected system. Leads receive an immediate response, are guided toward booking, move through the CRM pipeline, receive invoices, and continue through the correct follow-up path based on their actions. The business can manage the full customer journey with less manual work and more consistent communication.</p>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">Every new enquiry now enters one connected system. Leads receive an immediate response, are guided toward booking, move through the CRM pipeline, receive invoices, and continue through the correct follow-up path based on their actions. The business can manage the full customer journey with less manual work and more consistent communication.</p>
                     </div>
                 </div>
                 <div class="order-1 lg:order-2">
@@ -276,10 +282,6 @@
                 <button class="gallery-nav-btn next" aria-label="Scroll gallery right" data-dir="1"><span class="material-symbols-outlined">chevron_right</span></button>
             </div>
 
-            
-
-            
-
             <h4 class="text-xs font-mono text-primary uppercase tracking-widest mb-6">Customer Journey Timeline</h4>
             <div class="journey-track mb-6">
                 <div class="journey-node"><span class="num">1</span>Website Visit</div>
@@ -318,11 +320,11 @@
                 <div class="space-y-6">
                     <div class="bg-surface-variant border border-outline-variant p-6 rounded-2xl">
                         <h4 class="text-primary font-bold mb-3 text-sm">Problem</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Webinar leads needed a structured journey from registration to attendance follow-up and consultation booking. Without automation, it was difficult to consistently welcome registrants, identify attendees, collect their service preference, and direct them to the correct booking calendar.</p>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Webinar leads needed a structured journey from registration to attendance follow-up and consultation booking. Without automation, it was difficult to consistently welcome registrants, identify attendees, collect their service preference, and direct them to the correct booking calendar.</p>
                     </div>
                     <div class="bg-surface-variant border border-outline-variant p-6 rounded-2xl">
                         <h4 class="text-primary font-bold mb-3 text-sm">Solution</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed mb-2">Built a complete GoHighLevel webinar automation system. The system:</p>
+                        <p class="text-sm text-on-surface-variant leading-relaxed mb-2">Built a complete GoHighLevel webinar automation system. The system:</p>
                         <ul class="text-xs text-on-surface-variant space-y-1.5 list-disc pl-5">
                             <li>Captures webinar registrations</li>
                             <li>Sends an immediate welcome email</li>
@@ -335,7 +337,7 @@
                     </div>
                     <div class="bg-surface-variant border border-outline-variant p-6 rounded-2xl">
                         <h4 class="text-primary font-bold mb-3 text-sm">Result</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Each webinar contact follows the correct automated path based on attendance and service selection. Attendees receive a clear next step, while Strategy Call and Funding Call leads are automatically separated and directed into the appropriate booking journey.</p>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Each webinar contact follows the correct automated path based on attendance and service selection. Attendees receive a clear next step, while Strategy Call and Funding Call leads are automatically separated and directed into the appropriate booking journey.</p>
                     </div>
                 </div>
             </div>
@@ -370,10 +372,6 @@
                 </div>
                 <button class="gallery-nav-btn next" aria-label="Scroll gallery right" data-dir="1"><span class="material-symbols-outlined">chevron_right</span></button>
             </div>
-
-            
-
-            
 
             <h4 class="text-xs font-mono text-primary uppercase tracking-widest mb-6">Customer Journey</h4>
             <div class="journey-track mb-2">
@@ -411,15 +409,15 @@
                 <div class="space-y-6 order-2 lg:order-1">
                     <div class="bg-surface-variant border border-outline-variant p-6 rounded-2xl">
                         <h4 class="text-primary font-bold text-sm mb-3">Problem</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Noor Esth&eacute;tique &amp; Wellness needed one connected system to manage website enquiries, service-specific forms, appointment booking, lead follow-up, membership activity, communication preferences, CRM pipelines, and reputation requests. Customer and membership information was divided between GoHighLevel and Pabau, making it difficult to keep contact records and membership statuses consistently updated.</p>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Noor Esth&eacute;tique &amp; Wellness needed one connected system to manage website enquiries, service-specific forms, appointment booking, lead follow-up, membership activity, communication preferences, CRM pipelines, and reputation requests. Customer and membership information was divided between GoHighLevel and Pabau, making it difficult to keep contact records and membership statuses consistently updated.</p>
                     </div>
                     <div class="bg-surface-variant border border-outline-variant p-6 rounded-2xl">
                         <h4 class="text-primary font-bold text-sm mb-3">Solution</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Built a complete GoHighLevel CRM and automation system connected with Pabau. Every Noor service uses its own form and automation path, with welcome emails, appointment confirmation, no-booking nurture, membership link delivery after attendance, Pabau webhooks syncing membership activity, a communication-preference workflow, and a full CRM pipeline that triggers a review request once a contact reaches the Member stage.</p>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Built a complete GoHighLevel CRM and automation system connected with Pabau. Every Noor service uses its own form and automation path, with welcome emails, appointment confirmation, no-booking nurture, membership link delivery after attendance, Pabau webhooks syncing membership activity, a communication-preference workflow, and a full CRM pipeline that triggers a review request once a contact reaches the Member stage.</p>
                     </div>
                     <div class="bg-surface-variant border border-outline-variant p-6 rounded-2xl">
                         <h4 class="text-primary font-bold text-sm mb-3">Result</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Noor now has one connected customer journey covering lead capture, service selection, booking, follow-up, appointment attendance, membership conversion, membership status updates, communication preferences, pipeline management, and review requests. The system reduces manual updates and keeps appointment and membership data organized inside GoHighLevel.</p>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Noor now has one connected customer journey covering lead capture, service selection, booking, follow-up, appointment attendance, membership conversion, membership status updates, communication preferences, pipeline management, and review requests. The system reduces manual updates and keeps appointment and membership data organized inside GoHighLevel.</p>
                     </div>
                 </div>
             </div>
@@ -544,10 +542,6 @@
                 <button class="gallery-nav-btn next" aria-label="Scroll gallery right" data-dir="1"><span class="material-symbols-outlined">chevron_right</span></button>
             </div>
 
-            
-
-            
-
             <h4 class="text-xs font-mono text-primary uppercase tracking-widest mb-6">Customer Journey</h4>
             <div class="journey-track mb-6">
                 <div class="journey-node"><span class="num">1</span>Website Visit</div>
@@ -592,15 +586,15 @@
                 <div class="space-y-6">
                     <div class="bg-surface-variant border border-outline-variant p-6 rounded-2xl">
                         <h4 class="text-primary font-bold text-sm mb-3">Problem</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">VEGA MIDEIA CO. needed one connected system to manage the complete client journey from website enquiry to appointment booking, sales consultation, contract signing, invoicing, onboarding, project delivery, monthly reporting, and review collection &mdash; while using GoHighLevel, ClickUp, Google Drive, Google Sheets, Zapier, AgencyAnalytics, BrightLocal, and LandingSite.</p>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">VEGA MIDEIA CO. needed one connected system to manage the complete client journey from website enquiry to appointment booking, sales consultation, contract signing, invoicing, onboarding, project delivery, monthly reporting, and review collection &mdash; while using GoHighLevel, ClickUp, Google Drive, Google Sheets, Zapier, AgencyAnalytics, BrightLocal, and LandingSite.</p>
                     </div>
                     <div class="bg-surface-variant border border-outline-variant p-6 rounded-2xl">
                         <h4 class="text-primary font-bold text-sm mb-3">Solution</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Built a complete end-to-end agency operations system using GoHighLevel as the main CRM, with a welcome email and booking link, ClickUp tasks and Google Sheets records created at booking, contracts and invoices triggered after a Showed appointment, an Onboarding pipeline stage after payment, a launch-planning call after onboarding, an Active Client stage with a review request after delivery, a Zapier-driven Google Drive client folder on contact creation, and monthly reporting through Zapier, AgencyAnalytics, and BrightLocal.</p>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Built a complete end-to-end agency operations system using GoHighLevel as the main CRM, with a welcome email and booking link, ClickUp tasks and Google Sheets records created at booking, contracts and invoices triggered after a Showed appointment, an Onboarding pipeline stage after payment, a launch-planning call after onboarding, an Active Client stage with a review request after delivery, a Zapier-driven Google Drive client folder on contact creation, and monthly reporting through Zapier, AgencyAnalytics, and BrightLocal.</p>
                     </div>
                     <div class="bg-surface-variant border border-outline-variant p-6 rounded-2xl">
                         <h4 class="text-primary font-bold text-sm mb-3">Result</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">VEGA MIDEIA CO. now has one connected client journey from first enquiry to active-client management. Sales, appointments, ClickUp tasks, Google Sheets records, contracts, invoices, onboarding, Google Drive folders, reporting, pipeline stages, and review requests are coordinated through one structured system.</p>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">VEGA MIDEIA CO. now has one connected client journey from first enquiry to active-client management. Sales, appointments, ClickUp tasks, Google Sheets records, contracts, invoices, onboarding, Google Drive folders, reporting, pipeline stages, and review requests are coordinated through one structured system.</p>
                     </div>
                 </div>
             </div>
@@ -690,10 +684,6 @@
                 </div>
                 <button class="gallery-nav-btn next" aria-label="Scroll gallery right" data-dir="1"><span class="material-symbols-outlined">chevron_right</span></button>
             </div>
-
-            
-
-            
 
             <h4 class="font-bold text-base text-center mb-8">Connected Systems</h4>
             <div class="flex flex-wrap justify-center items-center gap-6 mb-16">
@@ -803,6 +793,91 @@
     </div>
 </section>
 
+<!-- ============ EXPERIENCE ============ -->
+<section class="py-24 px-6 bg-surface section-reveal" id="experience">
+    <div class="max-w-4xl mx-auto">
+        <div class="mb-16">
+            <span class="font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded">CAREER TIMELINE</span>
+            <h2 class="text-3xl font-bold mt-4">Experience.</h2>
+        </div>
+
+        <div class="relative pl-8 md:pl-10">
+            <div class="absolute left-[7px] md:left-[9px] top-2 bottom-2 w-px bg-outline-variant"></div>
+
+            <!-- FNNLX -->
+            <div class="relative mb-4">
+                <div class="absolute -left-8 md:-left-10 top-1 w-4 h-4 rounded-full bg-primary/15 border-2 border-primary flex items-center justify-center">
+                    <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                </div>
+                <span class="font-mono text-[10px] text-primary uppercase tracking-widest">March 2021 &mdash; March 2025</span>
+                <h3 class="text-xl font-bold mt-1">FNNLX</h3>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 mb-10 ml-2">
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center pt-1">
+                            <div class="w-2 h-2 rounded-full bg-primary"></div>
+                            <div class="w-px flex-1 bg-outline-variant mt-1"></div>
+                        </div>
+                        <div class="pb-2">
+                            <span class="font-mono text-[10px] text-on-surface-variant uppercase tracking-widest">Mar 2021 &mdash; Mar 2022 &bull; 1 yr</span>
+                            <h4 class="font-bold text-sm mt-1">Funnel Builder</h4>
+                            <p class="text-xs text-on-surface-variant mt-1">Started here building sales funnels and landing pages, laying the foundation for what would grow into full CRM and automation work.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center pt-1">
+                            <div class="w-2 h-2 rounded-full bg-primary"></div>
+                            <div class="w-px flex-1 bg-outline-variant mt-1"></div>
+                        </div>
+                        <div class="pb-2">
+                            <span class="font-mono text-[10px] text-on-surface-variant uppercase tracking-widest">Mar 2022 &mdash; Sep 2022 &bull; 6 mo</span>
+                            <h4 class="font-bold text-sm mt-1">Automation Specialist</h4>
+                            <p class="text-xs text-on-surface-variant mt-1">Promoted to focus on CRM workflows and automations, building the systems-thinking that now anchors my GoHighLevel work.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center pt-1">
+                            <div class="w-2 h-2 rounded-full bg-primary"></div>
+                        </div>
+                        <div>
+                            <span class="font-mono text-[10px] text-on-surface-variant uppercase tracking-widest">Sep 2022 &mdash; Mar 2025 &bull; 2.5 yrs</span>
+                            <h4 class="font-bold text-sm mt-1">Project Manager</h4>
+                            <p class="text-xs text-on-surface-variant mt-1">Moved into managing client projects end-to-end, overseeing delivery, timelines, and the automation systems built for each account.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Techbridge -->
+            <div class="relative mb-4">
+                <div class="absolute -left-8 md:-left-10 top-1 w-4 h-4 rounded-full bg-primary/15 border-2 border-primary flex items-center justify-center">
+                    <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                </div>
+                <div class="flex items-center gap-3 flex-wrap">
+                    <span class="font-mono text-[10px] text-primary uppercase tracking-widest">April 2025 &mdash; Present</span>
+                    <span class="font-mono text-[9px] uppercase tracking-widest text-primary bg-primary/10 border border-primary/30 px-2 py-0.5 rounded-full">Current</span>
+                </div>
+                <h3 class="text-xl font-bold mt-1">Techbridge</h3>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 ml-2">
+                <div class="flex gap-4">
+                    <div class="flex flex-col items-center pt-1">
+                        <div class="w-2 h-2 rounded-full bg-primary"></div>
+                    </div>
+                    <div>
+                        <span class="font-mono text-[10px] text-on-surface-variant uppercase tracking-widest">Apr 2025 &mdash; Present</span>
+                        <h4 class="font-bold text-sm mt-1">Senior CRM Specialist</h4>
+                        <p class="text-xs text-on-surface-variant mt-1">Currently building and managing advanced GoHighLevel CRM systems, automations, and AI-powered workflows for clients.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- ============ CONTACT ============ -->
 <section class="py-24 px-6 bg-surface section-reveal" id="contact">
     <div class="max-w-4xl mx-auto">
@@ -854,9 +929,9 @@
                 <span class="hidden md:inline text-outline-variant">|</span>
                 <a class="hover:text-primary transition-colors" href="https://wa.me/923026641717" target="_blank" rel="noopener">WhatsApp: +92 302 6641717</a>
                 <span class="hidden md:inline text-outline-variant">|</span>
-                <a class="hover:text-primary transition-colors" href="#" rel="noopener" target="_blank">LinkedIn</a>
+                <a class="hover:text-primary transition-colors" href="https://www.linkedin.com/in/abdul-wadood-0682b930b?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener">LinkedIn</a>
             </div>
-            <p class="font-mono text-[10px] text-on-surface-variant uppercase">&copy; 2026 Abdul Wadood. All rights reserved.</p>
+            <p class="font-mono text-[10px] text-on-surface-variant uppercase">&copy; 2026 Abdul Wadood. All rights reserved. All screenshots and project work shown are proprietary and may not be reproduced.</p>
         </div>
     </div>
 </footer>
@@ -1124,6 +1199,29 @@
                 }
             });
         }
+
+        // --- image / content protection deterrents ---
+        // disable right-click everywhere except inside form fields (so users can still paste)
+        document.addEventListener('contextmenu', (e) => {
+            const tag = e.target.tagName;
+            if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+            e.preventDefault();
+        });
+        // disable dragging images (blocks the common "drag to desktop to save" method)
+        document.querySelectorAll('img').forEach(img => {
+            img.setAttribute('draggable', 'false');
+            img.addEventListener('dragstart', (e) => e.preventDefault());
+        });
+        // add a subtle watermark over every project screenshot
+        document.querySelectorAll('.browser-frame').forEach(frame => {
+            const container = frame.querySelector('.relative');
+            if (container && !container.querySelector('.watermark-tag')) {
+                const wm = document.createElement('span');
+                wm.className = 'watermark-tag';
+                wm.textContent = '© Abdul Wadood';
+                container.appendChild(wm);
+            }
+        });
     });
 </script>
 </body>

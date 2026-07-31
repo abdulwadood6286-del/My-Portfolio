@@ -35,6 +35,10 @@
         .section-reveal { transition: none; opacity: 1; transform: none; }
         .whatsapp-fab { animation: none !important; }
     }
+
+    /* --- image protection --- */
+    img { -webkit-user-drag: none; user-drag: none; -webkit-user-select: none; -moz-user-select: none; user-select: none; -webkit-touch-callout: none; }
+    .watermark-tag { position: absolute; bottom: 6px; right: 8px; font-size: 9px; font-family: 'JetBrains Mono', monospace; color: rgba(255,255,255,0.4); pointer-events: none; letter-spacing: .05em; text-shadow: 0 1px 2px rgba(0,0,0,0.7); z-index: 1; }
 </style>
 <script id="tailwind-config">
     tailwind.config = {
@@ -222,7 +226,7 @@
             <div class="flex flex-col md:flex-row items-center gap-2 md:gap-6 text-sm text-on-surface-variant">
                 <a class="hover:text-primary transition-colors" href="https://wa.me/923026641717" target="_blank" rel="noopener">WhatsApp: +92 302 6641717</a>
             </div>
-            <p class="font-mono text-[10px] text-on-surface-variant uppercase">&copy; 2026 Abdul Wadood. All rights reserved.</p>
+            <p class="font-mono text-[10px] text-on-surface-variant uppercase">&copy; 2026 Abdul Wadood. All rights reserved. All screenshots and project work shown are proprietary and may not be reproduced.</p>
         </div>
     </div>
 </footer>
@@ -306,6 +310,26 @@
                 }
                 lightbox.style.display = 'flex';
             });
+        });
+
+        // --- image / content protection deterrents ---
+        document.addEventListener('contextmenu', (e) => {
+            const tag = e.target.tagName;
+            if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+            e.preventDefault();
+        });
+        document.querySelectorAll('img').forEach(img => {
+            img.setAttribute('draggable', 'false');
+            img.addEventListener('dragstart', (e) => e.preventDefault());
+        });
+        document.querySelectorAll('.browser-frame').forEach(frame => {
+            const container = frame.querySelector('.relative');
+            if (container && !container.querySelector('.watermark-tag')) {
+                const wm = document.createElement('span');
+                wm.className = 'watermark-tag';
+                wm.textContent = '© Abdul Wadood';
+                container.appendChild(wm);
+            }
         });
     });
 </script>
