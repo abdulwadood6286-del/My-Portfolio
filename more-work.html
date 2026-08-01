@@ -39,6 +39,8 @@
     /* --- image protection --- */
     img { -webkit-user-drag: none; user-drag: none; -webkit-user-select: none; -moz-user-select: none; user-select: none; -webkit-touch-callout: none; }
     .watermark-tile { position: absolute; inset: 0; pointer-events: none; z-index: 5; display: flex; align-items: center; justify-content: center; } .watermark-tile span { transform: translateX(-18%) rotate(-10deg); font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: clamp(9px, 1.4vw, 15px); color: rgba(110,110,110,0.55); white-space: nowrap; text-shadow: 0 0 3px rgba(255,255,255,0.55), 0 0 3px rgba(0,0,0,0.55); }
+    .live-site-card { display: block; background: #171f33; border: 1px solid #2d3449; border-radius: 14px; padding: 20px; transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease; }
+    .live-site-card:hover { border-color: rgba(128,171,255,0.5); transform: translateY(-3px); box-shadow: 0 0 24px rgba(128,171,255,0.1); }
 </style>
 <script id="tailwind-config">
     tailwind.config = {
@@ -74,6 +76,7 @@
             <a class="text-on-surface-variant hover:text-primary transition-colors" href="#websites">Websites</a>
             <a class="text-on-surface-variant hover:text-primary transition-colors" href="#ai-voice">AI Voice &amp; Chat</a>
             <a class="text-on-surface-variant hover:text-primary transition-colors" href="#a2p">A2P Registrations</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors" href="#live-sites">Live Sites</a>
             <div class="flex items-center gap-4 ml-4">
                 <a href="/#contact" class="px-4 py-2 border border-outline-variant hover:bg-surface-variant rounded-lg transition-all">Contact</a>
                 <a href="/#contact" class="px-4 py-2 bg-primary text-background font-bold rounded-lg hover:opacity-90 transition-all">Book a Call</a>
@@ -89,6 +92,7 @@
             <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#websites">Websites</a>
             <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#ai-voice">AI Voice &amp; Chat</a>
             <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#a2p">A2P Registrations</a>
+            <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#live-sites">Live Sites</a>
             <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="/#contact">Contact</a>
             <a href="/#contact" class="mt-4 px-4 py-3 bg-primary text-background font-bold rounded-lg text-center">Book a Call</a>
         </div>
@@ -425,6 +429,87 @@
     </div>
 </section>
 
+<!-- ============ LIVE SITES ============ -->
+<section class="py-16 px-6 bg-surface section-reveal" id="live-sites">
+    <div class="max-w-7xl mx-auto">
+        <span class="font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded">LIVE ON THE WEB</span>
+        <h2 class="text-2xl md:text-3xl font-bold mt-4 mb-2">Live Sites &amp; Funnels</h2>
+        <p class="text-on-surface-variant text-sm mb-8 max-w-2xl">Real, live websites and funnels I've built and shipped &mdash; filter by platform to browse.</p>
+
+        <div class="flex flex-wrap gap-2 mb-8" id="live-sites-filters">
+            <button class="live-filter-btn font-mono text-xs font-bold px-4 py-2 rounded-full bg-primary text-background transition-all" data-filter="all">All</button>
+            <button class="live-filter-btn font-mono text-xs font-bold px-4 py-2 rounded-full bg-surface-variant border border-outline-variant text-on-surface-variant hover:border-primary/50 transition-all" data-filter="ghl">GHL Funnels</button>
+            <button class="live-filter-btn font-mono text-xs font-bold px-4 py-2 rounded-full bg-surface-variant border border-outline-variant text-on-surface-variant hover:border-primary/50 transition-all" data-filter="clickfunnels">ClickFunnels</button>
+            <button class="live-filter-btn font-mono text-xs font-bold px-4 py-2 rounded-full bg-surface-variant border border-outline-variant text-on-surface-variant hover:border-primary/50 transition-all" data-filter="ai-built">AI-Built Sites</button>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="live-sites-grid">
+            <a href="#" target="_blank" rel="noopener" class="live-site-card group" data-category="ghl">
+                <div class="flex items-center justify-between mb-4">
+                    <h4 class="font-bold text-lg">Site Name</h4>
+                    <span class="material-symbols-outlined text-primary text-lg group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">open_in_new</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <span class="text-[10px] font-mono uppercase tracking-wide bg-primary/10 text-primary px-2.5 py-1 rounded-full">GHL Funnels</span>
+                    <span class="text-xs text-on-surface-variant group-hover:text-primary transition-colors">Visit Site</span>
+                </div>
+            </a>
+            <a href="#" target="_blank" rel="noopener" class="live-site-card group" data-category="ghl">
+                <div class="flex items-center justify-between mb-4">
+                    <h4 class="font-bold text-lg">Site Name</h4>
+                    <span class="material-symbols-outlined text-primary text-lg group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">open_in_new</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <span class="text-[10px] font-mono uppercase tracking-wide bg-primary/10 text-primary px-2.5 py-1 rounded-full">GHL Funnels</span>
+                    <span class="text-xs text-on-surface-variant group-hover:text-primary transition-colors">Visit Site</span>
+                </div>
+            </a>
+            <a href="#" target="_blank" rel="noopener" class="live-site-card group" data-category="clickfunnels">
+                <div class="flex items-center justify-between mb-4">
+                    <h4 class="font-bold text-lg">Site Name</h4>
+                    <span class="material-symbols-outlined text-primary text-lg group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">open_in_new</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <span class="text-[10px] font-mono uppercase tracking-wide bg-primary/10 text-primary px-2.5 py-1 rounded-full">ClickFunnels</span>
+                    <span class="text-xs text-on-surface-variant group-hover:text-primary transition-colors">Visit Site</span>
+                </div>
+            </a>
+            <a href="#" target="_blank" rel="noopener" class="live-site-card group" data-category="ghl">
+                <div class="flex items-center justify-between mb-4">
+                    <h4 class="font-bold text-lg">Site Name</h4>
+                    <span class="material-symbols-outlined text-primary text-lg group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">open_in_new</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <span class="text-[10px] font-mono uppercase tracking-wide bg-primary/10 text-primary px-2.5 py-1 rounded-full">GHL Funnels</span>
+                    <span class="text-xs text-on-surface-variant group-hover:text-primary transition-colors">Visit Site</span>
+                </div>
+            </a>
+            <a href="#" target="_blank" rel="noopener" class="live-site-card group" data-category="ai-built">
+                <div class="flex items-center justify-between mb-4">
+                    <h4 class="font-bold text-lg">Site Name</h4>
+                    <span class="material-symbols-outlined text-primary text-lg group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">open_in_new</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <span class="text-[10px] font-mono uppercase tracking-wide bg-primary/10 text-primary px-2.5 py-1 rounded-full">AI-Built Sites</span>
+                    <span class="text-xs text-on-surface-variant group-hover:text-primary transition-colors">Visit Site</span>
+                </div>
+            </a>
+            <a href="#" target="_blank" rel="noopener" class="live-site-card group" data-category="ai-built">
+                <div class="flex items-center justify-between mb-4">
+                    <h4 class="font-bold text-lg">Site Name</h4>
+                    <span class="material-symbols-outlined text-primary text-lg group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">open_in_new</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <span class="text-[10px] font-mono uppercase tracking-wide bg-primary/10 text-primary px-2.5 py-1 rounded-full">AI-Built Sites</span>
+                    <span class="text-xs text-on-surface-variant group-hover:text-primary transition-colors">Visit Site</span>
+                </div>
+            </a>
+        </div>
+
+        <p class="text-xs text-on-surface-variant mt-8 max-w-2xl">Replace each "Site Name" with the real site title, set the href to the live URL, and update the category tag/data-category to match one of the filters above.</p>
+    </div>
+</section>
+
 <!-- ============ CONTACT CTA ============ -->
 <section class="py-20 px-6 text-center">
     <div class="max-w-2xl mx-auto">
@@ -534,6 +619,25 @@
                     lightboxWatermark.style.display = 'none';
                 }
                 lightbox.style.display = 'flex';
+            });
+        });
+
+        // live sites filter
+        const liveFilterBtns = document.querySelectorAll('.live-filter-btn');
+        const liveSiteCards = document.querySelectorAll('.live-site-card');
+        liveFilterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.getAttribute('data-filter');
+                liveFilterBtns.forEach(b => {
+                    b.classList.remove('bg-primary', 'text-background');
+                    b.classList.add('bg-surface-variant', 'border', 'border-outline-variant', 'text-on-surface-variant');
+                });
+                btn.classList.remove('bg-surface-variant', 'border', 'border-outline-variant', 'text-on-surface-variant');
+                btn.classList.add('bg-primary', 'text-background');
+                liveSiteCards.forEach(card => {
+                    const match = filter === 'all' || card.getAttribute('data-category') === filter;
+                    card.style.display = match ? 'block' : 'none';
+                });
             });
         });
 
