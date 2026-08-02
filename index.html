@@ -11,15 +11,15 @@
     .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20; vertical-align: middle; }
     html { scroll-behavior: smooth; }
     body { background-color: #060e20; }
-    .glass-card { background: rgba(23, 31, 51, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(0, 174, 255, 0.1); }
+    .glass-card { background: rgba(23, 31, 51, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(14, 165, 233, 0.1); }
     .browser-frame { border: 1px solid #2d3449; border-radius: 8px; overflow: hidden; background: #0b1326; transition: box-shadow .2s ease, border-color .2s ease, transform .2s ease; cursor: zoom-in; }
-    .browser-frame:hover { border-color: rgba(0,174,255,0.5); box-shadow: 0 0 24px rgba(0,174,255,0.12); transform: translateY(-3px); }
+    .browser-frame:hover { border-color: rgba(14,165,233,0.5); box-shadow: 0 0 24px rgba(14,165,233,0.12); transform: translateY(-3px); }
     .browser-header { background: #1a1f2e; border-bottom: 1px solid #2d3449; padding: 8px 12px; display: flex; align-items: center; }
     .browser-dot { height: 6px; width: 6px; border-radius: 50%; margin-right: 4px; }
     .glow-point { position: relative; }
-    .glow-point::after { content: ''; position: absolute; width: 8px; height: 8px; background: #00AEFF; border-radius: 50%; box-shadow: 0 0 15px #00AEFF; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    .glow-point::after { content: ''; position: absolute; width: 8px; height: 8px; background: #0EA5E9; border-radius: 50%; box-shadow: 0 0 15px #0EA5E9; top: 50%; left: 50%; transform: translate(-50%, -50%); }
     .workflow-line { height: 1px; background: linear-gradient(90deg, transparent, #2d3449, transparent); position: relative; }
-    .workflow-line::after { content: ''; position: absolute; left: 50%; top: 50%; width: 4px; height: 4px; background: #00AEFF; border-radius: 50%; box-shadow: 0 0 10px #00AEFF; transform: translate(-50%, -50%); }
+    .workflow-line::after { content: ''; position: absolute; left: 50%; top: 50%; width: 4px; height: 4px; background: #0EA5E9; border-radius: 50%; box-shadow: 0 0 10px #0EA5E9; transform: translate(-50%, -50%); }
     ::-webkit-scrollbar { width: 8px; }
     ::-webkit-scrollbar-track { background: #060e20; }
     ::-webkit-scrollbar-thumb { background: #2d3449; border-radius: 4px; }
@@ -27,40 +27,40 @@
     .section-reveal { transition: opacity 1s ease, transform 1s ease; opacity: 0; transform: translateY(2.5rem); }
     .section-reveal.is-visible { opacity: 1; transform: translateY(0); }
     #mobile-menu { transition: max-height .35s ease, opacity .3s ease; }
-    input:focus, textarea:focus, button:focus-visible, a:focus-visible { outline: 2px solid #00AEFF; outline-offset: 2px; }
+    input:focus, textarea:focus, button:focus-visible, a:focus-visible { outline: 2px solid #0EA5E9; outline-offset: 2px; }
     /* --- flow diagram primitives --- */
     .step-chip { display: inline-flex; align-items: center; gap: 7px; padding: 11px 16px; background: #171f33; border: 1px solid #2d3449; border-radius: 9px; font-family: 'JetBrains Mono', monospace; font-size: 12.5px; line-height: 1.3; white-space: nowrap; color: #dae2fd; transition: border-color .2s ease, transform .2s ease; }
-    .step-chip:hover { border-color: rgba(0,174,255,0.5); transform: translateY(-1px); }
-    .step-chip .material-symbols-outlined { font-size: 16px; color: #00AEFF; }
-    .step-chip.is-integration { border-style: dashed; border-color: rgba(0,174,255,0.35); }
-    .step-chip.is-result { background: #00AEFF; color: #060e20; font-weight: 700; border-color: #00AEFF; }
+    .step-chip:hover { border-color: rgba(14,165,233,0.5); transform: translateY(-1px); }
+    .step-chip .material-symbols-outlined { font-size: 16px; color: #0EA5E9; }
+    .step-chip.is-integration { border-style: dashed; border-color: rgba(14,165,233,0.35); }
+    .step-chip.is-result { background: #0EA5E9; color: #060e20; font-weight: 700; border-color: #0EA5E9; }
     .step-chip.is-result .material-symbols-outlined { color: #060e20; }
-    .arrow-h { color: rgba(0,174,255,0.55); font-size: 16px; font-weight: 700; }
+    .arrow-h { color: rgba(14,165,233,0.55); font-size: 16px; font-weight: 700; }
     .flow-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 10px; row-gap: 14px; }
-    .decision-box { border: 1px dashed rgba(0,174,255,0.45); border-radius: 12px; padding: 16px 22px; text-align: center; background: rgba(0,174,255,0.06); font-size: 13.5px; font-weight: 600; }
-    .decision-box .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; color: #00AEFF; opacity: .85; text-transform: uppercase; display:block; margin-bottom:6px; font-weight: 700; }
-    .branch-col { border-left: 3px solid #2d3449; padding: 16px 20px; background: rgba(0,174,255,0.03); border-radius: 0 12px 12px 0; }
+    .decision-box { border: 1px dashed rgba(14,165,233,0.45); border-radius: 12px; padding: 16px 22px; text-align: center; background: rgba(14,165,233,0.06); font-size: 13.5px; font-weight: 600; }
+    .decision-box .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; color: #0EA5E9; opacity: .85; text-transform: uppercase; display:block; margin-bottom:6px; font-weight: 700; }
+    .branch-col { border-left: 3px solid #2d3449; padding: 16px 20px; background: rgba(14,165,233,0.03); border-radius: 0 12px 12px 0; }
     .branch-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; margin-bottom: 14px; display: block; }
-    .branch-label.yes { color: #00AEFF; }
+    .branch-label.yes { color: #0EA5E9; }
     .branch-label.no { color: #aeb9d0; }
     .process-card { transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease; }
-    .process-card:hover { border-color: rgba(0,174,255,0.6); transform: translateY(-6px) scale(1.03); box-shadow: 0 0 32px rgba(0,174,255,0.25); }
+    .process-card:hover { border-color: rgba(14,165,233,0.6); transform: translateY(-6px) scale(1.03); box-shadow: 0 0 32px rgba(14,165,233,0.25); }
 
     .journey-track { display: flex; flex-wrap: wrap; gap: 10px; }
-    .journey-node { display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: #171f33; border: 1px solid #2d3449; border-left: 2px solid #00AEFF; border-radius: 8px; font-size: 10.5px; white-space: nowrap; }
-    .journey-node .num { font-family: 'JetBrains Mono', monospace; color: #00AEFF; font-weight: 700; }
+    .journey-node { display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: #171f33; border: 1px solid #2d3449; border-left: 2px solid #0EA5E9; border-radius: 8px; font-size: 10.5px; white-space: nowrap; }
+    .journey-node .num { font-family: 'JetBrains Mono', monospace; color: #0EA5E9; font-weight: 700; }
     .gallery-frame-label { font-size: 9px; font-family: 'JetBrains Mono', monospace; color: #aeb9d0; text-align: center; padding: 6px 4px; line-height: 1.25; }
 
     /* --- image slider --- */
-    .gallery-slider { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 16px; scrollbar-width: thin; scrollbar-color: #00AEFF transparent; }
+    .gallery-slider { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 16px; scrollbar-width: thin; scrollbar-color: #0EA5E9 transparent; }
     .gallery-slider .browser-frame { flex: 0 0 220px; scroll-snap-align: start; }
     .gallery-slider::-webkit-scrollbar { height: 6px; }
-    .gallery-slider::-webkit-scrollbar-track { background: rgba(0,174,255,0.12); border-radius: 999px; }
-    .gallery-slider::-webkit-scrollbar-thumb { background: #00AEFF; border-radius: 999px; }
+    .gallery-slider::-webkit-scrollbar-track { background: rgba(14,165,233,0.12); border-radius: 999px; }
+    .gallery-slider::-webkit-scrollbar-thumb { background: #0EA5E9; border-radius: 999px; }
     .gallery-slider::-webkit-scrollbar-thumb:hover { background: #a5c2ff; }
     .gallery-slider-wrap { position: relative; }
-    .gallery-nav-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 34px; height: 34px; border-radius: 50%; background: rgba(23,31,51,0.9); border: 1px solid #2d3449; color: #00AEFF; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; transition: background .2s ease, border-color .2s ease; }
-    .gallery-nav-btn:hover { background: #171f33; border-color: rgba(0,174,255,0.6); }
+    .gallery-nav-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 34px; height: 34px; border-radius: 50%; background: rgba(23,31,51,0.9); border: 1px solid #2d3449; color: #0EA5E9; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; transition: background .2s ease, border-color .2s ease; }
+    .gallery-nav-btn:hover { background: #171f33; border-color: rgba(14,165,233,0.6); }
     .gallery-nav-btn.prev { left: -6px; }
     .gallery-nav-btn.next { right: -6px; }
     @media (max-width: 640px) {
@@ -70,10 +70,10 @@
     /* --- hero animated background --- */
     .hero-bg { position: absolute; inset: 0; overflow: hidden; z-index: 0; pointer-events: none; }
     .hero-orb { position: absolute; border-radius: 50%; filter: blur(70px); opacity: 0.35; }
-    .hero-orb.one { width: 420px; height: 420px; background: #00AEFF; top: -140px; left: -80px; animation: float-one 16s ease-in-out infinite; }
+    .hero-orb.one { width: 420px; height: 420px; background: #0EA5E9; top: -140px; left: -80px; animation: float-one 16s ease-in-out infinite; }
     .hero-orb.two { width: 340px; height: 340px; background: #4a6fd6; bottom: -120px; right: -60px; animation: float-two 20s ease-in-out infinite; }
-    .hero-orb.three { width: 260px; height: 260px; background: #00AEFF; top: 30%; right: 20%; animation: float-three 14s ease-in-out infinite; opacity: 0.18; }
-    .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(0,174,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0,174,255,0.06) 1px, transparent 1px); background-size: 44px 44px; mask-image: radial-gradient(ellipse 60% 60% at 50% 20%, black 40%, transparent 100%); display: none; }
+    .hero-orb.three { width: 260px; height: 260px; background: #0EA5E9; top: 30%; right: 20%; animation: float-three 14s ease-in-out infinite; opacity: 0.18; }
+    .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(14,165,233,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(14,165,233,0.06) 1px, transparent 1px); background-size: 44px 44px; mask-image: radial-gradient(ellipse 60% 60% at 50% 20%, black 40%, transparent 100%); display: none; }
     #hero-network { position: absolute; inset: 0; width: 100%; height: 100%; mask-image: radial-gradient(ellipse 70% 75% at 50% 30%, black 45%, transparent 100%); -webkit-mask-image: radial-gradient(ellipse 70% 75% at 50% 30%, black 45%, transparent 100%); }
     @keyframes float-one { 0%, 100% { transform: translate(0,0) scale(1); } 50% { transform: translate(60px, 40px) scale(1.1); } }
     @keyframes float-two { 0%, 100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-50px, -30px) scale(1.15); } }
@@ -106,7 +106,7 @@
         theme: {
             extend: {
                 colors: {
-                    primary: "#00AEFF",
+                    primary: "#0EA5E9",
                     background: "#060e20",
                     surface: "#0b1326",
                     "surface-variant": "#171f33",
@@ -454,8 +454,8 @@
                 <span class="step-chip">GoHighLevel</span><span class="step-chip is-integration">Pabau Integration</span><span class="step-chip">Service Forms</span><span class="step-chip">Contact Form</span><span class="step-chip">Welcome Email</span><span class="step-chip">Calendar Booking</span><span class="step-chip">Appointment Confirmation</span><span class="step-chip">Nurture Sequence</span><span class="step-chip is-integration">Webhooks</span><span class="step-chip">Membership Automation</span><span class="step-chip">Communication Preferences</span><span class="step-chip">CRM Pipeline</span><span class="step-chip">Reputation Management</span><span class="step-chip">Review Request</span><span class="step-chip is-integration">AI Voice Agent</span>
             </div>
 
-            <div class="relative rounded-3xl p-6 md:p-10 mb-16 overflow-hidden" style="background: linear-gradient(135deg, rgba(0,174,255,0.1), rgba(23,31,51,0.9)); border: 1px solid rgba(0,174,255,0.35); box-shadow: 0 0 40px rgba(0,174,255,0.08);">
-                <div class="absolute top-0 right-0 w-64 h-64 rounded-full opacity-20" style="background: radial-gradient(circle, #00AEFF, transparent 70%); filter: blur(30px);"></div>
+            <div class="relative rounded-3xl p-6 md:p-10 mb-16 overflow-hidden" style="background: linear-gradient(135deg, rgba(14,165,233,0.1), rgba(23,31,51,0.9)); border: 1px solid rgba(14,165,233,0.35); box-shadow: 0 0 40px rgba(14,165,233,0.08);">
+                <div class="absolute top-0 right-0 w-64 h-64 rounded-full opacity-20" style="background: radial-gradient(circle, #0EA5E9, transparent 70%); filter: blur(30px);"></div>
                 <div class="relative flex flex-col md:flex-row gap-8 items-start">
                     <div class="flex-shrink-0 w-full md:w-56 flex flex-col items-center gap-3">
                         <div class="w-16 h-16 rounded-2xl bg-primary/15 border border-primary/40 flex items-center justify-center">
@@ -486,7 +486,7 @@
                         <p class="text-sm text-on-surface-variant leading-relaxed mb-4">Beyond the CRM automations, I built and deployed a live AI voice agent for Noor that calls or answers as a natural conversation partner, walks each contact through a structured intake quiz, and writes every answer directly into the matching custom fields on the GoHighLevel contact record &mdash; no manual data entry, no lost information.</p>
 
                         <div class="grid sm:grid-cols-2 gap-4">
-                            <div class="browser-frame" style="border-color: rgba(0,174,255,0.3);">
+                            <div class="browser-frame" style="border-color: rgba(14,165,233,0.3);">
                                 <div class="browser-header"><span class="browser-dot bg-red-500"></span><span class="browser-dot bg-yellow-500"></span><span class="browser-dot bg-green-500"></span></div>
                                 <div class="aspect-video bg-surface-variant/50 flex items-center justify-center relative">
 <!-- IMAGE PLACEHOLDER: replace src below with your AI voice agent screenshot -->
@@ -494,7 +494,7 @@
                                 </div>
                                 <p class="gallery-frame-label border-t border-outline-variant">AI Voice Agent &mdash; Quiz Configuration</p>
                             </div>
-                            <div class="browser-frame" style="border-color: rgba(0,174,255,0.3);">
+                            <div class="browser-frame" style="border-color: rgba(14,165,233,0.3);">
                                 <div class="browser-header"><span class="browser-dot bg-red-500"></span><span class="browser-dot bg-yellow-500"></span><span class="browser-dot bg-green-500"></span></div>
                                 <div class="aspect-video bg-surface-variant/50 flex items-center justify-center relative">
 <!-- IMAGE PLACEHOLDER: replace src below with your AI voice agent screenshot -->
@@ -584,7 +584,7 @@
                 <div class="journey-node"><span class="num">10</span>Membership Active Tag Applied</div>
                 <div class="journey-node"><span class="num">11</span>Member Pipeline Stage</div>
                 <div class="journey-node"><span class="num">12</span>Review Request Sent</div>
-                <div class="journey-node" style="border-left-color:#00AEFF;"><span class="num">13</span>AI Voice Quiz &amp; Field Mapping</div>
+                <div class="journey-node" style="border-left-color:#0EA5E9;"><span class="num">13</span>AI Voice Quiz &amp; Field Mapping</div>
             </div>
             <div class="flex flex-col gap-2 text-xs text-on-surface-variant font-mono">
                 <div class="flex items-center gap-2"><span class="glow-point"></span>No appointment booked &rarr; No-Booking Nurture Sequence</div>
@@ -1000,7 +1000,7 @@
                         const dx = n.x - m.x, dy = n.y - m.y;
                         const dist = Math.hypot(dx, dy);
                         if (dist < linkDist) {
-                            ctx.strokeStyle = 'rgba(0,174,255,' + (0.16 * (1 - dist / linkDist)) + ')';
+                            ctx.strokeStyle = 'rgba(14,165,233,' + (0.16 * (1 - dist / linkDist)) + ')';
                             ctx.lineWidth = 1;
                             ctx.beginPath();
                             ctx.moveTo(n.x, n.y);
@@ -1011,8 +1011,8 @@
                 }
                 for (const n of nodes) {
                     ctx.beginPath();
-                    ctx.fillStyle = 'rgba(0,174,255,0.65)';
-                    ctx.shadowColor = 'rgba(0,174,255,0.8)';
+                    ctx.fillStyle = 'rgba(14,165,233,0.65)';
+                    ctx.shadowColor = 'rgba(14,165,233,0.8)';
                     ctx.shadowBlur = 6;
                     ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
                     ctx.fill();
@@ -1046,10 +1046,10 @@
             <button id="lightbox-close" aria-label="Close" style="position:absolute;top:20px;right:20px;width:40px;height:40px;border-radius:50%;background:rgba(23,31,51,0.9);border:1px solid #2d3449;color:#dae2fd;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:2;">
                 <span class="material-symbols-outlined">close</span>
             </button>
-            <button id="lightbox-prev" aria-label="Previous image" style="position:absolute;left:16px;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(23,31,51,0.9);border:1px solid #2d3449;color:#00AEFF;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:2;">
+            <button id="lightbox-prev" aria-label="Previous image" style="position:absolute;left:16px;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(23,31,51,0.9);border:1px solid #2d3449;color:#0EA5E9;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:2;">
                 <span class="material-symbols-outlined">chevron_left</span>
             </button>
-            <button id="lightbox-next" aria-label="Next image" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(23,31,51,0.9);border:1px solid #2d3449;color:#00AEFF;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:2;">
+            <button id="lightbox-next" aria-label="Next image" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(23,31,51,0.9);border:1px solid #2d3449;color:#0EA5E9;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:2;">
                 <span class="material-symbols-outlined">chevron_right</span>
             </button>
             <div style="max-width:900px;width:100%;text-align:center;cursor:default;" onclick="event.stopPropagation();">
@@ -1058,7 +1058,7 @@
                     <div id="lightbox-watermark" class="watermark-tile" style="display:none;border-radius:12px;"><span>&copy; Abdul Wadood</span></div>
                 </div>
                 <div id="lightbox-placeholder" style="display:none;border:1px solid #2d3449;border-radius:12px;background:#0b1326;padding:48px 24px;">
-                    <span class="material-symbols-outlined" style="font-size:48px;color:#00AEFF;opacity:.4;">image</span>
+                    <span class="material-symbols-outlined" style="font-size:48px;color:#0EA5E9;opacity:.4;">image</span>
                     <p style="margin-top:8px;color:#aeb9d0;font-size:11px;">Replace this placeholder with the real project screenshot.</p>
                 </div>
                 <p id="lightbox-label" style="margin-top:16px;color:#dae2fd;font-family:'JetBrains Mono', monospace;font-size:13px;"></p>
@@ -1091,7 +1091,7 @@
                 lightboxImg.src = img.src;
                 lightboxImg.style.display = 'block';
                 lightboxPlaceholder.style.display = 'none';
-                lightboxWatermark.style.display = 'block';
+                lightboxWatermark.style.display = 'flex';
             } else {
                 lightboxImg.style.display = 'none';
                 lightboxPlaceholder.style.display = 'block';
@@ -1141,12 +1141,12 @@
         const thankYouModal = document.createElement('div');
         thankYouModal.style.cssText = 'display:none;position:fixed;inset:0;background:rgba(6,14,32,0.85);z-index:200;align-items:center;justify-content:center;padding:24px;';
         thankYouModal.innerHTML = `
-            <div class="glass-card" style="max-width:420px;width:100%;border-radius:24px;padding:40px 32px;text-align:center;position:relative;border:1px solid rgba(0,174,255,0.25);" onclick="event.stopPropagation();">
+            <div class="glass-card" style="max-width:420px;width:100%;border-radius:24px;padding:40px 32px;text-align:center;position:relative;border:1px solid rgba(14,165,233,0.25);" onclick="event.stopPropagation();">
                 <button id="thankyou-close" aria-label="Close" style="position:absolute;top:16px;right:16px;background:none;border:none;color:#aeb9d0;cursor:pointer;">
                     <span class="material-symbols-outlined">close</span>
                 </button>
-                <div style="width:64px;height:64px;border-radius:50%;background:rgba(0,174,255,0.12);border:1px solid rgba(0,174,255,0.4);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
-                    <span class="material-symbols-outlined" style="font-size:32px;color:#00AEFF;">check_circle</span>
+                <div style="width:64px;height:64px;border-radius:50%;background:rgba(14,165,233,0.12);border:1px solid rgba(14,165,233,0.4);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+                    <span class="material-symbols-outlined" style="font-size:32px;color:#0EA5E9;">check_circle</span>
                 </div>
                 <h3 style="font-size:1.4rem;font-weight:700;color:#dae2fd;margin-bottom:10px;">Thank you!</h3>
                 <p style="font-size:0.9rem;color:#aeb9d0;line-height:1.5;">Your message has been sent successfully. I'll get back to you within a day.</p>
