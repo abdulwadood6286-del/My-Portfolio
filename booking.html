@@ -4,6 +4,9 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Book a Call | Abdul Wadood &mdash; GoHighLevel CRM &amp; Automation Specialist</title>
+<link rel="preconnect" href="https://calendar.google.com">
+<link rel="preconnect" href="https://calendar.app.google">
+<link rel="dns-prefetch" href="https://calendar.google.com">
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=JetBrains+Mono:wght@100..800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <style>
@@ -23,7 +26,12 @@
     .whatsapp-fab { position: fixed; bottom: 22px; right: 22px; z-index: 60; width: 52px; height: 52px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 18px rgba(37,211,102,0.45); animation: pulse-wa 2.4s ease-in-out infinite; }
     .whatsapp-fab:hover { animation-play-state: paused; transform: scale(1.06); }
     @keyframes pulse-wa { 0%, 100% { box-shadow: 0 4px 18px rgba(37,211,102,0.45); } 50% { box-shadow: 0 4px 26px rgba(37,211,102,0.75); } }
-    .booking-frame-wrap { border-radius: 24px; overflow: hidden; border: 1px solid rgba(14,165,233,0.25); box-shadow: 0 0 40px rgba(14,165,233,0.08); background: #ffffff; }
+    .booking-frame-wrap { border-radius: 24px; overflow: hidden; border: 1px solid rgba(14,165,233,0.25); box-shadow: 0 0 40px rgba(14,165,233,0.08); background: #ffffff; position: relative; min-height: 780px; }
+    .booking-loader { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #ffffff; z-index: 2; transition: opacity .3s ease; }
+    .booking-loader.hidden { opacity: 0; pointer-events: none; }
+    .booking-spinner { width: 40px; height: 40px; border: 3px solid #e2e8f0; border-top-color: #0EA5E9; border-radius: 50%; animation: spin 0.8s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .booking-loader p { margin-top: 16px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #64748b; }
     @media (prefers-reduced-motion: reduce) {
         html { scroll-behavior: auto; }
         .section-reveal { transition: none; opacity: 1; transform: none; }
@@ -96,7 +104,7 @@
             <span class="font-mono text-[10px] uppercase tracking-tighter text-primary">BOOK A CALL</span>
         </div>
         <h1 class="text-3xl md:text-5xl font-bold leading-[1.15] mb-6">Let's talk about automating your business.</h1>
-        <p class="text-on-surface-variant text-base leading-relaxed">Book a free 15-minute discovery call to discuss your CRM, automation, or AI voice/chat needs. I'll ask a few questions about your business and current setup, then walk you through how I can help &mdash; no obligation.</p>
+        <p class="text-on-surface-variant text-base leading-relaxed">Book a free 30-minute discovery call to discuss your CRM, automation, or AI voice/chat needs. I'll ask a few questions about your business and current setup, then walk you through how I can help &mdash; no obligation.</p>
     </div>
 </header>
 
@@ -104,11 +112,16 @@
 <section class="pb-24 px-6 section-reveal">
     <div class="max-w-3xl mx-auto">
         <div class="booking-frame-wrap">
+            <div class="booking-loader" id="booking-loader">
+                <div class="booking-spinner"></div>
+                <p>Loading calendar...</p>
+            </div>
             <iframe
+                id="booking-iframe"
                 src="https://calendar.app.google/7JdW2SNKfbvdB27b8"
                 title="Book a call with Abdul Wadood"
-                style="width:100%; height:780px; border:0; display:block;"
-                loading="lazy">
+                style="width:100%; height:780px; border:0; display:block; position:relative; z-index:1;"
+                onload="document.getElementById('booking-loader').classList.add('hidden')">
             </iframe>
         </div>
         <p class="text-center text-xs text-on-surface-variant mt-6">Prefer to message first? <a href="https://wa.me/923026641717" target="_blank" rel="noopener" class="text-primary hover:underline">Chat with me on WhatsApp</a> instead.</p>
