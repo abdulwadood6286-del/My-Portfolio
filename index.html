@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Abdul Wadood | GoHighLevel CRM &amp; Automation Specialist</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=JetBrains+Mono:wght@100..800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    html { font-size: 100%; }
+    p.leading-relaxed { font-size: 18px !important; line-height: 1.5 !important; }
+    .list-disc.pl-5 li { font-size: 16px !important; line-height: 1.5 !important; }
+    p.text-xs.text-on-surface-variant.mt-1 { font-size: 16px !important; line-height: 1.5 !important; }
+    h4.font-bold.text-sm.mt-1 { font-size: 18px !important; line-height: 1.5 !important; }
+    p.text-on-surface-variant.text-base.max-w-4xl.mb-12 { font-size: 18px !important; line-height: 1.5 !important; }
+    h4.text-primary.font-bold.text-sm { font-size: 18px !important; }
+    h3.font-bold.text-base.mt-4.mb-2 { font-size: 18px !important; line-height: 1.5 !important; }
+    p[class="text-xs text-on-surface-variant"] { font-size: 15px !important; line-height: 1.5 !important; }
+    p.font-mono.text-\[10px\].font-bold { font-size: 13px !important; }
+    p.text-\[9px\].text-on-surface-variant.mt-1 { font-size: 12px !important; line-height: 1.4 !important; }
+    span.text-\[10px\].font-mono.text-primary { font-size: 13px !important; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20; vertical-align: middle; }
+    html { scroll-behavior: smooth; }
+    body { background-color: #060e20; }
+    .glass-card { background: rgba(23, 31, 51, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(14, 165, 233, 0.1); }
+    .browser-frame { border: 1px solid #2d3449; border-radius: 8px; overflow: hidden; background: #0b1326; transition: box-shadow .2s ease, border-color .2s ease, transform .2s ease; cursor: zoom-in; }
+    .browser-frame:hover { border-color: rgba(14,165,233,0.5); box-shadow: 0 0 24px rgba(14,165,233,0.12); transform: translateY(-3px); }
+    .browser-header { background: #1a1f2e; border-bottom: 1px solid #2d3449; padding: 8px 12px; display: flex; align-items: center; }
+    .browser-dot { height: 6px; width: 6px; border-radius: 50%; margin-right: 4px; }
+    .glow-point { position: relative; }
+    .glow-point::after { content: ''; position: absolute; width: 8px; height: 8px; background: #0EA5E9; border-radius: 50%; box-shadow: 0 0 15px #0EA5E9; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    .workflow-line { height: 1px; background: linear-gradient(90deg, transparent, #2d3449, transparent); position: relative; }
+    .workflow-line::after { content: ''; position: absolute; left: 50%; top: 50%; width: 4px; height: 4px; background: #0EA5E9; border-radius: 50%; box-shadow: 0 0 10px #0EA5E9; transform: translate(-50%, -50%); }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #060e20; }
+    ::-webkit-scrollbar-thumb { background: #2d3449; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3e495d; }
+    .section-reveal { transition: opacity 1s ease, transform 1s ease; opacity: 0; transform: translateY(2.5rem); }
+    .section-reveal.is-visible { opacity: 1; transform: translateY(0); }
+    #mobile-menu { transition: max-height .35s ease, opacity .3s ease; }
+    input:focus, textarea:focus, button:focus-visible, a:focus-visible { outline: 2px solid #0EA5E9; outline-offset: 2px; }
+    /* --- flow diagram primitives --- */
+    .step-chip { display: inline-flex; align-items: center; gap: 7px; padding: 11px 16px; background: #171f33; border: 1px solid #2d3449; border-radius: 9px; font-family: 'JetBrains Mono', monospace; font-size: 12.5px; line-height: 1.3; white-space: nowrap; color: #dae2fd; transition: border-color .2s ease, transform .2s ease; }
+    .step-chip:hover { border-color: rgba(14,165,233,0.5); transform: translateY(-1px); }
+    .step-chip .material-symbols-outlined { font-size: 16px; color: #0EA5E9; }
+    .step-chip.is-integration { border-style: dashed; border-color: rgba(14,165,233,0.35); }
+    .step-chip.is-result { background: #0EA5E9; color: #060e20; font-weight: 700; border-color: #0EA5E9; }
+    .step-chip.is-result .material-symbols-outlined { color: #060e20; }
+    .arrow-h { color: rgba(14,165,233,0.55); font-size: 16px; font-weight: 700; }
+    .flow-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 10px; row-gap: 14px; }
+    .decision-box { border: 1px dashed rgba(14,165,233,0.45); border-radius: 12px; padding: 16px 22px; text-align: center; background: rgba(14,165,233,0.06); font-size: 13.5px; font-weight: 600; }
+    .decision-box .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; color: #0EA5E9; opacity: .85; text-transform: uppercase; display:block; margin-bottom:6px; font-weight: 700; }
+    .branch-col { border-left: 3px solid #2d3449; padding: 16px 20px; background: rgba(14,165,233,0.03); border-radius: 0 12px 12px 0; }
+    .branch-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; margin-bottom: 14px; display: block; }
+    .branch-label.yes { color: #0EA5E9; }
+    .branch-label.no { color: #aeb9d0; }
+    .process-card { transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease; }
+    .process-card:hover { border-color: rgba(14,165,233,0.6); transform: translateY(-6px) scale(1.03); box-shadow: 0 0 32px rgba(14,165,233,0.25); }
+
+    .journey-track { display: flex; flex-wrap: wrap; gap: 10px; }
+    .journey-node { display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: #171f33; border: 1px solid #2d3449; border-left: 2px solid #0EA5E9; border-radius: 8px; font-size: 10.5px; white-space: nowrap; }
+    .journey-node .num { font-family: 'JetBrains Mono', monospace; color: #0EA5E9; font-weight: 700; }
+    .gallery-frame-label { font-size: 9px; font-family: 'JetBrains Mono', monospace; color: #aeb9d0; text-align: center; padding: 6px 4px; line-height: 1.25; }
+
+    /* --- image slider --- */
+    .gallery-slider { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 16px; scrollbar-width: thin; scrollbar-color: #0EA5E9 transparent; }
+    .gallery-slider .browser-frame { flex: 0 0 220px; scroll-snap-align: start; }
+    .gallery-slider::-webkit-scrollbar { height: 6px; }
+    .gallery-slider::-webkit-scrollbar-track { background: rgba(14,165,233,0.12); border-radius: 999px; }
+    .gallery-slider::-webkit-scrollbar-thumb { background: #0EA5E9; border-radius: 999px; }
+    .gallery-slider::-webkit-scrollbar-thumb:hover { background: #a5c2ff; }
+    .gallery-slider-wrap { position: relative; }
+    .gallery-nav-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 34px; height: 34px; border-radius: 50%; background: rgba(23,31,51,0.9); border: 1px solid #2d3449; color: #0EA5E9; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; transition: background .2s ease, border-color .2s ease; }
+    .gallery-nav-btn:hover { background: #171f33; border-color: rgba(14,165,233,0.6); }
+    .gallery-nav-btn.prev { left: -6px; }
+    .gallery-nav-btn.next { right: -6px; }
+    @media (max-width: 640px) {
+        .gallery-nav-btn { display: none; }
+    }
+
+    /* --- hero animated background --- */
+    .hero-bg { position: absolute; inset: 0; overflow: hidden; z-index: 0; pointer-events: none; }
+    .hero-orb { position: absolute; border-radius: 50%; filter: blur(70px); opacity: 0.35; }
+    .hero-orb.one { width: 420px; height: 420px; background: #0EA5E9; top: -140px; left: -80px; animation: float-one 16s ease-in-out infinite; }
+    .hero-orb.two { width: 340px; height: 340px; background: #4a6fd6; bottom: -120px; right: -60px; animation: float-two 20s ease-in-out infinite; }
+    .hero-orb.three { width: 260px; height: 260px; background: #0EA5E9; top: 30%; right: 20%; animation: float-three 14s ease-in-out infinite; opacity: 0.18; }
+    .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(14,165,233,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(14,165,233,0.06) 1px, transparent 1px); background-size: 44px 44px; mask-image: radial-gradient(ellipse 60% 60% at 50% 20%, black 40%, transparent 100%); display: none; }
+    #hero-network { position: absolute; inset: 0; width: 100%; height: 100%; mask-image: radial-gradient(ellipse 70% 75% at 50% 30%, black 45%, transparent 100%); -webkit-mask-image: radial-gradient(ellipse 70% 75% at 50% 30%, black 45%, transparent 100%); }
+    @keyframes float-one { 0%, 100% { transform: translate(0,0) scale(1); } 50% { transform: translate(60px, 40px) scale(1.1); } }
+    @keyframes float-two { 0%, 100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-50px, -30px) scale(1.15); } }
+    @keyframes float-three { 0%, 100% { transform: translate(0,0); } 50% { transform: translate(-30px, 50px); } }
+
+    /* --- misc entrance animations --- */
+    @keyframes fade-up { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-fade-1 { animation: fade-up .8s ease both; }
+    .hero-fade-2 { animation: fade-up .8s ease .12s both; }
+    .hero-fade-3 { animation: fade-up .8s ease .24s both; }
+    .hero-fade-4 { animation: fade-up .8s ease .36s both; }
+
+    .whatsapp-fab { position: fixed; bottom: 22px; right: 22px; z-index: 60; width: 52px; height: 52px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 18px rgba(37,211,102,0.45); animation: pulse-wa 2.4s ease-in-out infinite; }
+    .whatsapp-fab:hover { animation-play-state: paused; transform: scale(1.06); }
+    @keyframes pulse-wa { 0%, 100% { box-shadow: 0 4px 18px rgba(37,211,102,0.45); } 50% { box-shadow: 0 4px 26px rgba(37,211,102,0.75); } }
+
+    @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .section-reveal { transition: none; opacity: 1; transform: none; }
+        .hero-orb, .whatsapp-fab, .hero-fade-1, .hero-fade-2, .hero-fade-3, .hero-fade-4 { animation: none !important; }
+    }
+
+    /* --- image protection --- */
+    img { -webkit-user-drag: none; user-drag: none; -webkit-user-select: none; -moz-user-select: none; user-select: none; -webkit-touch-callout: none; }
+    .watermark-tile { position: absolute; inset: 0; pointer-events: none; z-index: 5; display: flex; align-items: center; justify-content: center; } .watermark-tile span { transform: translateX(-18%) rotate(-10deg); font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: clamp(9px, 1.4vw, 15px); color: rgba(110,110,110,0.55); white-space: nowrap; text-shadow: 0 0 3px rgba(255,255,255,0.55), 0 0 3px rgba(0,0,0,0.55); }
+</style>
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    primary: "#0EA5E9",
+                    background: "#060e20",
+                    surface: "#0b1326",
+                    "surface-variant": "#171f33",
+                    "outline-variant": "#2d3449",
+                    "on-surface": "#dae2fd",
+                    "on-surface-variant": "#aeb9d0"
+                },
+                fontFamily: { sans: ["Geist", "sans-serif"], mono: ["JetBrains Mono", "monospace"] }
+            }
+        }
+    }
+</script>
+</head>
+<body class="text-on-surface font-sans selection:bg-primary/30 selection:text-white">
+
+<!-- ============ NAVIGATION ============ -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-outline-variant">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <a class="flex items-center gap-2" href="#top">
+            <span class="material-symbols-outlined text-primary">hub</span>
+            <span class="font-mono text-sm uppercase tracking-widest font-bold">Abdul Wadood</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+            <a class="text-on-surface-variant hover:text-primary transition-colors" href="#skills">Skills</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors" href="#work">Work</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors" href="#process">Process</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors" href="#experience">Experience</a>
+            <div class="flex items-center gap-4 ml-4">
+                <a href="#contact" class="px-4 py-2 border border-outline-variant hover:bg-surface-variant rounded-lg transition-all">Contact</a>
+                <a href="/booking" class="px-4 py-2 bg-primary text-background font-bold rounded-lg hover:opacity-90 transition-all">Book a Call</a>
+            </div>
+        </div>
+        <button aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu" id="menu-toggle" class="md:hidden p-2 text-on-surface">
+            <span class="material-symbols-outlined" id="menu-icon">menu</span>
+        </button>
+    </div>
+    <div class="md:hidden max-h-0 overflow-hidden opacity-0" id="mobile-menu">
+        <div class="flex flex-col gap-1 px-6 pb-6 pt-2">
+            <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#skills">Skills</a>
+            <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#work">Work</a>
+            <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#process">Process</a>
+            <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#experience">Experience</a>
+            <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#contact">Contact</a>
+            <a href="/booking" class="mt-4 px-4 py-3 bg-primary text-background font-bold rounded-lg text-center">Book a Call</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="pt-48 pb-24 px-6 relative overflow-hidden" id="top">
+    <div class="hero-bg">
+        <canvas id="hero-network"></canvas>
+        <div class="hero-orb one"></div>
+        <div class="hero-orb two"></div>
+        <div class="hero-orb three"></div>
+    </div>
+    <div class="max-w-5xl mx-auto relative z-10 text-center">
+        <div class="inline-flex items-center px-3 py-1.5 bg-background/90 border border-primary/40 rounded-full mb-8 hero-fade-1 shadow-lg">
+            <span class="w-2 h-2 rounded-full bg-primary mr-2 animate-pulse"></span>
+            <span class="font-mono text-[10px] font-bold uppercase tracking-tighter" style="color:#B8D9FF;">GOHIGHLEVEL CRM &amp; AUTOMATION SPECIALIST</span>
+        </div>
+        <h1 class="text-4xl md:text-6xl font-bold leading-[1.1] mb-8 hero-fade-2">
+            I build powerful CRM systems<br/>that capture leads, <span class="text-primary">automate follow-ups</span><br/>and <span class="text-primary">drive more bookings.</span>
+        </h1>
+        <p class="text-on-surface-variant text-base max-w-2xl mx-auto mb-12 leading-relaxed hero-fade-3">
+            GoHighLevel CRM systems, workflows, funnels, calendars, integrations and follow-up automations designed to help businesses convert more leads with less manual work.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center hero-fade-4">
+            <a href="#work" class="px-8 py-4 bg-primary text-background font-bold rounded-xl text-base hover:scale-105 transition-transform">View My Work</a>
+            <a href="/booking" class="px-8 py-4 border border-outline-variant hover:bg-surface-variant font-bold rounded-xl text-base transition-all">Book a Call</a>
+        </div>
+        <div class="mt-24 pt-12 border-t border-outline-variant">
+            <p class="font-mono text-xs text-on-surface-variant tracking-wide mb-3">GoHighLevel &nbsp;&bull;&nbsp; Zapier &nbsp;&bull;&nbsp; CRM Automation &nbsp;&bull;&nbsp; Workflow Specialist &nbsp;&bull;&nbsp; Funnel Development &nbsp;&bull;&nbsp; AI Voice &amp; Chat</p>
+            <p class="font-mono text-xs text-primary tracking-wide">Automation &amp; CRM Workflow Trained</p>
+        </div>
+    </div>
+</header>
+
+<!-- ============ SKILLS ============ -->
+<section class="py-24 px-6 bg-background section-reveal" id="skills">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-16">
+            <span class="font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded">SKILLS</span>
+            <h2 class="text-3xl font-bold mt-4">Tools I build with.</h2>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <div class="lg:col-span-2">
+                <h3 class="font-mono text-xs uppercase tracking-widest text-primary mb-6">Core</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                    <div class="p-4 bg-surface-variant border border-outline-variant rounded-lg text-center text-xs font-bold">Pipelines</div>
+                    <div class="p-4 bg-surface-variant border border-outline-variant rounded-lg text-center text-xs font-bold">Workflow Automation</div>
+                    <div class="p-4 bg-surface-variant border border-outline-variant rounded-lg text-center text-xs font-bold">Forms</div>
+                    <div class="p-4 bg-surface-variant border border-outline-variant rounded-lg text-center text-xs font-bold">Calendars</div>
+                    <div class="p-4 bg-surface-variant border border-outline-variant rounded-lg text-center text-xs font-bold">Email Automation</div>
+                    <div class="p-4 bg-surface-variant border border-outline-variant rounded-lg text-center text-xs font-bold">SMS Automation</div>
+                    <div class="p-4 bg-surface-variant border border-outline-variant rounded-lg text-center text-xs font-bold">CRM Pipelines</div>
+                    <div class="p-4 bg-surface-variant border border-outline-variant rounded-lg text-center text-xs font-bold">AI Voice &amp; Chat (GHL)</div>
+                    <div class="p-4 bg-primary/10 border border-primary/30 rounded-lg text-center text-xs font-bold text-primary">GoHighLevel</div>
+                </div>
+            </div>
+            <div>
+                <h3 class="font-mono text-xs uppercase tracking-widest text-primary mb-6">Also Skilled In</h3>
+                <div class="flex flex-col gap-3">
+                    <div class="px-4 py-3 bg-surface-variant border border-outline-variant rounded-lg text-xs">Zapier</div>
+                    <div class="px-4 py-3 bg-surface-variant border border-outline-variant rounded-lg text-xs">Webhooks &amp; Third-Party Integrations</div>
+                    <div class="px-4 py-3 bg-surface-variant border border-outline-variant rounded-lg text-xs">CRM Optimization</div>
+                    <div class="px-4 py-3 bg-surface-variant border border-outline-variant rounded-lg text-xs">Process Documentation</div>
+                    <div class="px-4 py-3 bg-surface-variant border border-outline-variant rounded-lg text-xs">Active Campaign</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ FEATURED WORK INTRO ============ -->
+<section class="pt-8 pb-4 px-6 section-reveal" id="work">
+    <div class="max-w-7xl mx-auto">
+        <span class="font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded">FEATURED WORK</span>
+        <h2 class="text-3xl font-bold mt-4 max-w-2xl">Real CRM systems, built and shipped.</h2>
+        <p class="text-on-surface-variant mt-4 max-w-2xl text-sm" style="font-size:16px;">Every project shown here was planned, built, tested, and launched as a complete GoHighLevel system &mdash; not just a template or theoretical concept.</p>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- PROJECT 1: ELEMENT 6 AUTO SPA                                 -->
+<!-- ============================================================ -->
+<section class="py-14 px-6 bg-surface" id="work-projects">
+    <div class="max-w-7xl mx-auto space-y-10">
+        <div class="glass-card rounded-3xl p-6 md:p-12 section-reveal">
+            <span class="font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded">AUTOMOTIVE DETAILING &bull; GOHIGHLEVEL CRM &amp; AUTOMATION</span>
+            <h3 class="text-2xl md:text-3xl font-bold mt-4 mb-8">Element 6 Auto SPA</h3>
+            <p class="text-on-surface-variant text-base max-w-4xl mb-12">Built a complete lead-to-customer automation system covering enquiries, appointment booking, invoicing, payments, follow-up, pipelines, and after-hours communication.</p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12 items-start">
+                <div class="space-y-6 order-2 lg:order-1">
+                    <div class="bg-surface-variant border border-outline-variant p-6 rounded-2xl">
+                        <h4 class="text-primary font-bold mb-3 flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-sm">report_problem</span>Problem</h4>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">Element 6 Auto SPA needed a connected system to capture website enquiries, respond to new leads, encourage appointment booking, manage pipeline movement, send invoices, track payments, and follow up with contacts who did not book. The business also needed an automated response for customers who sent messages outside normal business hours.</p>
+                    </div>
+                    <div class="bg-surface-variant border border-outline-variant p-6 rounded-2xl">
+                        <h4 class="text-primary font-bold mb-3 flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-sm">lightbulb</span>Solution</h4>
+                        <p class="text-on-surface-variant text-sm leading-relaxed mb-3">Built a complete GoHighLevel customer journey beginning from the website contact form. The system includes:</p>
+                        <ul class="text-xs text-on-surface-variant space-y-1.5 list-disc pl-5">
+                            <li>Website lead capture</li>
+                            <li>Welcome email with appointment booking link</li>
+                            <li>Appointment booking confirmation</li>
+                            <li>CRM pipeline management</li>
+                            <li>Invoice delivery</li>
+                            <li>Invoice payment tracking</li>
+                            <li>No-response nurture follow-up</li>
+                            <li>After-business-hours messaging workflow</li>
+                        </ul>
+                    </div>
+                    <div class="bg-surface-variant border border-outline-variant p-6 rounded-2xl">
+                        <h4 class="text-primary font-bold mb-3 flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-sm">check_circle</span>Result</h4>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">Every new enquiry now enters one connected system. Leads receive an immediate response, are guided toward booking, move through the CRM pipeline, receive invoices, and continue through the correct follow-up path based on their actions. The business can manage the full customer journey with less manual work and more consistent communication.</p>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2">
+                    <div class="browser-frame">
+                        <div class="browser-header"><span class="browser-dot bg-red-500"></span><span class="browser-dot bg-yellow-500"></span><span class="browser-dot bg-green-500"></span></div>
+                        <div class="aspect-video flex items-center justify-center bg-surface-variant/50 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Element 6 Auto SPA/Screenshot_89.png"  alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" />
+                            <span class="material-symbols-outlined text-6xl text-primary/20">dashboard</span>
+                        </div>
+                        <p class="gallery-frame-label border-t border-outline-variant">Element 6 Auto SPA Home Page</p>
+                    </div>
+                </div>
+            </div>
+
+            <h4 class="font-mono text-xs uppercase tracking-widest text-primary mb-1">Project Gallery &mdash; Website, CRM, Workflows &amp; Automations</h4>
+            <p class="text-xs text-on-surface-variant mb-6">Drag or use the arrows to scroll through the gallery. Click any image to enlarge.</p>
+            <div class="gallery-slider-wrap mb-16">
+                <button class="gallery-nav-btn prev" aria-label="Scroll gallery left" data-dir="-1"><span class="material-symbols-outlined">chevron_left</span></button>
+                <div class="gallery-slider">
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Element 6 Auto SPA/Screenshot_97.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">1. Workflow List</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Element 6 Auto SPA/Screenshot_95.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">2. Website Contact Form</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Element 6 Auto SPA/Screenshot_88.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">3. Welcome Email and Booking Link</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Element 6 Auto SPA/Screenshot_94.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">4. Appointment Booking Confirmation</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Element 6 Auto SPA/Screenshot_98.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">5. CRM Sales Pipeline</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Element 6 Auto SPA/Screenshot_92.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">6. Invoice Sent Workflow</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Element 6 Auto SPA/Screenshot_93.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">7. Invoice Paid Workflow</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Element 6 Auto SPA/Screenshot_91.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">8. No-Response Nurture Workflow</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Element 6 Auto SPA/Screenshot_90.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">9. After-Business-Hours Workflow</p></div>
+                </div>
+                <button class="gallery-nav-btn next" aria-label="Scroll gallery right" data-dir="1"><span class="material-symbols-outlined">chevron_right</span></button>
+            </div>
+
+            <h4 class="text-xs font-mono text-primary uppercase tracking-widest mb-6">Customer Journey Timeline</h4>
+            <div class="journey-track mb-6">
+                <div class="journey-node"><span class="num">1</span>Website Visit</div>
+                <div class="journey-node"><span class="num">2</span>Contact Form Submitted</div>
+                <div class="journey-node"><span class="num">3</span>Welcome Email Sent</div>
+                <div class="journey-node"><span class="num">4</span>Booking Link Opened</div>
+                <div class="journey-node"><span class="num">5</span>Appointment Booked</div>
+                <div class="journey-node"><span class="num">6</span>Confirmation Sent</div>
+                <div class="journey-node"><span class="num">7</span>Pipeline Updated</div>
+                <div class="journey-node"><span class="num">8</span>Invoice Sent</div>
+                <div class="journey-node"><span class="num">9</span>Invoice Paid</div>
+                <div class="journey-node"><span class="num">10</span>Customer Completed</div>
+            </div>
+            <div class="flex flex-wrap gap-6 text-xs text-on-surface-variant font-mono">
+                <div class="flex items-center gap-2"><span class="glow-point"></span>No booking &rarr; No-Response Nurture Workflow</div>
+                <div class="flex items-center gap-2"><span class="glow-point"></span>Message outside business hours &rarr; After-Hours Automatic Response</div>
+            </div>
+        </div>
+
+<!-- ============================================================ -->
+<!-- PROJECT 3: NOOR ESTHÉTIQUE & WELLNESS                         -->
+<!-- ============================================================ -->
+        <div class="glass-card rounded-3xl p-6 md:p-12 section-reveal">
+            <span class="font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded">MEDICAL WELLNESS &bull; CRM &bull; MEMBERSHIP AUTOMATION</span>
+            <h3 class="text-2xl md:text-3xl font-bold mt-4 mb-8">Noor Esth&eacute;tique &amp; Wellness</h3>
+            <p class="text-on-surface-variant text-base max-w-4xl mb-12">Built a complete patient lead, appointment, membership, communication, and reputation management system using GoHighLevel and Pabau.</p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12 items-start">
+                <div class="browser-frame">
+                    <div class="browser-header"><span class="browser-dot bg-red-500"></span><span class="browser-dot bg-yellow-500"></span><span class="browser-dot bg-green-500"></span></div>
+                    <div class="aspect-video bg-surface-variant/50 flex items-center justify-center relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Noor Esthétique & Wellness/Screenshot_88.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-6xl text-primary/20">medical_services</span></div>
+                    <p class="gallery-frame-label border-t border-outline-variant">NOOR ESTHÉTIQUE & WELLNESS Home Page</p>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-surface-variant border border-outline-variant p-6 rounded-2xl">
+                        <h4 class="text-primary font-bold text-sm mb-3">Problem</h4>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Noor Esth&eacute;tique &amp; Wellness needed one connected system to manage website enquiries, service-specific forms, appointment booking, lead follow-up, membership activity, communication preferences, CRM pipelines, and reputation requests. Customer and membership information was divided between GoHighLevel and Pabau, making it difficult to keep contact records and membership statuses consistently updated.</p>
+                    </div>
+                    <div class="bg-surface-variant border border-outline-variant p-6 rounded-2xl">
+                        <h4 class="text-primary font-bold text-sm mb-3">Solution</h4>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Built a complete GoHighLevel CRM and automation system connected with Pabau. Every Noor service uses its own form and automation path, with welcome emails, appointment confirmation, no-booking nurture, membership link delivery after attendance, Pabau webhooks syncing membership activity, a communication-preference workflow, and a full CRM pipeline that triggers a review request once a contact reaches the Member stage.</p>
+                    </div>
+                    <div class="bg-surface-variant border border-outline-variant p-6 rounded-2xl">
+                        <h4 class="text-primary font-bold text-sm mb-3">Result</h4>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Noor now has one connected customer journey covering lead capture, service selection, booking, follow-up, appointment attendance, membership conversion, membership status updates, communication preferences, pipeline management, and review requests. The system reduces manual updates and keeps appointment and membership data organized inside GoHighLevel.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap gap-2 mb-16">
+                <span class="step-chip">GoHighLevel</span><span class="step-chip is-integration">Pabau Integration</span><span class="step-chip">Service Forms</span><span class="step-chip">Contact Form</span><span class="step-chip">Welcome Email</span><span class="step-chip">Calendar Booking</span><span class="step-chip">Appointment Confirmation</span><span class="step-chip">Nurture Sequence</span><span class="step-chip is-integration">Webhooks</span><span class="step-chip">Membership Automation</span><span class="step-chip">Communication Preferences</span><span class="step-chip">CRM Pipeline</span><span class="step-chip">Reputation Management</span><span class="step-chip">Review Request</span><span class="step-chip is-integration">AI Voice Agent</span>
+            </div>
+
+            <div class="relative rounded-3xl p-6 md:p-10 mb-16 overflow-hidden" style="background: linear-gradient(135deg, rgba(14,165,233,0.1), rgba(23,31,51,0.9)); border: 1px solid rgba(14,165,233,0.35); box-shadow: 0 0 40px rgba(14,165,233,0.08);">
+                <div class="absolute top-0 right-0 w-64 h-64 rounded-full opacity-20" style="background: radial-gradient(circle, #0EA5E9, transparent 70%); filter: blur(30px);"></div>
+                <div class="relative flex flex-col md:flex-row gap-8 items-start">
+                    <div class="flex-shrink-0 w-full md:w-56 flex flex-col items-center gap-3">
+                        <div class="w-16 h-16 rounded-2xl bg-primary/15 border border-primary/40 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary text-3xl">graphic_eq</span>
+                        </div>
+                        <span class="font-mono text-[9px] uppercase tracking-widest text-primary bg-primary/10 border border-primary/30 px-2 py-1 rounded-full whitespace-nowrap">Live &amp; In Production</span>
+                        <div class="flex flex-col gap-3 w-full mt-2">
+                            <div class="bg-surface-variant/60 border border-outline-variant rounded-xl p-4">
+                                <span class="material-symbols-outlined text-primary text-lg mb-1 block">record_voice_over</span>
+                                <p class="text-xs font-bold mb-1">Asks the Quiz</p>
+                                <p class="text-[11px] text-on-surface-variant">Conducts the intake conversation by voice, question by question.</p>
+                            </div>
+                            <div class="bg-surface-variant/60 border border-outline-variant rounded-xl p-4">
+                                <span class="material-symbols-outlined text-primary text-lg mb-1 block">sync_alt</span>
+                                <p class="text-xs font-bold mb-1">Maps Every Answer</p>
+                                <p class="text-[11px] text-on-surface-variant">Each response is parsed and saved to its own contact field in real time.</p>
+                            </div>
+                            <div class="bg-surface-variant/60 border border-outline-variant rounded-xl p-4">
+                                <span class="material-symbols-outlined text-primary text-lg mb-1 block">verified</span>
+                                <p class="text-xs font-bold mb-1">Live in Production</p>
+                                <p class="text-[11px] text-on-surface-variant">Actively running on real contacts, not a demo or prototype.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <span class="font-mono text-[10px] text-primary uppercase tracking-widest">Featured Build &bull; AI Voice Agent</span>
+                        <h4 class="text-xl md:text-2xl font-bold mt-2 mb-4">AI Voice Quiz Agent</h4>
+                        <p class="text-sm text-on-surface-variant leading-relaxed mb-4">Beyond the CRM automations, I built and deployed a live AI voice agent for Noor that calls or answers as a natural conversation partner, walks each contact through a structured intake quiz, and writes every answer directly into the matching custom fields on the GoHighLevel contact record &mdash; no manual data entry, no lost information.</p>
+
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div class="browser-frame" style="border-color: rgba(14,165,233,0.3);">
+                                <div class="browser-header"><span class="browser-dot bg-red-500"></span><span class="browser-dot bg-yellow-500"></span><span class="browser-dot bg-green-500"></span></div>
+                                <div class="aspect-video bg-surface-variant/50 flex items-center justify-center relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your AI voice agent screenshot -->
+<img src="Noor Esthétique & Wellness/Screenshot AI 2.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-4xl text-primary/20">graphic_eq</span>
+                                </div>
+                                <p class="gallery-frame-label border-t border-outline-variant">AI Voice Agent &mdash; Quiz Configuration</p>
+                            </div>
+                            <div class="browser-frame" style="border-color: rgba(14,165,233,0.3);">
+                                <div class="browser-header"><span class="browser-dot bg-red-500"></span><span class="browser-dot bg-yellow-500"></span><span class="browser-dot bg-green-500"></span></div>
+                                <div class="aspect-video bg-surface-variant/50 flex items-center justify-center relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your AI voice agent screenshot -->
+<img src="Noor Esthétique & Wellness/Screenshot AI 1.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-4xl text-primary/20">contact_page</span>
+                                </div>
+                                <p class="gallery-frame-label border-t border-outline-variant">Quiz Answers Saved to Contact Fields</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h4 class="font-mono text-xs uppercase tracking-widest text-primary mb-1">Project Gallery &mdash; CRM, Forms, Bookings, Membership &amp; Automations</h4>
+            <p class="text-xs text-on-surface-variant mb-6">Drag or use the arrows to scroll through the gallery. Click any image to enlarge.</p>
+            <div class="gallery-slider-wrap mb-16">
+                <button class="gallery-nav-btn prev" aria-label="Scroll gallery left" data-dir="-1"><span class="material-symbols-outlined">chevron_left</span></button>
+                <div class="gallery-slider">
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-[4/3] flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Noor Esthétique & Wellness/Screenshot_90.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">1. Noor Website Contact Form</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-[4/3] flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Noor Esthétique & Wellness/Screenshot_89.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">2. Noor Website Booking Page</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-[4/3] flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Noor Esthétique & Wellness/Screenshot_106.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">3. Contact Form Submission Workflow</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-[4/3] flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Noor Esthétique & Wellness/Screenshot_91.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">4. Service Form Submission Workflow</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-[4/3] flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Noor Esthétique & Wellness/Screenshot_94.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">5. Appointment Confirmation Workflow</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-[4/3] flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Noor Esthétique & Wellness/Screenshot_96.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">6. Appointment Cancel Workflow</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-[4/3] flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Noor Esthétique & Wellness/Screenshot_97.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">7. Appointment Showed Workflow</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-[4/3] flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Noor Esthétique & Wellness/Screenshot_92.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">8. No-Booking Nurture Sequence</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-[4/3] flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Noor Esthétique & Wellness/Screenshot_95.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">9. Appointment No-Showed Workflow</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-[4/3] flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Noor Esthétique & Wellness/Screenshot_100.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">10. Complete Booking System</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-[4/3] flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Noor Esthétique & Wellness/Screenshot_107.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">11. Pabau Membership Purchase Webhook</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-[4/3] flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Noor Esthétique & Wellness/Screenshot_109.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">12. Membership Data Synced to GoHighLevel</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-[4/3] flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Noor Esthétique & Wellness/Screenshot_98.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">13. Membership Active Tag Workflow</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-[4/3] flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Noor Esthétique & Wellness/Screenshot_108.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">14. Pabau Membership Cancellation Webhook</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-[4/3] flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Noor Esthétique & Wellness/Screenshot_99.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">15. Membership Cancelled Workflow</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-[4/3] flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Noor Esthétique & Wellness/Screenshot_104.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">16. Communication Preference Workflow</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-[4/3] flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Noor Esthétique & Wellness/Screenshot_105.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">17. Noor CRM Pipeline</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-[4/3] flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Noor Esthétique & Wellness/Screenshot_102.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">18. Member Review Request Workflow</p></div>
+                </div>
+                <button class="gallery-nav-btn next" aria-label="Scroll gallery right" data-dir="1"><span class="material-symbols-outlined">chevron_right</span></button>
+            </div>
+
+            <h4 class="text-xs font-mono text-primary uppercase tracking-widest mb-6">Customer Journey</h4>
+            <div class="journey-track mb-6">
+                <div class="journey-node"><span class="num">1</span>Website Visit</div>
+                <div class="journey-node"><span class="num">2</span>Contact or Service Form Submitted</div>
+                <div class="journey-node"><span class="num">3</span>Welcome Communication Sent</div>
+                <div class="journey-node"><span class="num">4</span>Appointment Booked</div>
+                <div class="journey-node"><span class="num">5</span>Confirmation Sent</div>
+                <div class="journey-node"><span class="num">6</span>Appointment Attended</div>
+                <div class="journey-node"><span class="num">7</span>Membership Link Sent</div>
+                <div class="journey-node"><span class="num">8</span>Membership Purchased in Pabau</div>
+                <div class="journey-node"><span class="num">9</span>Membership Synced to GHL</div>
+                <div class="journey-node"><span class="num">10</span>Membership Active Tag Applied</div>
+                <div class="journey-node"><span class="num">11</span>Member Pipeline Stage</div>
+                <div class="journey-node"><span class="num">12</span>Review Request Sent</div>
+                <div class="journey-node" style="border-left-color:#0EA5E9;"><span class="num">13</span>AI Voice Quiz &amp; Field Mapping</div>
+            </div>
+            <div class="flex flex-col gap-2 text-xs text-on-surface-variant font-mono">
+                <div class="flex items-center gap-2"><span class="glow-point"></span>No appointment booked &rarr; No-Booking Nurture Sequence</div>
+                <div class="flex items-center gap-2"><span class="glow-point"></span>Membership cancelled in Pabau &rarr; Cancellation Webhook &rarr; Membership Cancelled Workflow</div>
+                <div class="flex items-center gap-2"><span class="glow-point"></span>Communication Preference Form &rarr; Phone, Text, or Email Preference Saved</div>
+            </div>
+        </div>
+
+<!-- ============================================================ -->
+<!-- PROJECT 4: VEGA MIDEIA CO.                                    -->
+<!-- ============================================================ -->
+        <div class="glass-card rounded-3xl p-6 md:p-12 section-reveal">
+            <span class="font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded">AGENCY OPERATIONS &bull; CRM &bull; CLIENT ONBOARDING</span>
+            <h3 class="text-2xl md:text-3xl font-bold mt-4 mb-8">VEGA MIDEIA CO.</h3>
+            <p class="text-on-surface-variant text-base max-w-4xl mb-12">Built a complete lead-to-active-client system connecting sales, contracts, invoicing, onboarding, project delivery, reporting, ClickUp, Google Workspace, and GoHighLevel.</p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12 items-start">
+                <div class="browser-frame order-1 lg:order-2">
+                    <div class="browser-header"><span class="browser-dot bg-red-500"></span><span class="browser-dot bg-yellow-500"></span><span class="browser-dot bg-green-500"></span><div class="ml-auto"><span class="px-2 py-0.5 bg-primary/20 text-primary text-[8px] font-mono rounded">ACTIVE INTEGRATION</span></div></div>
+                    <div class="aspect-video bg-surface-variant/50 flex flex-col items-center justify-center relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="Mustafa/Screenshot_92.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" />
+                        <span class="material-symbols-outlined text-6xl text-primary/20 mb-2">account_tree</span>
+                    </div>
+                    <p class="gallery-frame-label border-t border-outline-variant">VEGA MIDEIA CO. CRM &amp; Client Delivery Pipeline</p>
+                </div>
+                <div class="space-y-6 order-2 lg:order-1">
+                    <div class="bg-surface-variant border border-outline-variant p-6 rounded-2xl">
+                        <h4 class="text-primary font-bold text-sm mb-3">Problem</h4>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">VEGA MIDEIA CO. needed one connected system to manage the complete client journey from website enquiry to appointment booking, sales consultation, contract signing, invoicing, onboarding, project delivery, monthly reporting, and review collection &mdash; while using GoHighLevel, ClickUp, Google Drive, Google Sheets, Zapier, AgencyAnalytics, BrightLocal, and LandingSite.</p>
+                    </div>
+                    <div class="bg-surface-variant border border-outline-variant p-6 rounded-2xl">
+                        <h4 class="text-primary font-bold text-sm mb-3">Solution</h4>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Built a complete end-to-end agency operations system using GoHighLevel as the main CRM, with a welcome email and booking link, ClickUp tasks and Google Sheets records created at booking, contracts and invoices triggered after a Showed appointment, an Onboarding pipeline stage after payment, a launch-planning call after onboarding, an Active Client stage with a review request after delivery, a Zapier-driven Google Drive client folder on contact creation, and monthly reporting through Zapier, AgencyAnalytics, and BrightLocal.</p>
+                    </div>
+                    <div class="bg-surface-variant border border-outline-variant p-6 rounded-2xl">
+                        <h4 class="text-primary font-bold text-sm mb-3">Result</h4>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">VEGA MIDEIA CO. now has one connected client journey from first enquiry to active-client management. Sales, appointments, ClickUp tasks, Google Sheets records, contracts, invoices, onboarding, Google Drive folders, reporting, pipeline stages, and review requests are coordinated through one structured system.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h4 class="font-mono text-xs uppercase tracking-widest text-primary mb-1">Project Gallery &mdash; Sales, Operations, Onboarding &amp; Reporting</h4>
+            <p class="text-xs text-on-surface-variant mb-6">Drag or use the arrows to scroll through the gallery. Click any image to enlarge.</p>
+            <div class="gallery-slider-wrap mb-16">
+                <button class="gallery-nav-btn prev" aria-label="Scroll gallery left" data-dir="-1"><span class="material-symbols-outlined">chevron_left</span></button>
+                <div class="gallery-slider">
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="Mustafa/Screenshot_93.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-lg text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">1. Website Lead Capture Form</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="Mustafa/Screenshot_95.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-lg text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">2. VEGA Sales Pipeline</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="Mustafa/Screenshot_112.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-lg text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">3. Welcome Email With Booking Link</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="Mustafa/Screenshot_98.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-lg text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">4. Appointment Confirmation Workflow</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="Mustafa/Screenshot_116.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-lg text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">5. ClickUp Task Creation After Booking</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="Mustafa/Screenshot_99.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-lg text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">6. Appointment Showed Workflow</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="Mustafa/Screenshot_101.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-lg text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">7. Appointment No-Show Workflow</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="Mustafa/Screenshot_96.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-lg text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">8. Service Contract Sent</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="Mustafa/Screenshot_97.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-lg text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">9. Contract Signed Workflow</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="Mustafa/Screenshot_115.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-lg text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">10. ClickUp Task After Contract Signing</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="Mustafa/Screenshot_102.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-lg text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">11. Invoice Sent Workflow</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="Mustafa/Screenshot_103.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-lg text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">12. Invoice Follow-Up Workflow</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="Mustafa/Screenshot_104.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-lg text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">13. Invoice Paid Workflow</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="Mustafa/Screenshot_105.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-lg text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">14. Onboarding Form Sent Workflow</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="Mustafa/Screenshot_106.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-lg text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">15. Onboarding Form Submission Workflow</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="Mustafa/Screenshot_117.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-lg text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">16. Google Sheets Onboarding Update</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="Mustafa/Screenshot_107.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-lg text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">17. Kickoff Call Booked (Project Launch) Workflow</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="Mustafa/Screenshot_109.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-lg text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">18. Day 30 Feedback + Referral Workflow</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="Mustafa/Screenshot_110.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-lg text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">19. Google Drive Client Folder Automation</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="Mustafa/Screenshot_111.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-lg text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">20. Active Client Review and Monthly Reporting Workflow</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="Mustafa/Screenshot_114.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-lg text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">21. BrightLocal Dashboard</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="Mustafa/Screenshot_118.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-lg text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">22. AgencyAnalytic Dashboard</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="Mustafa/Screenshot_113.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-lg text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">23. AgencyAnalytic Monthly Report</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="Mustafa/Screenshot_94.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-lg text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">24. A2P Approved</p></div>
+                </div>
+                <button class="gallery-nav-btn next" aria-label="Scroll gallery right" data-dir="1"><span class="material-symbols-outlined">chevron_right</span></button>
+            </div>
+
+            <h4 class="font-bold text-base text-center mb-8">Connected Systems</h4>
+            <div class="flex flex-wrap justify-center items-center gap-6 mb-16">
+                <div class="flex flex-col items-center gap-2">
+                    <div class="w-20 h-20 bg-primary/10 border border-primary/40 rounded-full flex items-center justify-center relative">
+                        <span class="material-symbols-outlined text-primary text-3xl">hub</span>
+                        <div class="glow-point"></div>
+                    </div>
+                    <span class="text-[10px] font-mono text-primary">GHL (CENTER)</span>
+                </div>
+                <div class="workflow-line w-10 hidden md:block"></div>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl">
+                    <div class="p-3 border border-outline-variant rounded-lg text-center"><p class="font-mono text-[10px] font-bold">ClickUp</p><p class="text-[9px] text-on-surface-variant mt-1">Task creation &amp; project-status updates</p></div>
+                    <div class="p-3 border border-outline-variant rounded-lg text-center"><p class="font-mono text-[10px] font-bold">Google Sheets</p><p class="text-[9px] text-on-surface-variant mt-1">Lead, contract, onboarding &amp; client records</p></div>
+                    <div class="p-3 border border-outline-variant rounded-lg text-center"><p class="font-mono text-[10px] font-bold">Google Drive</p><p class="text-[9px] text-on-surface-variant mt-1">Automatic client-folder creation</p></div>
+                    <div class="p-3 border border-outline-variant rounded-lg text-center"><p class="font-mono text-[10px] font-bold">Zapier</p><p class="text-[9px] text-on-surface-variant mt-1">Cross-platform automation &amp; report delivery</p></div>
+                    <div class="p-3 border border-outline-variant rounded-lg text-center"><p class="font-mono text-[10px] font-bold">LandingSite</p><p class="text-[9px] text-on-surface-variant mt-1">Website &amp; landing-page creation</p></div>
+                    <div class="p-3 border border-outline-variant rounded-lg text-center"><p class="font-mono text-[10px] font-bold">AgencyAnalytics</p><p class="text-[9px] text-on-surface-variant mt-1">Client dashboard &amp; monthly reporting</p></div>
+                    <div class="p-3 border border-outline-variant rounded-lg text-center"><p class="font-mono text-[10px] font-bold">BrightLocal</p><p class="text-[9px] text-on-surface-variant mt-1">Local SEO &amp; reputation reporting data</p></div>
+                    <div class="p-3 border border-outline-variant rounded-lg text-center"><p class="font-mono text-[10px] font-bold">GHL Reputation Mgmt</p><p class="text-[9px] text-on-surface-variant mt-1">Automated review requests</p></div>
+                </div>
+            </div>
+
+            <h4 class="text-xs font-mono text-primary uppercase tracking-widest mb-6">Customer Journey</h4>
+            <div class="journey-track mb-6">
+                <div class="journey-node"><span class="num">1</span>Website Form Submitted</div>
+                <div class="journey-node"><span class="num">2</span>Welcome Email Sent</div>
+                <div class="journey-node"><span class="num">3</span>Google Drive Folder Created</div>
+                <div class="journey-node"><span class="num">4</span>Appointment Booked</div>
+                <div class="journey-node"><span class="num">5</span>ClickUp Task Created</div>
+                <div class="journey-node"><span class="num">6</span>Google Sheet Record Created</div>
+                <div class="journey-node"><span class="num">7</span>Appointment Attended</div>
+                <div class="journey-node"><span class="num">8</span>Services Selected</div>
+                <div class="journey-node"><span class="num">9</span>Contract Signed</div>
+                <div class="journey-node"><span class="num">10</span>Invoice Sent</div>
+                <div class="journey-node"><span class="num">11</span>Invoice Paid</div>
+                <div class="journey-node"><span class="num">12</span>Onboarding Form Submitted</div>
+                <div class="journey-node"><span class="num">13</span>Launch Call Booked</div>
+                <div class="journey-node"><span class="num">14</span>Project Delivered</div>
+                <div class="journey-node"><span class="num">15</span>Active Client</div>
+                <div class="journey-node"><span class="num">16</span>Review Request Sent</div>
+                <div class="journey-node"><span class="num">17</span>Monthly Report Delivered</div>
+            </div>
+            <div class="flex flex-col gap-2 text-xs text-on-surface-variant font-mono">
+                <div class="flex items-center gap-2"><span class="glow-point"></span>Invoice unpaid &rarr; Invoice Follow-Up Workflow</div>
+                <div class="flex items-center gap-2"><span class="glow-point"></span>Contract not signed &rarr; Contract Follow-Up Stage</div>
+                <div class="flex items-center gap-2"><span class="glow-point"></span>Appointment not attended &rarr; Appointment Follow-Up Path</div>
+            </div>
+        </div>
+
+<!-- ============================================================ -->
+<!-- PROJECT 2: WEBINAR REGISTRATION                               -->
+<!-- ============================================================ -->
+        <div class="glass-card rounded-3xl p-6 md:p-12 section-reveal">
+            <span class="font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded">WEBINAR FUNNEL &bull; GOHIGHLEVEL AUTOMATION</span>
+            <h3 class="text-2xl md:text-3xl font-bold mt-4 mb-8">Webinar Registration</h3>
+            <p class="text-on-surface-variant text-base max-w-4xl mb-12">Built an automated webinar registration and post-event booking system that routes attendees into the correct consultation calendar.</p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12 items-start">
+                <div class="browser-frame">
+                    <div class="browser-header"><span class="browser-dot bg-red-500"></span><span class="browser-dot bg-yellow-500"></span><span class="browser-dot bg-green-500"></span></div>
+                    <div class="aspect-video bg-surface-variant/50 flex items-center justify-center relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./RMJ Consultant/Screenshot_92.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-6xl text-primary/20">video_library</span></div>
+                    <p class="gallery-frame-label border-t border-outline-variant">Webinar Registration</p>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-surface-variant border border-outline-variant p-6 rounded-2xl">
+                        <h4 class="text-primary font-bold mb-3 text-sm">Problem</h4>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Webinar leads needed a structured journey from registration to attendance follow-up and consultation booking. Without automation, it was difficult to consistently welcome registrants, identify attendees, collect their service preference, and direct them to the correct booking calendar.</p>
+                    </div>
+                    <div class="bg-surface-variant border border-outline-variant p-6 rounded-2xl">
+                        <h4 class="text-primary font-bold mb-3 text-sm">Solution</h4>
+                        <p class="text-sm text-on-surface-variant leading-relaxed mb-2">Built a complete GoHighLevel webinar automation system. The system:</p>
+                        <ul class="text-xs text-on-surface-variant space-y-1.5 list-disc pl-5">
+                            <li>Captures webinar registrations</li>
+                            <li>Sends an immediate welcome email</li>
+                            <li>Checks whether the contact attended the webinar</li>
+                            <li>Sends attendees a consultation-selection form</li>
+                            <li>Allows the attendee to choose between a Strategy Call and a Funding Call</li>
+                            <li>Triggers the correct booking workflow based on the selected service</li>
+                            <li>Sends the relevant calendar link and booking communication</li>
+                        </ul>
+                    </div>
+                    <div class="bg-surface-variant border border-outline-variant p-6 rounded-2xl">
+                        <h4 class="text-primary font-bold mb-3 text-sm">Result</h4>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Each webinar contact follows the correct automated path based on attendance and service selection. Attendees receive a clear next step, while Strategy Call and Funding Call leads are automatically separated and directed into the appropriate booking journey.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h4 class="font-mono text-xs uppercase tracking-widest text-primary mb-1">Project Gallery &mdash; Webinar Funnel &amp; Booking Automations</h4>
+            <p class="text-xs text-on-surface-variant mb-6">Drag or use the arrows to scroll through the gallery. Click any image to enlarge.</p>
+            <div class="gallery-slider-wrap mb-16">
+                <button class="gallery-nav-btn prev" aria-label="Scroll gallery left" data-dir="-1"><span class="material-symbols-outlined">chevron_left</span></button>
+                <div class="gallery-slider">
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./RMJ Consultant/Screenshot_98.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">1. Workflow List</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./RMJ Consultant/Screenshot_94.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">2. Webinar Register Workflow</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./RMJ Consultant/Screenshot_97.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">3. Attendance Condition Workflow</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./RMJ Consultant/Screenshot_99.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">4. Service Selection Form</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./RMJ Consultant/Screenshot_95.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">5. Strategy Call Booking Workflow</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./RMJ Consultant/Screenshot_96.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">6. Funding Call Booking Workflow</p></div>
+                </div>
+                <button class="gallery-nav-btn next" aria-label="Scroll gallery right" data-dir="1"><span class="material-symbols-outlined">chevron_right</span></button>
+            </div>
+
+            <h4 class="text-xs font-mono text-primary uppercase tracking-widest mb-6">Customer Journey</h4>
+            <div class="journey-track mb-2">
+                <div class="journey-node"><span class="num">1</span>Webinar Form Submitted</div>
+                <div class="journey-node"><span class="num">2</span>Welcome Email Sent</div>
+                <div class="journey-node"><span class="num">3</span>Webinar Attended</div>
+                <div class="journey-node"><span class="num">4</span>Consultation Form Sent</div>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-3 max-w-lg mb-2">
+                <div class="journey-node"><span class="num">5a</span>Service Selected: Strategy Call</div>
+                <div class="journey-node"><span class="num">5b</span>Service Selected: Funding Call</div>
+            </div>
+            <div class="journey-track">
+                <div class="journey-node"><span class="num">6</span>Correct Booking Workflow Triggered</div>
+                <div class="journey-node"><span class="num">7</span>Appointment Booked</div>
+            </div>
+        </div>
+
+    </div>
+    <div class="max-w-7xl mx-auto mt-6 text-center">
+        <a href="/more-work" class="inline-flex items-center gap-2 px-8 py-4 border border-outline-variant hover:border-primary/50 hover:bg-surface-variant font-bold rounded-xl text-base transition-all">
+            View More Work
+            <span class="material-symbols-outlined text-lg">arrow_forward</span>
+        </a>
+    </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="py-24 px-6 bg-surface section-reveal" id="process">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-16 text-center">
+            <span class="font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded">HOW I WORK</span>
+            <h2 class="text-3xl font-bold mt-4">A repeatable process, not guesswork.</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="glass-card process-card p-8 rounded-2xl"><span class="font-mono text-3xl text-primary/30 font-bold">01</span><h3 class="font-bold text-base mt-4 mb-2">Audit</h3><p class="text-xs text-on-surface-variant">Map every existing tool, form, and hand-off to find where leads are getting dropped or delayed.</p></div>
+            <div class="glass-card process-card p-8 rounded-2xl"><span class="font-mono text-3xl text-primary/30 font-bold">02</span><h3 class="font-bold text-base mt-4 mb-2">Map Workflow</h3><p class="text-xs text-on-surface-variant">Design the pipeline stages, triggers, and branches before touching the CRM.</p></div>
+            <div class="glass-card process-card p-8 rounded-2xl"><span class="font-mono text-3xl text-primary/30 font-bold">03</span><h3 class="font-bold text-base mt-4 mb-2">Build in GHL</h3><p class="text-xs text-on-surface-variant">Build the pipelines, forms, calendars, and automations directly in GoHighLevel.</p></div>
+            <div class="glass-card process-card p-8 rounded-2xl"><span class="font-mono text-3xl text-primary/30 font-bold">04</span><h3 class="font-bold text-base mt-4 mb-2">Test &amp; Handoff</h3><p class="text-xs text-on-surface-variant">Run real leads through every branch, document the system, and hand it off clean.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section class="py-24 px-6 bg-surface section-reveal" id="experience">
+    <div class="max-w-4xl mx-auto">
+        <div class="mb-16">
+            <span class="font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded">CAREER TIMELINE</span>
+            <h2 class="text-3xl font-bold mt-4">Experience.</h2>
+        </div>
+
+        <div class="relative pl-8 md:pl-10">
+            <div class="absolute left-[7px] md:left-[9px] top-2 bottom-2 w-px bg-outline-variant"></div>
+
+            <!-- FNNLX -->
+            <div class="relative mb-4">
+                <div class="absolute -left-8 md:-left-10 top-1 w-4 h-4 rounded-full bg-primary/15 border-2 border-primary flex items-center justify-center">
+                    <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                </div>
+                <span class="font-mono text-[10px] text-primary uppercase tracking-widest">March 2021 &mdash; March 2025</span>
+                <h3 class="text-xl font-bold mt-1">FNNLX</h3>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 mb-10 ml-2">
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center pt-1">
+                            <div class="w-2 h-2 rounded-full bg-primary"></div>
+                            <div class="w-px flex-1 bg-outline-variant mt-1"></div>
+                        </div>
+                        <div class="pb-2">
+                            <span class="font-mono text-[10px] text-on-surface-variant uppercase tracking-widest">Mar 2021 &mdash; Mar 2022 &bull; 1 yr</span>
+                            <h4 class="font-bold text-sm mt-1">Funnel Builder</h4>
+                            <p class="text-xs text-on-surface-variant mt-1">Started here building sales funnels and landing pages, laying the foundation for what would grow into full CRM and automation work.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center pt-1">
+                            <div class="w-2 h-2 rounded-full bg-primary"></div>
+                            <div class="w-px flex-1 bg-outline-variant mt-1"></div>
+                        </div>
+                        <div class="pb-2">
+                            <span class="font-mono text-[10px] text-on-surface-variant uppercase tracking-widest">Mar 2022 &mdash; Sep 2023 &bull; 1.5 yrs</span>
+                            <h4 class="font-bold text-sm mt-1">Automation Specialist</h4>
+                            <p class="text-xs text-on-surface-variant mt-1">Promoted to focus on CRM workflows and automations, building the systems-thinking that now anchors my GoHighLevel work.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center pt-1">
+                            <div class="w-2 h-2 rounded-full bg-primary"></div>
+                        </div>
+                        <div>
+                            <span class="font-mono text-[10px] text-on-surface-variant uppercase tracking-widest">Sep 2023 &mdash; Mar 2025 &bull; 1.5 yrs</span>
+                            <h4 class="font-bold text-sm mt-1">Project Manager</h4>
+                            <p class="text-xs text-on-surface-variant mt-1">Moved into managing client projects end-to-end, overseeing delivery, timelines, and the automation systems built for each account.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Techbridge -->
+            <div class="relative mb-4">
+                <div class="absolute -left-8 md:-left-10 top-1 w-4 h-4 rounded-full bg-primary/15 border-2 border-primary flex items-center justify-center">
+                    <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                </div>
+                <div class="flex items-center gap-3 flex-wrap">
+                    <span class="font-mono text-[10px] text-primary uppercase tracking-widest">April 2025 &mdash; Present</span>
+                    <span class="font-mono text-[9px] uppercase tracking-widest text-primary bg-primary/10 border border-primary/30 px-2 py-0.5 rounded-full">Current</span>
+                </div>
+                <h3 class="text-xl font-bold mt-1">Techbridge</h3>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 ml-2">
+                <div class="flex gap-4">
+                    <div class="flex flex-col items-center pt-1">
+                        <div class="w-2 h-2 rounded-full bg-primary"></div>
+                    </div>
+                    <div>
+                        <span class="font-mono text-[10px] text-on-surface-variant uppercase tracking-widest">Apr 2025 &mdash; Present</span>
+                        <h4 class="font-bold text-sm mt-1">CRM Specialist &amp; Team Leader</h4>
+                        <p class="text-xs text-on-surface-variant mt-1">Currently building and managing advanced GoHighLevel CRM systems, automations, and AI-powered workflows for clients.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="py-24 px-6 bg-surface section-reveal" id="contact">
+    <div class="max-w-4xl mx-auto">
+        <div class="mb-12 text-center">
+            <span class="font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded">LET'S TALK</span>
+            <h2 class="text-3xl font-bold mt-4">Let's automate your CRM.</h2>
+            <p class="text-on-surface-variant mt-4 text-sm" style="font-size:18px;line-height:1.5;">Tell me a bit about your business and I'll get back to you within a day.</p>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-4 mb-10 text-sm">
+            <a href="https://wa.me/923026641717" target="_blank" rel="noopener" class="flex items-center gap-2 px-5 py-3 bg-surface-variant border border-outline-variant rounded-xl hover:border-primary/50 transition-colors">
+                <span class="material-symbols-outlined text-primary text-base">chat</span>+92 302 6641717 (WhatsApp)
+            </a>
+        </div>
+
+        <form action="https://api.web3forms.com/submit" class="glass-card p-8 md:p-12 rounded-3xl grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto" method="POST" id="contact-form">
+            <input type="hidden" name="access_key" value="a020f55b-bbf4-4310-b41c-e4d21f5f66d2">
+            <input type="hidden" name="subject" value="New Portfolio Contact Form Submission">
+            <input type="hidden" name="from_name" value="Portfolio Contact Form">
+            <input type="checkbox" name="botcheck" class="hidden" style="display:none">
+            <div class="flex flex-col gap-2">
+                <label class="text-xs font-mono uppercase tracking-widest text-on-surface-variant" for="name">Name</label>
+                <input class="bg-surface-variant border border-outline-variant rounded-lg px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 text-sm" id="name" name="name" placeholder="Jane Doe" required type="text"/>
+            </div>
+            <div class="flex flex-col gap-2">
+                <label class="text-xs font-mono uppercase tracking-widest text-on-surface-variant" for="email">Email</label>
+                <input class="bg-surface-variant border border-outline-variant rounded-lg px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 text-sm" id="email" name="email" placeholder="jane@company.com" required type="email"/>
+            </div>
+            <div class="flex flex-col gap-2 md:col-span-2">
+                <label class="text-xs font-mono uppercase tracking-widest text-on-surface-variant" for="message">What do you need automated?</label>
+                <textarea class="bg-surface-variant border border-outline-variant rounded-lg px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 text-sm" id="message" name="message" placeholder="Tell me about your leads, your current tools, and where things break down." required rows="5"></textarea>
+            </div>
+            <button class="md:col-span-2 px-8 py-4 bg-primary text-background font-bold rounded-xl text-base hover:scale-[1.02] transition-transform" type="submit" id="submit-btn">Send Message</button>
+            <p id="form-result" class="md:col-span-2 text-center text-sm"></p>
+        </form>
+    </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="py-24 px-6 border-t border-outline-variant">
+    <div class="max-w-7xl mx-auto text-center">
+        <div class="flex flex-col md:flex-row justify-between items-center pt-12 gap-8">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary">hub</span>
+                <span class="font-mono text-sm uppercase tracking-widest font-bold">Abdul Wadood</span>
+            </div>
+            <div class="flex flex-col md:flex-row items-center gap-2 md:gap-6 text-sm text-on-surface-variant">
+                <a class="hover:text-primary transition-colors" href="https://mail.google.com/mail/?view=cm&fs=1&to=abdulwadood6286@gmail.com" target="_blank" rel="noopener">abdulwadood6286@gmail.com</a>
+                <span class="hidden md:inline text-outline-variant">|</span>
+                <a class="hover:text-primary transition-colors" href="https://wa.me/923026641717" target="_blank" rel="noopener">WhatsApp: +92 302 6641717</a>
+                <span class="hidden md:inline text-outline-variant">|</span>
+                <a class="hover:text-primary transition-colors" href="https://www.linkedin.com/in/abdul-wadood-0682b930b?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+            <p class="font-mono text-[10px] text-on-surface-variant uppercase">&copy; 2026 Abdul Wadood. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- ============ WHATSAPP FLOATING BUTTON ============ -->
+<a href="https://wa.me/923026641717" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" class="whatsapp-fab">
+    <span class="material-symbols-outlined" style="color:#0b1326;font-size:26px;">chat</span>
+</a>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('is-visible'); });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.section-reveal').forEach(el => observer.observe(el));
+
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        let menuOpen = false;
+        function closeMenu() {
+            menuOpen = false;
+            mobileMenu.style.maxHeight = '0px';
+            mobileMenu.style.opacity = '0';
+            menuIcon.textContent = 'menu';
+            menuToggle.setAttribute('aria-expanded', 'false');
+        }
+        menuToggle.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            menuToggle.setAttribute('aria-expanded', String(menuOpen));
+            if (menuOpen) {
+                mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+                mobileMenu.style.opacity = '1';
+                menuIcon.textContent = 'close';
+            } else {
+                closeMenu();
+            }
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+
+        // hero live network animation — nodes connecting like a CRM automation flow
+        (function heroNetwork() {
+            const canvas = document.getElementById('hero-network');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const header = canvas.closest('header');
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            let w, h, nodes, dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+            function resize() {
+                w = header.offsetWidth;
+                h = header.offsetHeight;
+                canvas.width = w * dpr;
+                canvas.height = h * dpr;
+                canvas.style.width = w + 'px';
+                canvas.style.height = h + 'px';
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+                const count = Math.max(26, Math.round((w * h) / 26000));
+                nodes = Array.from({ length: count }, () => ({
+                    x: Math.random() * w,
+                    y: Math.random() * h,
+                    vx: (Math.random() - 0.5) * 0.28,
+                    vy: (Math.random() - 0.5) * 0.28,
+                    r: Math.random() * 1.6 + 1
+                }));
+            }
+
+            function step() {
+                ctx.clearRect(0, 0, w, h);
+                const linkDist = 150;
+                for (let i = 0; i < nodes.length; i++) {
+                    const n = nodes[i];
+                    n.x += n.vx; n.y += n.vy;
+                    if (n.x < 0 || n.x > w) n.vx *= -1;
+                    if (n.y < 0 || n.y > h) n.vy *= -1;
+                    for (let j = i + 1; j < nodes.length; j++) {
+                        const m = nodes[j];
+                        const dx = n.x - m.x, dy = n.y - m.y;
+                        const dist = Math.hypot(dx, dy);
+                        if (dist < linkDist) {
+                            ctx.strokeStyle = 'rgba(14,165,233,' + (0.16 * (1 - dist / linkDist)) + ')';
+                            ctx.lineWidth = 1;
+                            ctx.beginPath();
+                            ctx.moveTo(n.x, n.y);
+                            ctx.lineTo(m.x, m.y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+                for (const n of nodes) {
+                    ctx.beginPath();
+                    ctx.fillStyle = 'rgba(14,165,233,0.65)';
+                    ctx.shadowColor = 'rgba(14,165,233,0.8)';
+                    ctx.shadowBlur = 6;
+                    ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+                ctx.shadowBlur = 0;
+                if (!reduceMotion) requestAnimationFrame(step);
+            }
+
+            resize();
+            step();
+            window.addEventListener('resize', resize);
+        })();
+
+        // gallery slider arrow controls
+        document.querySelectorAll('.gallery-slider-wrap').forEach(wrap => {
+            const slider = wrap.querySelector('.gallery-slider');
+            const prev = wrap.querySelector('.prev');
+            const next = wrap.querySelector('.next');
+            const scrollAmount = () => (slider.querySelector('.browser-frame')?.offsetWidth || 220) + 16;
+            prev.addEventListener('click', () => slider.scrollBy({ left: -scrollAmount() * 2, behavior: 'smooth' }));
+            next.addEventListener('click', () => slider.scrollBy({ left: scrollAmount() * 2, behavior: 'smooth' }));
+        });
+
+        // lightbox for gallery frames — shows the real image when available,
+        // falls back to a placeholder message when the image hasn't been added yet.
+        // Supports a close button and prev/next arrows to browse through the
+        // images in the same gallery without closing and reopening.
+        const lightbox = document.createElement('div');
+        lightbox.style.cssText = 'display:none;position:fixed;inset:0;background:rgba(6,14,32,0.92);z-index:100;align-items:center;justify-content:center;cursor:default;padding:24px;';
+        lightbox.innerHTML = `
+            <button id="lightbox-close" aria-label="Close" style="position:absolute;top:20px;right:20px;width:40px;height:40px;border-radius:50%;background:rgba(23,31,51,0.9);border:1px solid #2d3449;color:#dae2fd;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:2;">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            <button id="lightbox-prev" aria-label="Previous image" style="position:absolute;left:16px;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(23,31,51,0.9);border:1px solid #2d3449;color:#0EA5E9;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:2;">
+                <span class="material-symbols-outlined">chevron_left</span>
+            </button>
+            <button id="lightbox-next" aria-label="Next image" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(23,31,51,0.9);border:1px solid #2d3449;color:#0EA5E9;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:2;">
+                <span class="material-symbols-outlined">chevron_right</span>
+            </button>
+            <div style="max-width:900px;width:100%;text-align:center;cursor:default;" onclick="event.stopPropagation();">
+                <div id="lightbox-img-wrap" style="position:relative;display:inline-block;max-width:100%;">
+                    <img id="lightbox-img" style="display:none;max-width:100%;max-height:80vh;border-radius:12px;border:1px solid #2d3449;margin:0 auto;" />
+                    <div id="lightbox-watermark" class="watermark-tile" style="display:none;border-radius:12px;"><span>&copy; Abdul Wadood</span></div>
+                </div>
+                <div id="lightbox-placeholder" style="display:none;border:1px solid #2d3449;border-radius:12px;background:#0b1326;padding:48px 24px;">
+                    <span class="material-symbols-outlined" style="font-size:48px;color:#0EA5E9;opacity:.4;">image</span>
+                    <p style="margin-top:8px;color:#aeb9d0;font-size:11px;">Replace this placeholder with the real project screenshot.</p>
+                </div>
+                <p id="lightbox-label" style="margin-top:16px;color:#dae2fd;font-family:'JetBrains Mono', monospace;font-size:13px;"></p>
+                <p style="margin-top:6px;color:#aeb9d0;font-size:10px;">Click outside the image, press Esc, or use the close button to exit</p>
+            </div>`;
+        document.body.appendChild(lightbox);
+
+        const lightboxImg = lightbox.querySelector('#lightbox-img');
+        const lightboxPlaceholder = lightbox.querySelector('#lightbox-placeholder');
+        const lightboxLabel = lightbox.querySelector('#lightbox-label');
+        const lightboxClose = lightbox.querySelector('#lightbox-close');
+        const lightboxPrev = lightbox.querySelector('#lightbox-prev');
+        const lightboxNext = lightbox.querySelector('#lightbox-next');
+        const lightboxWatermark = lightbox.querySelector('#lightbox-watermark');
+
+        let currentGroup = [];
+        let currentIndex = 0;
+
+        function renderFrame(frame) {
+            const img = frame.querySelector('img');
+            const label = frame.querySelector('.gallery-frame-label');
+            lightboxLabel.textContent = label ? label.textContent : '';
+
+            const hasRealImage = img && img.src
+                && !img.src.includes('PASTE-IMAGE-URL-HERE')
+                && img.complete && img.naturalWidth > 0
+                && getComputedStyle(img).display !== 'none';
+
+            if (hasRealImage) {
+                lightboxImg.src = img.src;
+                lightboxImg.style.display = 'block';
+                lightboxPlaceholder.style.display = 'none';
+                lightboxWatermark.style.display = 'flex';
+            } else {
+                lightboxImg.style.display = 'none';
+                lightboxPlaceholder.style.display = 'block';
+                lightboxWatermark.style.display = 'none';
+            }
+        }
+
+        function openLightbox(group, index) {
+            currentGroup = group;
+            currentIndex = index;
+            renderFrame(currentGroup[currentIndex]);
+            const multi = currentGroup.length > 1;
+            lightboxPrev.style.display = multi ? 'flex' : 'none';
+            lightboxNext.style.display = multi ? 'flex' : 'none';
+            lightbox.style.display = 'flex';
+        }
+
+        function closeLightbox() { lightbox.style.display = 'none'; }
+        function showPrev() { if (!currentGroup.length) return; currentIndex = (currentIndex - 1 + currentGroup.length) % currentGroup.length; renderFrame(currentGroup[currentIndex]); }
+        function showNext() { if (!currentGroup.length) return; currentIndex = (currentIndex + 1) % currentGroup.length; renderFrame(currentGroup[currentIndex]); }
+
+        lightbox.addEventListener('click', closeLightbox);
+        lightboxClose.addEventListener('click', (e) => { e.stopPropagation(); closeLightbox(); });
+        lightboxPrev.addEventListener('click', (e) => { e.stopPropagation(); showPrev(); });
+        lightboxNext.addEventListener('click', (e) => { e.stopPropagation(); showNext(); });
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.style.display !== 'flex') return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') showPrev();
+            if (e.key === 'ArrowRight') showNext();
+        });
+
+        // group images by their gallery so arrows browse within the same gallery;
+        // standalone project hero images (not in a slider) open alone, no arrows
+        document.querySelectorAll('.gallery-slider-wrap').forEach(wrap => {
+            const frames = Array.from(wrap.querySelectorAll('.browser-frame'));
+            frames.forEach((frame, i) => {
+                frame.addEventListener('click', () => openLightbox(frames, i));
+            });
+        });
+        document.querySelectorAll('.browser-frame').forEach(frame => {
+            if (frame.closest('.gallery-slider-wrap')) return;
+            frame.addEventListener('click', () => openLightbox([frame], 0));
+        });
+
+        // thank-you popup modal
+        const thankYouModal = document.createElement('div');
+        thankYouModal.style.cssText = 'display:none;position:fixed;inset:0;background:rgba(6,14,32,0.85);z-index:200;align-items:center;justify-content:center;padding:24px;';
+        thankYouModal.innerHTML = `
+            <div class="glass-card" style="max-width:420px;width:100%;border-radius:24px;padding:40px 32px;text-align:center;position:relative;border:1px solid rgba(14,165,233,0.25);" onclick="event.stopPropagation();">
+                <button id="thankyou-close" aria-label="Close" style="position:absolute;top:16px;right:16px;background:none;border:none;color:#aeb9d0;cursor:pointer;">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+                <div style="width:64px;height:64px;border-radius:50%;background:rgba(14,165,233,0.12);border:1px solid rgba(14,165,233,0.4);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+                    <span class="material-symbols-outlined" style="font-size:32px;color:#0EA5E9;">check_circle</span>
+                </div>
+                <h3 style="font-size:1.4rem;font-weight:700;color:#dae2fd;margin-bottom:10px;">Thank you!</h3>
+                <p style="font-size:0.9rem;color:#aeb9d0;line-height:1.5;">Your message has been sent successfully. I'll get back to you within a day.</p>
+            </div>`;
+        document.body.appendChild(thankYouModal);
+        function closeThankYou() { thankYouModal.style.display = 'none'; }
+        thankYouModal.addEventListener('click', closeThankYou);
+        thankYouModal.querySelector('#thankyou-close').addEventListener('click', closeThankYou);
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeThankYou(); });
+
+        // contact form submission via Web3Forms (no page reload)
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            const submitBtn = document.getElementById('submit-btn');
+            const resultEl = document.getElementById('form-result');
+            contactForm.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending...';
+                resultEl.textContent = '';
+                resultEl.style.color = '';
+
+                const formData = new FormData(contactForm);
+                try {
+                    const response = await fetch(contactForm.action, {
+                        method: 'POST',
+                        headers: { 'Accept': 'application/json' },
+                        body: formData
+                    });
+                    const data = await response.json();
+                    if (data.success) {
+                        contactForm.reset();
+                        thankYouModal.style.display = 'flex';
+                    } else {
+                        resultEl.textContent = 'Something went wrong. Please try again or email me directly.';
+                        resultEl.style.color = '#ff8080';
+                    }
+                } catch (error) {
+                    resultEl.textContent = 'Something went wrong. Please try again or email me directly.';
+                    resultEl.style.color = '#ff8080';
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Message';
+                }
+            });
+        }
+
+        // --- image / content protection deterrents ---
+        // disable right-click everywhere except inside form fields (so users can still paste)
+        document.addEventListener('contextmenu', (e) => {
+            const tag = e.target.tagName;
+            if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+            e.preventDefault();
+        });
+        // disable dragging images (blocks the common "drag to desktop to save" method)
+        document.querySelectorAll('img').forEach(img => {
+            img.setAttribute('draggable', 'false');
+            img.addEventListener('dragstart', (e) => e.preventDefault());
+        });
+        // add a large repeating watermark over every project screenshot thumbnail
+        document.querySelectorAll('.browser-frame').forEach(frame => {
+            const container = frame.querySelector('.relative');
+            if (container && !container.querySelector('.watermark-tile')) {
+                const wm = document.createElement('div');
+                wm.className = 'watermark-tile';
+                wm.innerHTML = '<span>\u00A9 Abdul Wadood</span>';
+                container.appendChild(wm);
+            }
+        });
+    });
+</script>
+</body>
+</html>

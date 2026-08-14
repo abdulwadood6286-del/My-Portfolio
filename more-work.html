@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>More Work | Abdul Wadood &mdash; GoHighLevel CRM &amp; Automation Specialist</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=JetBrains+Mono:wght@100..800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    html { font-size: 100%; }
+    p.leading-relaxed { font-size: 18px !important; line-height: 1.5 !important; }
+    p.text-on-surface-variant.text-sm.mb-10.max-w-2xl { font-size: 18px !important; line-height: 1.5 !important; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20; vertical-align: middle; }
+    html { scroll-behavior: smooth; }
+    body { background-color: #060e20; }
+    .glass-card { background: rgba(23, 31, 51, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(14, 165, 233, 0.1); }
+    .browser-frame { border: 1px solid #2d3449; border-radius: 8px; overflow: hidden; background: #0b1326; transition: box-shadow .2s ease, border-color .2s ease, transform .2s ease; cursor: zoom-in; }
+    .browser-frame:hover { border-color: rgba(14,165,233,0.5); box-shadow: 0 0 24px rgba(14,165,233,0.12); transform: translateY(-3px); }
+    .browser-header { background: #1a1f2e; border-bottom: 1px solid #2d3449; padding: 8px 12px; display: flex; align-items: center; }
+    .browser-dot { height: 6px; width: 6px; border-radius: 50%; margin-right: 4px; }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #060e20; }
+    ::-webkit-scrollbar-thumb { background: #2d3449; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3e495d; }
+    .section-reveal { transition: opacity 1s ease, transform 1s ease; opacity: 0; transform: translateY(2.5rem); }
+    .section-reveal.is-visible { opacity: 1; transform: translateY(0); }
+    #mobile-menu { transition: max-height .35s ease, opacity .3s ease; }
+    input:focus, textarea:focus, button:focus-visible, a:focus-visible { outline: 2px solid #0EA5E9; outline-offset: 2px; }
+    .gallery-frame-label { font-size: 9px; font-family: 'JetBrains Mono', monospace; color: #aeb9d0; text-align: center; padding: 6px 4px; line-height: 1.25; }
+    .status-chip { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .08em; font-weight: 700; }
+    .status-chip.approved { background: rgba(34,197,94,0.12); border: 1px solid rgba(34,197,94,0.4); color: #4ade80; }
+    .whatsapp-fab { position: fixed; bottom: 22px; right: 22px; z-index: 60; width: 52px; height: 52px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 18px rgba(37,211,102,0.45); animation: pulse-wa 2.4s ease-in-out infinite; }
+    .whatsapp-fab:hover { animation-play-state: paused; transform: scale(1.06); }
+    @keyframes pulse-wa { 0%, 100% { box-shadow: 0 4px 18px rgba(37,211,102,0.45); } 50% { box-shadow: 0 4px 26px rgba(37,211,102,0.75); } }
+    @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .section-reveal { transition: none; opacity: 1; transform: none; }
+        .whatsapp-fab { animation: none !important; }
+    }
+
+    /* --- image protection --- */
+    img { -webkit-user-drag: none; user-drag: none; -webkit-user-select: none; -moz-user-select: none; user-select: none; -webkit-touch-callout: none; }
+    .watermark-tile { position: absolute; inset: 0; pointer-events: none; z-index: 5; display: flex; align-items: center; justify-content: center; } .watermark-tile span { transform: translateX(-18%) rotate(-10deg); font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: clamp(9px, 1.4vw, 15px); color: rgba(110,110,110,0.55); white-space: nowrap; text-shadow: 0 0 3px rgba(255,255,255,0.55), 0 0 3px rgba(0,0,0,0.55); }
+    .live-site-card { display: block; background: #171f33; border: 1px solid #2d3449; border-radius: 14px; padding: 20px; transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease; }
+    .live-site-card:hover { border-color: rgba(128,171,255,0.5); transform: translateY(-3px); box-shadow: 0 0 24px rgba(128,171,255,0.1); }
+
+    /* --- mockups: 3D drag-rotate ring carousel (matches reference) --- */
+    #mockup-stage {
+        width: 100%;
+        height: 600px;
+        position: relative;
+        overflow: hidden;
+        background: transparent;
+        margin: 0;
+        padding: 0;
+        perspective: 2500px;
+        touch-action: pan-y;
+    }
+    #mockup-ring {
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        user-select: none;
+        position: absolute;
+        cursor: grab;
+    }
+    #mockup-ring.grabbing { cursor: grabbing; }
+    .mockup-card {
+        position: absolute;
+        width: 300px;
+        height: 560px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #171f33;
+        border-radius: 16px;
+        border: 1px solid #2d3449;
+        box-shadow: 0 20px 50px -12px rgba(0,0,0,0.55);
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+        overflow: hidden;
+    }
+    .mockup-card-inner { width: 100%; height: 100%; position: relative; overflow: hidden; background: #f4f6fb; }
+    .mockup-card-inner img { width: 100%; height: auto; position: absolute; top: 0; left: 0; display: block; }
+    .mockup-card-inner .fallback-icon { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: rgba(14,165,233,0.15); font-size: 44px; background: #171f33; }
+    .mockup-card-label { position: absolute; left: 0; right: 0; bottom: 0; padding: 10px 12px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .04em; color: #dae2fd; text-align: center; background: linear-gradient(to top, rgba(11,19,38,0.85), transparent); pointer-events: none; }
+    .mockup-hint { text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #aeb9d0; letter-spacing: .05em; margin-top: 6px; }
+    @media only screen and (max-width: 768px) {
+        #mockup-stage { height: 430px !important; }
+        .mockup-card { height: 480px !important; }
+    }
+</style>
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    primary: "#0EA5E9",
+                    background: "#060e20",
+                    surface: "#0b1326",
+                    "surface-variant": "#171f33",
+                    "outline-variant": "#2d3449",
+                    "on-surface": "#dae2fd",
+                    "on-surface-variant": "#aeb9d0"
+                },
+                fontFamily: { sans: ["Geist", "sans-serif"], mono: ["JetBrains Mono", "monospace"] }
+            }
+        }
+    }
+</script>
+</head>
+<body class="text-on-surface font-sans selection:bg-primary/30 selection:text-white">
+
+<!-- ============ NAVIGATION ============ -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-outline-variant">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <a class="flex items-center gap-2" href="/#top">
+            <span class="material-symbols-outlined text-primary">hub</span>
+            <span class="font-mono text-sm uppercase tracking-widest font-bold">Abdul Wadood</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+            <a class="text-on-surface-variant hover:text-primary transition-colors" href="/#work">CRM Work</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors" href="#websites">Websites</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors" href="#a2p">A2P Registrations</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors" href="#live-sites">Live Sites</a>
+            <div class="flex items-center gap-4 ml-4">
+                <a href="/#contact" class="px-4 py-2 border border-outline-variant hover:bg-surface-variant rounded-lg transition-all">Contact</a>
+                <a href="/booking" class="px-4 py-2 bg-primary text-background font-bold rounded-lg hover:opacity-90 transition-all">Book a Call</a>
+            </div>
+        </div>
+        <button aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu" id="menu-toggle" class="md:hidden p-2 text-on-surface">
+            <span class="material-symbols-outlined" id="menu-icon">menu</span>
+        </button>
+    </div>
+    <div class="md:hidden max-h-0 overflow-hidden opacity-0" id="mobile-menu">
+        <div class="flex flex-col gap-1 px-6 pb-6 pt-2">
+            <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="/#work">CRM Work</a>
+            <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#design">Design</a>
+            <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#a2p">A2P Registrations</a>
+            <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#live-sites">Live Sites</a>
+            <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="/#contact">Contact</a>
+            <a href="/booking" class="mt-4 px-4 py-3 bg-primary text-background font-bold rounded-lg text-center">Book a Call</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ============ PAGE HEADER ============ -->
+<header class="pt-40 pb-16 px-6">
+    <div class="max-w-5xl mx-auto text-center">
+        <a href="/#top" class="inline-flex items-center gap-2 text-xs font-mono text-on-surface-variant hover:text-primary transition-colors mb-8">
+            <span class="material-symbols-outlined text-sm">arrow_back</span> Back to Main Portfolio
+        </a>
+        <div class="inline-flex items-center px-3 py-1 bg-surface-variant border border-primary/20 rounded-full mb-6">
+            <span class="w-2 h-2 rounded-full bg-primary mr-2 animate-pulse"></span>
+            <span class="font-mono text-[10px] uppercase tracking-tighter text-primary">MORE PROJECTS &amp; LIVE WORK</span>
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold leading-[1.15] mb-6">More Work &amp; Live Builds</h1>
+        <p class="text-on-surface-variant text-base max-w-2xl mx-auto leading-relaxed">A closer look at additional websites and landing pages I've built, the AI voice and chat agents I've developed, live sites and funnels currently running, and my approved A2P 10DLC registrations that keep client SMS campaigns compliant and deliverable.</p>
+    </div>
+</header>
+
+<!-- ============ WEBSITES BUILT ============ -->
+<section class="py-16 px-6 section-reveal" id="websites">
+    <div class="max-w-7xl mx-auto">
+        <span class="font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded">WEBSITES &amp; LANDING PAGES</span>
+        <h2 class="text-2xl md:text-3xl font-bold mt-4 mb-2">Figma Designed</h2>
+        <p class="text-on-surface-variant text-sm mb-10 max-w-2xl">A collection of websites and landing pages designed and shipped for clients. Replace the placeholders below with screenshots and links as you add each project.</p>
+
+        <!-- Mockup 3D ring: drag to rotate on desktop, swipe with a finger on mobile -->
+        <div id="mockup-stage">
+            <div id="mockup-ring"><!-- cards injected by JS --></div>
+        </div>
+        <p class="mockup-hint">Drag to rotate</p>
+    </div>
+</section>
+
+<!-- ============ A2P REGISTRATIONS ============ -->
+<section class="py-16 px-6 section-reveal" id="a2p">
+    <div class="max-w-7xl mx-auto">
+        <span class="font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded">COMPLIANCE &amp; MESSAGING</span>
+        <h2 class="text-2xl md:text-3xl font-bold mt-4 mb-2">A2P 10DLC Registrations Approved</h2>
+        <p class="text-on-surface-variant text-sm mb-10 max-w-2xl">Application-to-Person (A2P) 10DLC brand and campaign registrations I've successfully submitted and gotten approved, ensuring clients' SMS automations are compliant and don't get filtered by carriers.</p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="browser-frame">
+                <div class="browser-header"><span class="browser-dot bg-red-500"></span><span class="browser-dot bg-yellow-500"></span><span class="browser-dot bg-green-500"></span><div class="ml-auto"><span class="status-chip approved"><span class="material-symbols-outlined text-xs">check_circle</span>Approved</span></div></div>
+                <div class="aspect-video bg-surface-variant/50 flex items-center justify-center relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your A2P approval screenshot -->
+<img src="A2P/A2P 1.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-4xl text-primary/20">verified_user</span>
+                </div>
+            </div>
+            <div class="browser-frame">
+                <div class="browser-header"><span class="browser-dot bg-red-500"></span><span class="browser-dot bg-yellow-500"></span><span class="browser-dot bg-green-500"></span><div class="ml-auto"><span class="status-chip approved"><span class="material-symbols-outlined text-xs">check_circle</span>Approved</span></div></div>
+                <div class="aspect-video bg-surface-variant/50 flex items-center justify-center relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your A2P approval screenshot -->
+<img src="A2P/A2P 2.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-4xl text-primary/20">verified_user</span>
+                </div>
+            </div>
+            <div class="browser-frame">
+                <div class="browser-header"><span class="browser-dot bg-red-500"></span><span class="browser-dot bg-yellow-500"></span><span class="browser-dot bg-green-500"></span><div class="ml-auto"><span class="status-chip approved"><span class="material-symbols-outlined text-xs">check_circle</span>Approved</span></div></div>
+                <div class="aspect-video bg-surface-variant/50 flex items-center justify-center relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your A2P approval screenshot -->
+<img src="A2P/A2P 3.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-4xl text-primary/20">verified_user</span>
+                </div>
+            </div>
+            <div class="browser-frame">
+                <div class="browser-header"><span class="browser-dot bg-red-500"></span><span class="browser-dot bg-yellow-500"></span><span class="browser-dot bg-green-500"></span><div class="ml-auto"><span class="status-chip approved"><span class="material-symbols-outlined text-xs">check_circle</span>Approved</span></div></div>
+                <div class="aspect-video bg-surface-variant/50 flex items-center justify-center relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your A2P approval screenshot -->
+<img src="A2P/A2P 4.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-4xl text-primary/20">verified_user</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ============ LIVE SITES ============ -->
+<section class="py-16 px-6 bg-surface section-reveal" id="live-sites">
+    <div class="max-w-7xl mx-auto">
+        <span class="font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded">LIVE ON THE WEB</span>
+        <h2 class="text-2xl md:text-3xl font-bold mt-4 mb-2">Live Sites &amp; Funnels</h2>
+        <p class="text-on-surface-variant text-sm mb-8 max-w-2xl" style="font-size:18px;line-height:1.5;">Real, live websites and funnels I've built and shipped &mdash; filter by platform to browse.</p>
+
+        <div class="flex flex-wrap gap-2 mb-8" id="live-sites-filters">
+            <button class="live-filter-btn font-mono text-xs font-bold px-4 py-2 rounded-full bg-primary text-background transition-all" data-filter="all">All</button>
+            <button class="live-filter-btn font-mono text-xs font-bold px-4 py-2 rounded-full bg-surface-variant border border-outline-variant text-on-surface-variant hover:border-primary/50 transition-all" data-filter="ghl">GHL Funnels</button>
+            <button class="live-filter-btn font-mono text-xs font-bold px-4 py-2 rounded-full bg-surface-variant border border-outline-variant text-on-surface-variant hover:border-primary/50 transition-all" data-filter="clickfunnels">ClickFunnels</button>
+            <button class="live-filter-btn font-mono text-xs font-bold px-4 py-2 rounded-full bg-surface-variant border border-outline-variant text-on-surface-variant hover:border-primary/50 transition-all" data-filter="ai-built">AI-Built Sites</button>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="live-sites-grid">
+            <a href="https://call.858appliance.com/" target="_blank" rel="noopener" class="live-site-card group" data-category="ghl">
+                <div class="flex items-center justify-between mb-4">
+                    <h4 class="font-bold text-lg">858 Appliance</h4>
+                    <span class="material-symbols-outlined text-primary text-lg group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">open_in_new</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <span class="text-[10px] font-mono uppercase tracking-wide bg-primary/10 text-primary px-2.5 py-1 rounded-full">GHL Funnels</span>
+                    <span class="text-xs text-on-surface-variant group-hover:text-primary transition-colors">Visit Site</span>
+                </div>
+            </a>
+            <a href="https://butkovllc.com/" target="_blank" rel="noopener" class="live-site-card group" data-category="ghl">
+                <div class="flex items-center justify-between mb-4">
+                    <h4 class="font-bold text-lg">Butkovllc</h4>
+                    <span class="material-symbols-outlined text-primary text-lg group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">open_in_new</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <span class="text-[10px] font-mono uppercase tracking-wide bg-primary/10 text-primary px-2.5 py-1 rounded-full">GHL Funnels</span>
+                    <span class="text-xs text-on-surface-variant group-hover:text-primary transition-colors">Visit Site</span>
+                </div>
+            </a>
+            <a href="https://marikrogshus.clickfunnels.com/fatburn-summer-edition-2025" target="_blank" rel="noopener" class="live-site-card group" data-category="clickfunnels">
+                <div class="flex items-center justify-between mb-4">
+                    <h4 class="font-bold text-lg">FatBurns</h4>
+                    <span class="material-symbols-outlined text-primary text-lg group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">open_in_new</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <span class="text-[10px] font-mono uppercase tracking-wide bg-primary/10 text-primary px-2.5 py-1 rounded-full">ClickFunnels</span>
+                    <span class="text-xs text-on-surface-variant group-hover:text-primary transition-colors">Visit Site</span>
+                </div>
+            </a>
+            <a href="https://owntheroof.com/" target="_blank" rel="noopener" class="live-site-card group" data-category="ghl">
+                <div class="flex items-center justify-between mb-4">
+                    <h4 class="font-bold text-lg">Own The Roof</h4>
+                    <span class="material-symbols-outlined text-primary text-lg group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">open_in_new</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <span class="text-[10px] font-mono uppercase tracking-wide bg-primary/10 text-primary px-2.5 py-1 rounded-full">GHL Funnels</span>
+                    <span class="text-xs text-on-surface-variant group-hover:text-primary transition-colors">Visit Site</span>
+                </div>
+            </a>
+            <a href="https://kakeryrose.com/" target="_blank" rel="noopener" class="live-site-card group" data-category="ghl">
+                <div class="flex items-center justify-between mb-4">
+                    <h4 class="font-bold text-lg">Kakeryrose</h4>
+                    <span class="material-symbols-outlined text-primary text-lg group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">open_in_new</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <span class="text-[10px] font-mono uppercase tracking-wide bg-primary/10 text-primary px-2.5 py-1 rounded-full">GHL Funnels</span>
+                    <span class="text-xs text-on-surface-variant group-hover:text-primary transition-colors">Visit Site</span>
+                </div>
+            </a>
+            <a href="https://jhhomebuyers.com/" target="_blank" rel="noopener" class="live-site-card group" data-category="ghl">
+                <div class="flex items-center justify-between mb-4">
+                    <h4 class="font-bold text-lg">JH homebuyers</h4>
+                    <span class="material-symbols-outlined text-primary text-lg group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">open_in_new</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <span class="text-[10px] font-mono uppercase tracking-wide bg-primary/10 text-primary px-2.5 py-1 rounded-full">GHL Funnels</span>
+                    <span class="text-xs text-on-surface-variant group-hover:text-primary transition-colors">Visit Site</span>
+                </div>
+            </a>
+            <a href="https://realestateagents.ai/" target="_blank" rel="noopener" class="live-site-card group" data-category="ghl">
+                <div class="flex items-center justify-between mb-4">
+                    <h4 class="font-bold text-lg">Real Estate Agents</h4>
+                    <span class="material-symbols-outlined text-primary text-lg group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">open_in_new</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <span class="text-[10px] font-mono uppercase tracking-wide bg-primary/10 text-primary px-2.5 py-1 rounded-full">GHL Funnels</span>
+                    <span class="text-xs text-on-surface-variant group-hover:text-primary transition-colors">Visit Site</span>
+                </div>
+            </a>
+            <a href="https://stlucieappliances.com/" target="_blank" rel="noopener" class="live-site-card group" data-category="ghl">
+                <div class="flex items-center justify-between mb-4">
+                    <h4 class="font-bold text-lg">ST Lucie Appliances</h4>
+                    <span class="material-symbols-outlined text-primary text-lg group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">open_in_new</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <span class="text-[10px] font-mono uppercase tracking-wide bg-primary/10 text-primary px-2.5 py-1 rounded-full">GHL Funnels</span>
+                    <span class="text-xs text-on-surface-variant group-hover:text-primary transition-colors">Visit Site</span>
+                </div>
+            </a>
+            <a href="https://blackwomanlifestylemillionairemindset.com/" target="_blank" rel="noopener" class="live-site-card group" data-category="ghl">
+                <div class="flex items-center justify-between mb-4">
+                    <h4 class="font-bold text-lg">Mental Armor Black Women</h4>
+                    <span class="material-symbols-outlined text-primary text-lg group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">open_in_new</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <span class="text-[10px] font-mono uppercase tracking-wide bg-primary/10 text-primary px-2.5 py-1 rounded-full">GHL Funnels</span>
+                    <span class="text-xs text-on-surface-variant group-hover:text-primary transition-colors">Visit Site</span>
+                </div>
+            </a>
+            <a href="https://thebloodpressurecoach.com/mastery" target="_blank" rel="noopener" class="live-site-card group" data-category="ghl">
+                <div class="flex items-center justify-between mb-4">
+                    <h4 class="font-bold text-lg">Mind Body BP Funnel</h4>
+                    <span class="material-symbols-outlined text-primary text-lg group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">open_in_new</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <span class="text-[10px] font-mono uppercase tracking-wide bg-primary/10 text-primary px-2.5 py-1 rounded-full">GHL Funnels</span>
+                    <span class="text-xs text-on-surface-variant group-hover:text-primary transition-colors">Visit Site</span>
+                </div>
+            </a>
+            <a href="https://www.thenoormd.com/" target="_blank" rel="noopener" class="live-site-card group" data-category="ai-built">
+                <div class="flex items-center justify-between mb-4">
+                    <h4 class="font-bold text-lg">The Noor MD</h4>
+                    <span class="material-symbols-outlined text-primary text-lg group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">open_in_new</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <span class="text-[10px] font-mono uppercase tracking-wide bg-primary/10 text-primary px-2.5 py-1 rounded-full">AI-Built Sites</span>
+                    <span class="text-xs text-on-surface-variant group-hover:text-primary transition-colors">Visit Site</span>
+                </div>
+            </a>
+            <a href="https://element6autosalon.com/" target="_blank" rel="noopener" class="live-site-card group" data-category="ai-built">
+                <div class="flex items-center justify-between mb-4">
+                    <h4 class="font-bold text-lg">Element 6 Auto Salon</h4>
+                    <span class="material-symbols-outlined text-primary text-lg group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">open_in_new</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <span class="text-[10px] font-mono uppercase tracking-wide bg-primary/10 text-primary px-2.5 py-1 rounded-full">AI-Built Sites</span>
+                    <span class="text-xs text-on-surface-variant group-hover:text-primary transition-colors">Visit Site</span>
+                </div>
+            </a>
+            <a href="https://neeba-studios.webflow.io/" target="_blank" rel="noopener" class="live-site-card group" data-category="ai-built">
+                <div class="flex items-center justify-between mb-4">
+                    <h4 class="font-bold text-lg">Neeba Studios</h4>
+                    <span class="material-symbols-outlined text-primary text-lg group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">open_in_new</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <span class="text-[10px] font-mono uppercase tracking-wide bg-primary/10 text-primary px-2.5 py-1 rounded-full">AI-Built Sites</span>
+                    <span class="text-xs text-on-surface-variant group-hover:text-primary transition-colors">Visit Site</span>
+                </div>
+            </a>
+            <a href="https://www.vegamediaco.com/" target="_blank" rel="noopener" class="live-site-card group" data-category="ai-built">
+                <div class="flex items-center justify-between mb-4">
+                    <h4 class="font-bold text-lg">Vega Media</h4>
+                    <span class="material-symbols-outlined text-primary text-lg group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">open_in_new</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <span class="text-[10px] font-mono uppercase tracking-wide bg-primary/10 text-primary px-2.5 py-1 rounded-full">AI-Built Sites</span>
+                    <span class="text-xs text-on-surface-variant group-hover:text-primary transition-colors">Visit Site</span>
+                </div>
+            </a>
+            <a href="https://event.rmjconsultant.us/webinar-registration-page" target="_blank" rel="noopener" class="live-site-card group" data-category="ai-built">
+                <div class="flex items-center justify-between mb-4">
+                    <h4 class="font-bold text-lg">Webinar Funnel</h4>
+                    <span class="material-symbols-outlined text-primary text-lg group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">open_in_new</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <span class="text-[10px] font-mono uppercase tracking-wide bg-primary/10 text-primary px-2.5 py-1 rounded-full">GHL Funnels</span>
+                    <span class="text-xs text-on-surface-variant group-hover:text-primary transition-colors">Visit Site</span>
+                </div>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- ============ CONTACT CTA ============ -->
+<section class="py-20 px-6 text-center">
+    <div class="max-w-2xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">Want something similar built?</h2>
+        <p class="text-on-surface-variant text-sm mb-8" style="font-size:18px;line-height:1.5;">Whether it's a landing page, a full CRM system, or A2P-compliant SMS campaigns &mdash; let's talk.</p>
+        <a href="/#contact" class="px-8 py-4 bg-primary text-background font-bold rounded-xl text-base hover:scale-105 transition-transform inline-block">Get in Touch</a>
+    </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="py-24 px-6 border-t border-outline-variant">
+    <div class="max-w-7xl mx-auto text-center">
+        <div class="flex flex-col md:flex-row justify-between items-center pt-12 gap-8">
+            <a href="/#top" class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary">hub</span>
+                <span class="font-mono text-sm uppercase tracking-widest font-bold">Abdul Wadood</span>
+            </a>
+            <div class="flex flex-col md:flex-row items-center gap-2 md:gap-6 text-sm text-on-surface-variant">
+                <a class="hover:text-primary transition-colors" href="https://mail.google.com/mail/?view=cm&fs=1&to=abdulwadood6286@gmail.com" target="_blank" rel="noopener">abdulwadood6286@gmail.com</a>
+                <span class="hidden md:inline text-outline-variant">|</span>
+                <a class="hover:text-primary transition-colors" href="https://wa.me/923026641717" target="_blank" rel="noopener">WhatsApp: +92 302 6641717</a>
+                <span class="hidden md:inline text-outline-variant">|</span>
+                <a class="hover:text-primary transition-colors" href="https://www.linkedin.com/in/abdul-wadood-0682b930b?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+            <p class="font-mono text-[10px] text-on-surface-variant uppercase">&copy; 2026 Abdul Wadood. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- ============ WHATSAPP FLOATING BUTTON ============ -->
+<a href="https://wa.me/923026641717" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" class="whatsapp-fab">
+    <span class="material-symbols-outlined" style="color:#0b1326;font-size:26px;">chat</span>
+</a>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('is-visible'); });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.section-reveal').forEach(el => observer.observe(el));
+
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        let menuOpen = false;
+        function closeMenu() {
+            menuOpen = false;
+            mobileMenu.style.maxHeight = '0px';
+            mobileMenu.style.opacity = '0';
+            menuIcon.textContent = 'menu';
+            menuToggle.setAttribute('aria-expanded', 'false');
+        }
+        menuToggle.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            menuToggle.setAttribute('aria-expanded', String(menuOpen));
+            if (menuOpen) {
+                mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+                mobileMenu.style.opacity = '1';
+                menuIcon.textContent = 'close';
+            } else {
+                closeMenu();
+            }
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+
+        // lightbox for website screenshots
+        const lightbox = document.createElement('div');
+        lightbox.style.cssText = 'display:none;position:fixed;inset:0;background:rgba(6,14,32,0.92);z-index:100;align-items:center;justify-content:center;cursor:default;padding:24px;';
+        lightbox.innerHTML = `
+            <button id="lightbox-close" aria-label="Close" style="position:absolute;top:20px;right:20px;width:40px;height:40px;border-radius:50%;background:rgba(23,31,51,0.9);border:1px solid #2d3449;color:#dae2fd;display:flex;align-items:center;justify-content:center;cursor:pointer;">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            <div style="max-width:900px;width:100%;text-align:center;" onclick="event.stopPropagation();">
+                <div id="lightbox-img-wrap" style="position:relative;display:inline-block;max-width:100%;">
+                    <img id="lightbox-img" style="display:none;max-width:100%;max-height:80vh;border-radius:12px;border:1px solid #2d3449;margin:0 auto;" />
+                    <div id="lightbox-watermark" class="watermark-tile" style="display:none;border-radius:12px;"><span>&copy; Abdul Wadood</span></div>
+                </div>
+                <div id="lightbox-placeholder" style="display:none;border:1px solid #2d3449;border-radius:12px;background:#0b1326;padding:48px 24px;">
+                    <span class="material-symbols-outlined" style="font-size:48px;color:#0EA5E9;opacity:.4;">image</span>
+                    <p style="margin-top:8px;color:#aeb9d0;font-size:11px;">Replace this placeholder with the real screenshot.</p>
+                </div>
+                <p id="lightbox-label" style="margin-top:16px;color:#dae2fd;font-family:'JetBrains Mono', monospace;font-size:13px;"></p>
+            </div>`;
+        document.body.appendChild(lightbox);
+        lightbox.addEventListener('click', () => { lightbox.style.display = 'none'; });
+        lightbox.querySelector('#lightbox-close').addEventListener('click', (e) => { e.stopPropagation(); lightbox.style.display = 'none'; });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') lightbox.style.display = 'none'; });
+
+        const lightboxImg = lightbox.querySelector('#lightbox-img');
+        const lightboxPlaceholder = lightbox.querySelector('#lightbox-placeholder');
+        const lightboxLabel = lightbox.querySelector('#lightbox-label');
+        const lightboxWatermark = lightbox.querySelector('#lightbox-watermark');
+
+        function openLightbox(img, labelText) {
+            lightboxLabel.textContent = labelText || '';
+            const hasRealImage = img && img.src
+                && !img.src.includes('PASTE-IMAGE-URL-HERE')
+                && img.complete && img.naturalWidth > 0
+                && getComputedStyle(img).display !== 'none';
+            if (hasRealImage) {
+                lightboxImg.src = img.src;
+                lightboxImg.style.display = 'block';
+                lightboxPlaceholder.style.display = 'none';
+                lightboxWatermark.style.display = 'flex';
+            } else {
+                lightboxImg.style.display = 'none';
+                lightboxPlaceholder.style.display = 'block';
+                lightboxWatermark.style.display = 'none';
+            }
+            lightbox.style.display = 'flex';
+        }
+
+        document.querySelectorAll('.browser-frame').forEach(frame => {
+            frame.addEventListener('click', () => {
+                const img = frame.querySelector('img');
+                const label = frame.querySelector('.gallery-frame-label');
+                openLightbox(img, label ? label.textContent : '');
+            });
+        });
+
+        // live sites filter
+        const liveFilterBtns = document.querySelectorAll('.live-filter-btn');
+        const liveSiteCards = document.querySelectorAll('.live-site-card');
+        liveFilterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.getAttribute('data-filter');
+                liveFilterBtns.forEach(b => {
+                    b.classList.remove('bg-primary', 'text-background');
+                    b.classList.add('bg-surface-variant', 'border', 'border-outline-variant', 'text-on-surface-variant');
+                });
+                btn.classList.remove('bg-surface-variant', 'border', 'border-outline-variant', 'text-on-surface-variant');
+                btn.classList.add('bg-primary', 'text-background');
+                liveSiteCards.forEach(card => {
+                    const match = filter === 'all' || card.getAttribute('data-category') === filter;
+                    card.style.display = match ? 'block' : 'none';
+                });
+            });
+        });
+
+        // --- mockup 3D ring carousel: drag with mouse, swipe with a finger ---
+        (function () {
+            const mockupImages = [
+                { src: 'New Mockups/FatBurns.jpg', label: 'FatBurns' },
+                { src: 'New Mockups/Masjid_Growth.jpg', label: 'Masjid Growth' },
+                { src: 'New Mockups/EasyBrew_Coffee_Maker.jpg', label: 'EasyBrew Coffee Maker' },
+                { src: 'New Mockups/Double-Sided_Desk_Mat.jpg', label: 'Double-Sided Desk Mat' },
+                { src: 'New Mockups/Ecommerce_Site.jpg', label: 'Ecommerce Site' },
+                { src: 'New Mockups/GHL_Course_Sales_Template.jpg', label: 'Course Funnel' },
+                { src: 'New Mockups/Laura Coaching Funnel.jpg', label: 'Coaching Funnel' },
+                { src: 'New Mockups/Pro_Shaker_Bottle.jpg', label: 'Pro Shaker Bottle' }
+            ];
+
+            const stage = document.getElementById('mockup-stage');
+            const ring = document.getElementById('mockup-ring');
+            if (!stage || !ring || typeof gsap === 'undefined') return;
+
+            const radius = 650;
+            const totalImgs = mockupImages.length;
+            const angleStep = 360 / totalImgs;
+
+            mockupImages.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = 'mockup-card';
+                card.innerHTML = `
+                    <div class="mockup-card-inner">
+                        <img src="${item.src}" alt="${item.label} website mockup" draggable="false"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                        <span class="material-symbols-outlined fallback-icon" style="display:none;">language</span>
+                        <div class="mockup-card-label">${item.label}</div>
+                    </div>`;
+                ring.appendChild(card);
+            });
+
+            const cards = Array.from(ring.querySelectorAll('.mockup-card'));
+
+            gsap.set(ring, { rotationY: 180 });
+            gsap.set(cards, {
+                rotateY: (i) => i * -angleStep,
+                transformOrigin: `50% 50% ${radius}px`,
+                z: -radius
+            });
+
+            gsap.from(cards, {
+                duration: 1.3,
+                y: 200,
+                opacity: 0,
+                stagger: 0.08,
+                ease: 'expo.out'
+            });
+
+            // hover: highlight the card under the cursor and slowly scroll its screenshot
+            cards.forEach(card => {
+                const img = card.querySelector('img');
+                card.addEventListener('mouseenter', () => {
+                    gsap.to(cards, {
+                        opacity: (i, t) => (t === card) ? 1 : 0.25,
+                        scale: (i, t) => (t === card) ? 1.04 : 0.96,
+                        duration: 0.4,
+                        ease: 'power3.out'
+                    });
+                    if (img && img.naturalHeight > 0) {
+                        const scrollDistance = img.offsetHeight - card.offsetHeight;
+                        if (scrollDistance > 0) {
+                            gsap.to(img, { y: -scrollDistance, duration: scrollDistance / 120, ease: 'none', overwrite: true });
+                        }
+                    }
+                });
+                card.addEventListener('mouseleave', () => {
+                    gsap.to(cards, { opacity: 1, scale: 1, duration: 0.4, ease: 'power2.inOut' });
+                    gsap.to(img, { y: 0, duration: 1, ease: 'power2.inOut', overwrite: true });
+                });
+                card.addEventListener('click', () => openLightbox(img, card.querySelector('.mockup-card-label').textContent));
+            });
+
+            // drag to rotate (mouse) / swipe to rotate (touch) — same interaction on desktop and mobile
+            let xPos = 0;
+            let dragging = false;
+
+            function dragStart(e) {
+                dragging = true;
+                xPos = (e.touches ? e.touches[0].clientX : e.clientX);
+                ring.classList.add('grabbing');
+            }
+            function dragMove(e) {
+                if (!dragging) return;
+                const clientX = (e.touches ? e.touches[0].clientX : e.clientX);
+                const delta = (clientX - xPos) * 0.45;
+                gsap.to(ring, { rotationY: `-=${delta}`, duration: 0.6, ease: 'power2.out' });
+                xPos = clientX;
+            }
+            function dragEnd() {
+                dragging = false;
+                ring.classList.remove('grabbing');
+            }
+
+            stage.addEventListener('mousedown', dragStart);
+            stage.addEventListener('touchstart', dragStart, { passive: true });
+            window.addEventListener('mousemove', dragMove);
+            stage.addEventListener('touchmove', dragMove, { passive: true });
+            window.addEventListener('mouseup', dragEnd);
+            window.addEventListener('touchend', dragEnd);
+        })();
+
+        // --- image / content protection deterrents ---
+        document.addEventListener('contextmenu', (e) => {
+            const tag = e.target.tagName;
+            if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+            e.preventDefault();
+        });
+        document.querySelectorAll('img').forEach(img => {
+            img.setAttribute('draggable', 'false');
+            img.addEventListener('dragstart', (e) => e.preventDefault());
+        });
+        document.querySelectorAll('.browser-frame').forEach(frame => {
+            const container = frame.querySelector('.relative');
+            if (container && !container.querySelector('.watermark-tile')) {
+                const wm = document.createElement('div');
+                wm.className = 'watermark-tile';
+                wm.innerHTML = '<span>\u00A9 Abdul Wadood</span>';
+                container.appendChild(wm);
+            }
+        });
+    });
+</script>
+</body>
+</html>
