@@ -48,13 +48,13 @@
     /* --- mockups: 3D drag-rotate ring carousel (matches reference) --- */
     #mockup-stage {
         width: 100%;
-        height: 600px;
+        height: 720px;
         position: relative;
         overflow: hidden;
         background: transparent;
         margin: 0;
         padding: 0;
-        perspective: 2500px;
+        perspective: 2800px;
         touch-action: pan-y;
     }
     #mockup-ring {
@@ -68,15 +68,15 @@
     #mockup-ring.grabbing { cursor: grabbing; }
     .mockup-card {
         position: absolute;
-        width: 300px;
-        height: 560px;
+        width: 420px;
+        height: 680px;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
         background-color: #171f33;
-        border-radius: 16px;
+        border-radius: 18px;
         border: 1px solid #2d3449;
-        box-shadow: 0 20px 50px -12px rgba(0,0,0,0.55);
+        box-shadow: 0 24px 60px -14px rgba(0,0,0,0.55);
         backface-visibility: hidden;
         transform-style: preserve-3d;
         overflow: hidden;
@@ -87,8 +87,8 @@
     .mockup-card-label { position: absolute; left: 0; right: 0; bottom: 0; padding: 10px 12px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .04em; color: #dae2fd; text-align: center; background: linear-gradient(to top, rgba(11,19,38,0.85), transparent); pointer-events: none; }
     .mockup-hint { text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #aeb9d0; letter-spacing: .05em; margin-top: 6px; }
     @media only screen and (max-width: 768px) {
-        #mockup-stage { height: 430px !important; }
-        .mockup-card { height: 480px !important; }
+        #mockup-stage { height: 440px !important; }
+        .mockup-card { width: 260px !important; height: 480px !important; }
     }
 </style>
 <script id="tailwind-config">
@@ -543,7 +543,7 @@
             const ring = document.getElementById('mockup-ring');
             if (!stage || !ring || typeof gsap === 'undefined') return;
 
-            const radius = 650;
+            const radius = 950;
             const totalImgs = mockupImages.length;
             const angleStep = 360 / totalImgs;
 
@@ -577,9 +577,18 @@
                 ease: 'expo.out'
             });
 
-            // hover: highlight the card under the cursor and slowly scroll its screenshot
+            // hover: highlight the card under the cursor and slowly scroll its screenshot downward
             cards.forEach(card => {
                 const img = card.querySelector('img');
+
+                function scrollDown() {
+                    if (!img || !img.complete || img.naturalHeight === 0) return;
+                    const scrollDistance = img.offsetHeight - card.offsetHeight;
+                    if (scrollDistance > 0) {
+                        gsap.to(img, { y: -scrollDistance, duration: Math.max(1.2, scrollDistance / 120), ease: 'none', overwrite: true });
+                    }
+                }
+
                 card.addEventListener('mouseenter', () => {
                     gsap.to(cards, {
                         opacity: (i, t) => (t === card) ? 1 : 0.25,
@@ -587,16 +596,16 @@
                         duration: 0.4,
                         ease: 'power3.out'
                     });
-                    if (img && img.naturalHeight > 0) {
-                        const scrollDistance = img.offsetHeight - card.offsetHeight;
-                        if (scrollDistance > 0) {
-                            gsap.to(img, { y: -scrollDistance, duration: scrollDistance / 120, ease: 'none', overwrite: true });
-                        }
+                    // image may still be loading (these are tall, full-page screenshots) — wait for it if so
+                    if (img && img.complete) {
+                        scrollDown();
+                    } else if (img) {
+                        img.addEventListener('load', scrollDown, { once: true });
                     }
                 });
                 card.addEventListener('mouseleave', () => {
                     gsap.to(cards, { opacity: 1, scale: 1, duration: 0.4, ease: 'power2.inOut' });
-                    gsap.to(img, { y: 0, duration: 1, ease: 'power2.inOut', overwrite: true });
+                    if (img) gsap.to(img, { y: 0, duration: 1, ease: 'power2.inOut', overwrite: true });
                 });
                 card.addEventListener('click', () => openLightbox(img, card.querySelector('.mockup-card-label').textContent));
             });
