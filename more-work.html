@@ -46,51 +46,78 @@
     .live-site-card { display: block; background: #171f33; border: 1px solid #2d3449; border-radius: 14px; padding: 20px; transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease; }
     .live-site-card:hover { border-color: rgba(128,171,255,0.5); transform: translateY(-3px); box-shadow: 0 0 24px rgba(128,171,255,0.1); }
 
-    /* --- mockups: 3D drag-rotate ring carousel (matches reference) --- */
-    #mockup-stage {
-        width: 100%;
-        height: 720px;
+    /* --- website mockups: scroll-on-hover preview cards (matches reference "Funnel Showcase" style) --- */
+    .mockup-grid { display: grid; grid-template-columns: repeat(1, minmax(0,1fr)); gap: 24px; justify-items: center; }
+    @media (min-width: 640px) { .mockup-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+    @media (min-width: 1024px) { .mockup-grid { grid-template-columns: repeat(3, minmax(0,1fr)); } }
+
+    .scroll-image-container {
         position: relative;
-        overflow: hidden;
-        background: transparent;
-        margin: 0;
-        padding: 0;
-        perspective: 2800px;
-        touch-action: pan-y;
-    }
-    #mockup-ring {
         width: 100%;
-        height: 100%;
-        transform-style: preserve-3d;
-        user-select: none;
-        position: absolute;
-        cursor: grab;
-    }
-    #mockup-ring.grabbing { cursor: grabbing; }
-    .mockup-card {
-        position: absolute;
-        width: 420px;
-        height: 680px;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        background-color: #171f33;
-        border-radius: 18px;
-        border: 1px solid #2d3449;
-        box-shadow: 0 24px 60px -14px rgba(0,0,0,0.55);
-        backface-visibility: hidden;
-        transform-style: preserve-3d;
+        max-width: 320px;
+        height: 400px;
         overflow: hidden;
+        border-radius: 18px;
+        cursor: zoom-in;
+        background: #171f33;
+        border: 1px solid #2d3449;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+        transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s ease, border-color .2s ease;
     }
-    .mockup-card-inner { width: 100%; height: 100%; position: relative; overflow: hidden; background: #f4f6fb; }
-    .mockup-card-inner img { width: 100%; height: auto; position: absolute; top: 0; left: 0; display: block; }
-    .mockup-card-inner .fallback-icon { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: rgba(14,165,233,0.15); font-size: 44px; background: #171f33; }
-    .mockup-card-label { position: absolute; left: 0; right: 0; bottom: 0; padding: 10px 12px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .04em; color: #dae2fd; text-align: center; background: linear-gradient(to top, rgba(11,19,38,0.85), transparent); pointer-events: none; }
-    .mockup-hint { text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #aeb9d0; letter-spacing: .05em; margin-top: 6px; }
-    @media only screen and (max-width: 768px) {
-        #mockup-stage { height: 440px !important; }
-        .mockup-card { width: 260px !important; height: 480px !important; }
+    .scroll-image-container:hover,
+    .scroll-image-container:focus-visible {
+        transform: translateY(-6px) scale(1.015);
+        box-shadow: 0 20px 40px rgba(14,165,233,0.28), 0 10px 25px rgba(0,0,0,0.4);
+        border-color: rgba(14,165,233,0.5);
+        outline: none;
     }
+    .scroll-image-element {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: block;
+        transition: top 0.2s ease-out;
+        -webkit-user-drag: none;
+    }
+    .scroll-image-fallback {
+        position: absolute;
+        inset: 0;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        color: rgba(14,165,233,0.2);
+        font-size: 40px;
+        background: #171f33;
+    }
+    .hover-overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(180deg, rgba(6,14,32,0) 55%, rgba(6,14,32,0.65) 100%);
+        opacity: 0;
+        transition: opacity .3s ease;
+        pointer-events: none;
+        border-radius: 18px;
+    }
+    .scroll-image-container:hover .hover-overlay,
+    .scroll-image-container:focus-visible .hover-overlay { opacity: 1; }
+    .hover-pill {
+        padding: 8px 18px;
+        border-radius: 999px;
+        background: #0EA5E9;
+        color: #060e20;
+        font: 700 12px/1 'JetBrains Mono', monospace;
+        letter-spacing: .2px;
+        transform: translateY(8px);
+        transition: transform .3s ease;
+        box-shadow: 0 6px 16px rgba(0,0,0,0.35), 0 0 18px rgba(14,165,233,0.35);
+    }
+    .scroll-image-container:hover .hover-pill,
+    .scroll-image-container:focus-visible .hover-pill { transform: translateY(0); }
+    .mockup-hint { text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #aeb9d0; letter-spacing: .05em; margin-top: 22px; }
 </style>
 <script id="tailwind-config">
     tailwind.config = {
@@ -167,13 +194,11 @@
     <div class="max-w-7xl mx-auto">
         <span class="font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded">WEBSITES &amp; LANDING PAGES</span>
         <h2 class="text-2xl md:text-3xl font-bold mt-4 mb-2">Figma Designed</h2>
-        <p class="text-on-surface-variant text-sm mb-10 max-w-2xl">A collection of websites and landing pages designed and shipped for clients. Replace the placeholders below with screenshots and links as you add each project.</p>
+        <p class="text-on-surface-variant text-sm mb-10 max-w-2xl">A collection of websites and landing pages designed and shipped for clients. Hover a card to preview the full page, click to view it enlarged.</p>
 
-        <!-- Mockup 3D ring: drag to rotate on desktop, swipe with a finger on mobile -->
-        <div id="mockup-stage">
-            <div id="mockup-ring"><!-- cards injected by JS --></div>
-        </div>
-        <p class="mockup-hint">Drag to rotate</p>
+        <!-- Scroll-on-hover preview cards -->
+        <div class="mockup-grid" id="mockup-grid"><!-- cards injected by JS --></div>
+        <p class="mockup-hint">Hover to preview &bull; Click to enlarge</p>
     </div>
 </section>
 
@@ -527,7 +552,7 @@
             });
         });
 
-        // --- mockup 3D ring carousel: drag with mouse, swipe with a finger ---
+        // --- website mockups: scroll-on-hover preview cards (reference "Funnel Showcase" style) ---
         (function () {
             const mockupImages = [
                 { src: 'New Mockups/FatBurns.jpg', label: 'FatBurns' },
@@ -540,104 +565,60 @@
                 { src: 'New Mockups/Pro_Shaker_Bottle.jpg', label: 'Pro Shaker Bottle' }
             ];
 
-            const stage = document.getElementById('mockup-stage');
-            const ring = document.getElementById('mockup-ring');
-            if (!stage || !ring || typeof gsap === 'undefined') return;
+            const grid = document.getElementById('mockup-grid');
+            if (!grid) return;
 
-            const radius = 950;
-            const totalImgs = mockupImages.length;
-            const angleStep = 360 / totalImgs;
+            mockupImages.forEach((item) => {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'scroll-image-container';
+                wrapper.tabIndex = 0;
+                wrapper.setAttribute('role', 'button');
+                wrapper.setAttribute('aria-label', 'View ' + item.label + ' design enlarged');
+                wrapper.innerHTML = `
+                    <img class="scroll-image-element" src="${item.src}" alt="${item.label} website design"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                    <span class="material-symbols-outlined scroll-image-fallback">language</span>
+                    <div class="hover-overlay"><span class="hover-pill">View Design</span></div>`;
+                grid.appendChild(wrapper);
 
-            mockupImages.forEach((item, index) => {
-                const card = document.createElement('div');
-                card.className = 'mockup-card';
-                card.innerHTML = `
-                    <div class="mockup-card-inner">
-                        <img src="${item.src}" alt="${item.label} website mockup" draggable="false"
-                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-                        <span class="material-symbols-outlined fallback-icon" style="display:none;">language</span>
-                        <div class="mockup-card-label">${item.label}</div>
-                    </div>`;
-                ring.appendChild(card);
-            });
+                const img = wrapper.querySelector('.scroll-image-element');
 
-            const cards = Array.from(ring.querySelectorAll('.mockup-card'));
+                function setupScroll() {
+                    const containerHeight = wrapper.offsetHeight;
+                    const scaleRatio = wrapper.offsetWidth / img.naturalWidth;
+                    const imageHeight = img.naturalHeight * scaleRatio;
+                    const maxScroll = Math.max(0, imageHeight - containerHeight);
+                    let pos = 0;
+                    const speed = 2;
+                    let raf = null;
 
-            gsap.set(ring, { rotationY: 180 });
-            gsap.set(cards, {
-                rotateY: (i) => i * -angleStep,
-                transformOrigin: `50% 50% ${radius}px`,
-                z: -radius
-            });
-
-            gsap.from(cards, {
-                duration: 1.3,
-                y: 200,
-                opacity: 0,
-                stagger: 0.08,
-                ease: 'expo.out'
-            });
-
-            // hover: highlight the card under the cursor and slowly scroll its screenshot downward
-            cards.forEach(card => {
-                const img = card.querySelector('img');
-
-                function scrollDown() {
-                    if (!img || !img.complete || img.naturalHeight === 0) return;
-                    const scrollDistance = img.offsetHeight - card.offsetHeight;
-                    if (scrollDistance > 0) {
-                        gsap.to(img, { y: -scrollDistance, duration: Math.max(1.2, scrollDistance / 120), ease: 'none', overwrite: true });
+                    function scrollTo(position) {
+                        cancelAnimationFrame(raf);
+                        (function animate() {
+                            if (Math.abs(pos - position) <= speed) {
+                                pos = position;
+                                img.style.top = -pos + 'px';
+                                return;
+                            }
+                            pos += pos < position ? speed : -speed;
+                            img.style.top = -pos + 'px';
+                            raf = requestAnimationFrame(animate);
+                        })();
                     }
+
+                    wrapper.addEventListener('mouseenter', () => scrollTo(maxScroll));
+                    wrapper.addEventListener('mouseleave', () => scrollTo(0));
                 }
 
-                card.addEventListener('mouseenter', () => {
-                    gsap.to(cards, {
-                        opacity: (i, t) => (t === card) ? 1 : 0.25,
-                        scale: (i, t) => (t === card) ? 1.04 : 0.96,
-                        duration: 0.4,
-                        ease: 'power3.out'
-                    });
-                    // image may still be loading (these are tall, full-page screenshots) — wait for it if so
-                    if (img && img.complete) {
-                        scrollDown();
-                    } else if (img) {
-                        img.addEventListener('load', scrollDown, { once: true });
-                    }
+                if (img.complete && img.naturalWidth > 0) setupScroll();
+                else img.addEventListener('load', setupScroll);
+
+                function openThisDesign() { openLightbox(img, item.label); }
+                wrapper.addEventListener('click', openThisDesign);
+                wrapper.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openThisDesign(); }
                 });
-                card.addEventListener('mouseleave', () => {
-                    gsap.to(cards, { opacity: 1, scale: 1, duration: 0.4, ease: 'power2.inOut' });
-                    if (img) gsap.to(img, { y: 0, duration: 1, ease: 'power2.inOut', overwrite: true });
-                });
-                card.addEventListener('click', () => openLightbox(img, card.querySelector('.mockup-card-label').textContent));
             });
-
-            // drag to rotate (mouse) / swipe to rotate (touch) — same interaction on desktop and mobile
-            let xPos = 0;
-            let dragging = false;
-
-            function dragStart(e) {
-                dragging = true;
-                xPos = (e.touches ? e.touches[0].clientX : e.clientX);
-                ring.classList.add('grabbing');
-            }
-            function dragMove(e) {
-                if (!dragging) return;
-                const clientX = (e.touches ? e.touches[0].clientX : e.clientX);
-                const delta = (clientX - xPos) * 0.45;
-                gsap.to(ring, { rotationY: `-=${delta}`, duration: 0.6, ease: 'power2.out' });
-                xPos = clientX;
-            }
-            function dragEnd() {
-                dragging = false;
-                ring.classList.remove('grabbing');
-            }
-
-            stage.addEventListener('mousedown', dragStart);
-            stage.addEventListener('touchstart', dragStart, { passive: true });
-            window.addEventListener('mousemove', dragMove);
-            stage.addEventListener('touchmove', dragMove, { passive: true });
-            window.addEventListener('mouseup', dragEnd);
-            window.addEventListener('touchend', dragEnd);
         })();
 
         // --- image / content protection deterrents ---
