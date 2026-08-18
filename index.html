@@ -102,6 +102,21 @@
     .whatsapp-fab:hover { animation-play-state: paused; transform: scale(1.06); }
     @keyframes pulse-wa { 0%, 100% { box-shadow: 0 4px 18px rgba(37,211,102,0.45); } 50% { box-shadow: 0 4px 26px rgba(37,211,102,0.75); } }
 
+    /* --- floating experience badge on hero photo --- */
+    .experience-badge { position: absolute; bottom: -22px; right: -22px; background: rgba(23,31,51,0.92); backdrop-filter: blur(10px); border: 1px solid rgba(14,165,233,0.35); border-radius: 14px; padding: 14px 20px; animation: badge-float 4s ease-in-out infinite, badge-glow 3s ease-in-out infinite; z-index: 10; }
+    .experience-badge .badge-number { font-size: 22px; font-weight: 800; color: #0EA5E9; line-height: 1.1; }
+    .experience-badge .badge-label { font-size: 11px; color: #aeb9d0; margin-top: 2px; white-space: nowrap; }
+    @keyframes badge-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    @keyframes badge-glow {
+        0%, 100% { border-color: rgba(14,165,233,0.35); box-shadow: 0 12px 30px rgba(0,0,0,0.4), 0 0 18px rgba(14,165,233,0.15); }
+        50% { border-color: rgba(14,165,233,0.85); box-shadow: 0 12px 30px rgba(0,0,0,0.4), 0 0 34px rgba(14,165,233,0.45); }
+    }
+    @media (max-width: 480px) {
+        .experience-badge { right: -8px; bottom: -18px; padding: 10px 14px; }
+        .experience-badge .badge-number { font-size: 18px; }
+        .experience-badge .badge-label { font-size: 9.5px; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
         html { scroll-behavior: auto; }
         .section-reveal { transition: none; opacity: 1; transform: none; }
@@ -180,7 +195,7 @@
             <div class="flex-1 text-center lg:text-left">
                 <div class="inline-flex items-center px-3 py-1.5 bg-background/90 border border-primary/40 rounded-full mb-8 hero-fade-1 shadow-lg">
                     <span class="w-2 h-2 rounded-full bg-primary mr-2 animate-pulse"></span>
-                    <span class="font-mono text-[10px] font-bold uppercase tracking-tighter" style="color:#B8D9FF;">GOHIGHLEVEL CRM &amp; AUTOMATION SPECIALIST</span>
+                    <span class="font-mono text-xs font-bold uppercase tracking-tighter" style="color:#B8D9FF;">GOHIGHLEVEL CRM &amp; AUTOMATION SPECIALIST</span>
                 </div>
                 <h1 class="text-4xl md:text-6xl font-bold leading-[1.1] mb-8 hero-fade-2">
                     I build powerful CRM systems<br/>that capture leads, <span class="text-primary">automate follow-ups</span><br/>and <span class="text-primary">drive more bookings.</span>
@@ -195,11 +210,15 @@
             </div>
 
             <!-- Photo frame: drop your headshot in here -->
-            <div class="hero-fade-2 flex-shrink-0">
+            <div class="hero-fade-2 flex-shrink-0 relative">
                 <div class="w-72 md:w-96 aspect-[896/1195] rounded-2xl border border-outline-variant bg-surface-variant/50 overflow-hidden flex items-center justify-center relative">
                     <!-- IMAGE PLACEHOLDER: replace src below with your headshot -->
                     <img src="My Image/Profile Image.jfif" alt="Abdul Wadood" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" />
                     <span class="material-symbols-outlined text-8xl text-primary/20">person</span>
+                </div>
+                <div class="experience-badge">
+                    <div class="badge-number">5+ yrs</div>
+                    <div class="badge-label">Building GHL CRM System</div>
                 </div>
             </div>
         </div>
