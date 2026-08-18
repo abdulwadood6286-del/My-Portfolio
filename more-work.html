@@ -619,6 +619,7 @@
 
         // --- large scrollable design preview modal ---
         const designModalBackdrop = document.getElementById('designModalBackdrop');
+        document.body.appendChild(designModalBackdrop); // escape the transformed .section-reveal ancestor so position:fixed centers on the real viewport
         const designModalImg = document.getElementById('designModalImg');
         const designModalTitle = document.getElementById('designModalTitle');
         const designModalClose = document.getElementById('designModalClose');
