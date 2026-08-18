@@ -118,6 +118,53 @@
     .scroll-image-container:hover .hover-pill,
     .scroll-image-container:focus-visible .hover-pill { transform: translateY(0); }
     .mockup-hint { text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #aeb9d0; letter-spacing: .05em; margin-top: 22px; }
+
+    /* --- large scrollable design preview modal (opens on click) --- */
+    .design-modal-backdrop {
+        position: fixed; inset: 0; z-index: 9999;
+        background: rgba(6,14,32,0.85); backdrop-filter: blur(4px);
+        display: flex; align-items: center; justify-content: center;
+        padding: 24px;
+        opacity: 0; visibility: hidden;
+        transition: opacity .28s ease, visibility 0s linear .28s;
+    }
+    .design-modal-backdrop.is-open { opacity: 1; visibility: visible; transition: opacity .28s ease, visibility 0s linear 0s; }
+    .design-modal {
+        position: relative;
+        width: min(760px, 100%);
+        height: min(88vh, 980px);
+        background: #0b1326;
+        border: 1px solid #2d3449;
+        border-radius: 16px;
+        box-shadow: 0 30px 80px rgba(0,0,0,0.55), 0 0 60px rgba(14,165,233,0.08);
+        overflow: hidden;
+        display: flex; flex-direction: column;
+        transform: translateY(24px) scale(.98);
+        transition: transform .3s cubic-bezier(.2,.7,.2,1);
+    }
+    .design-modal-backdrop.is-open .design-modal { transform: translateY(0) scale(1); }
+    .design-modal-header {
+        display: flex; align-items: center; gap: 8px;
+        padding: 10px 14px; background: #171f33; border-bottom: 1px solid #2d3449; flex: none;
+    }
+    .design-modal-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .design-modal-title {
+        margin-left: 8px; font-family: 'JetBrains Mono', monospace; font-size: 11px;
+        color: #aeb9d0; letter-spacing: .04em; flex: 1;
+    }
+    .design-modal-close {
+        width: 30px; height: 30px; border-radius: 50%; border: none;
+        background: rgba(23,31,51,0.9); color: #0EA5E9;
+        display: flex; align-items: center; justify-content: center; cursor: pointer;
+        transition: background .2s ease, color .2s ease, transform .2s ease;
+    }
+    .design-modal-close:hover { background: #0EA5E9; color: #060e20; transform: rotate(90deg); }
+    .design-modal-scroll { flex: 1; overflow-y: auto; overflow-x: hidden; background: #f4f6fb; }
+    .design-modal-scroll img { display: block; width: 100%; height: auto; }
+    @media (max-width: 640px) {
+        .design-modal-backdrop { padding: 0; }
+        .design-modal { width: 100%; height: 100%; border-radius: 0; }
+    }
 </style>
 <script id="tailwind-config">
     tailwind.config = {
@@ -198,7 +245,25 @@
 
         <!-- Scroll-on-hover preview cards -->
         <div class="mockup-grid" id="mockup-grid"><!-- cards injected by JS --></div>
-        <p class="mockup-hint">Hover to preview &bull; Click to enlarge</p>
+        <p class="mockup-hint">Hover to preview &bull; Click to view full design</p>
+
+        <!-- Large scrollable design preview modal -->
+        <div class="design-modal-backdrop" id="designModalBackdrop">
+            <div class="design-modal">
+                <div class="design-modal-header">
+                    <span class="design-modal-dot" style="background:#f87171;"></span>
+                    <span class="design-modal-dot" style="background:#fbbf24;"></span>
+                    <span class="design-modal-dot" style="background:#4ade80;"></span>
+                    <span class="design-modal-title" id="designModalTitle"></span>
+                    <button class="design-modal-close" id="designModalClose" aria-label="Close preview">
+                        <span class="material-symbols-outlined" style="font-size:18px;">close</span>
+                    </button>
+                </div>
+                <div class="design-modal-scroll">
+                    <img id="designModalImg" src="" alt="" />
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -552,6 +617,38 @@
             });
         });
 
+        // --- large scrollable design preview modal ---
+        const designModalBackdrop = document.getElementById('designModalBackdrop');
+        const designModalImg = document.getElementById('designModalImg');
+        const designModalTitle = document.getElementById('designModalTitle');
+        const designModalClose = document.getElementById('designModalClose');
+        const designModalScroll = document.querySelector('.design-modal-scroll');
+        let designModalLastFocused = null;
+
+        function openDesignModal(srcUrl, title) {
+            designModalLastFocused = document.activeElement;
+            designModalImg.src = srcUrl;
+            designModalImg.alt = title || '';
+            designModalTitle.textContent = title || '';
+            designModalBackdrop.classList.add('is-open');
+            document.body.style.overflow = 'hidden';
+            if (designModalScroll) designModalScroll.scrollTop = 0;
+            designModalClose.focus();
+        }
+        function closeDesignModal() {
+            designModalBackdrop.classList.remove('is-open');
+            document.body.style.overflow = '';
+            setTimeout(() => { designModalImg.src = ''; }, 300);
+            if (designModalLastFocused) designModalLastFocused.focus();
+        }
+        designModalClose.addEventListener('click', closeDesignModal);
+        designModalBackdrop.addEventListener('click', (e) => {
+            if (e.target === designModalBackdrop) closeDesignModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && designModalBackdrop.classList.contains('is-open')) closeDesignModal();
+        });
+
         // --- website mockups: scroll-on-hover preview cards (reference "Funnel Showcase" style) ---
         (function () {
             const mockupImages = [
@@ -613,7 +710,7 @@
                 if (img.complete && img.naturalWidth > 0) setupScroll();
                 else img.addEventListener('load', setupScroll);
 
-                function openThisDesign() { openLightbox(img, item.label); }
+                function openThisDesign() { openDesignModal(item.src, item.label); }
                 wrapper.addEventListener('click', openThisDesign);
                 wrapper.addEventListener('keydown', (e) => {
                     if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openThisDesign(); }
