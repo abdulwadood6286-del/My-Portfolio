@@ -58,6 +58,11 @@
     .process-card { transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease; }
     .process-card:hover { border-color: rgba(14,165,233,0.6); transform: translateY(-6px) scale(1.03); box-shadow: 0 0 32px rgba(14,165,233,0.25); }
 
+    .about-card { transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease, background-color .25s ease; }
+    .about-card:hover { border-color: rgba(14,165,233,0.5); transform: translateY(-4px); box-shadow: 0 12px 28px rgba(14,165,233,0.15); background-color: rgba(23,31,51,0.9); }
+    .about-card:hover .about-card-icon { background-color: rgba(14,165,233,0.2); border-color: rgba(14,165,233,0.6); transform: scale(1.08); }
+    .about-card-icon { transition: background-color .25s ease, border-color .25s ease, transform .25s ease; }
+
     .journey-track { display: flex; flex-wrap: wrap; gap: 10px; }
     .journey-node { display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: #171f33; border: 1px solid #2d3449; border-left: 2px solid #0EA5E9; border-radius: 8px; font-size: 10.5px; white-space: nowrap; }
     .journey-node .num { font-family: 'JetBrains Mono', monospace; color: #0EA5E9; font-weight: 700; }
@@ -117,6 +122,30 @@
         .experience-badge .badge-label { font-size: 9.5px; }
     }
 
+    /* --- hero automation cascade: two-column auto-scrolling screenshot grid --- */
+    #hero-cascade { display: block; width: 100%; }
+    #hero-cascade .cascade-mask {
+        position: relative; height: 520px; overflow: hidden; border-radius: 22px;
+        border: 1px solid #2d3449;
+        -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
+        mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
+    }
+    #hero-cascade .columns { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; height: 100%; width: 100%; padding: 0 8px; }
+    #hero-cascade .column { position: relative; overflow: hidden; }
+    #hero-cascade .column-track { display: flex; flex-direction: column; gap: 8px; animation: hero-cascade-scroll linear infinite; }
+    @keyframes hero-cascade-scroll { from { transform: translateY(0); } to { transform: translateY(-50%); } }
+    #hero-cascade .tile-image {
+        position: relative; width: 100%; border-radius: 12px; overflow: hidden;
+        border: 1px solid #2d3449; background: #171f33;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+    #hero-cascade .tile-image img { width: 100%; height: auto; display: block; }
+    #hero-cascade .tile-fallback { display: none; align-items: center; justify-content: center; width: 100%; min-height: 110px; color: rgba(14,165,233,0.5); font-size: 26px; }
+    #hero-cascade .tile-image.is-broken img { display: none; }
+    #hero-cascade .tile-image.is-broken .tile-fallback { display: flex; }
+    @media (max-width: 640px) { #hero-cascade .cascade-mask { height: 380px; } }
+    @media (prefers-reduced-motion: reduce) { #hero-cascade .column-track { animation: none; } }
+
     @media (prefers-reduced-motion: reduce) {
         html { scroll-behavior: auto; }
         .section-reveal { transition: none; opacity: 1; transform: none; }
@@ -157,9 +186,11 @@
             <span class="font-mono text-sm uppercase tracking-widest font-bold">Abdul Wadood</span>
         </a>
         <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+            <a class="text-on-surface-variant hover:text-primary transition-colors" href="#about">About</a>
             <a class="text-on-surface-variant hover:text-primary transition-colors" href="#skills">Skills</a>
             <a class="text-on-surface-variant hover:text-primary transition-colors" href="#work">Work</a>
             <a class="text-on-surface-variant hover:text-primary transition-colors" href="#process">Process</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors" href="#integrations">Integrations</a>
             <a class="text-on-surface-variant hover:text-primary transition-colors" href="#experience">Experience</a>
             <div class="flex items-center gap-4 ml-4">
                 <a href="#contact" class="px-4 py-2 border border-outline-variant hover:bg-surface-variant rounded-lg transition-all">Contact</a>
@@ -172,9 +203,11 @@
     </div>
     <div class="md:hidden max-h-0 overflow-hidden opacity-0" id="mobile-menu">
         <div class="flex flex-col gap-1 px-6 pb-6 pt-2">
+            <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#about">About</a>
             <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#skills">Skills</a>
             <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#work">Work</a>
             <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#process">Process</a>
+            <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#integrations">Integrations</a>
             <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#experience">Experience</a>
             <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#contact">Contact</a>
             <a href="/booking" class="mt-4 px-4 py-3 bg-primary text-background font-bold rounded-lg text-center">Book a Call</a>
@@ -195,12 +228,12 @@
             <div class="flex-1 text-center lg:text-left">
                 <div class="inline-flex items-center px-3 py-1.5 bg-background/90 border border-primary/40 rounded-full mb-8 hero-fade-1 shadow-lg">
                     <span class="w-2 h-2 rounded-full bg-primary mr-2 animate-pulse"></span>
-                    <span class="font-mono text-xs font-bold uppercase tracking-tighter" style="color:#B8D9FF;">GOHIGHLEVEL CRM &amp; AUTOMATION SPECIALIST</span>
+                    <span class="font-mono text-[14px] font-bold uppercase tracking-tighter" style="color:#B8D9FF;">GOHIGHLEVEL CRM &amp; AUTOMATION SPECIALIST</span>
                 </div>
-                <h1 class="text-4xl md:text-6xl font-bold leading-[1.1] mb-8 hero-fade-2">
+                <h1 class="text-[30px] md:text-[44px] font-bold leading-[1.1] mb-8 hero-fade-2">
                     I build powerful CRM systems<br/>that capture leads, <span class="text-primary">automate follow-ups</span><br/>and <span class="text-primary">drive more bookings.</span>
                 </h1>
-                <p class="text-on-surface-variant text-base max-w-2xl mx-auto lg:mx-0 mb-12 leading-relaxed hero-fade-3">
+                <p class="text-on-surface-variant text-[18px] md:text-[20px] max-w-2xl mx-auto lg:mx-0 mb-12 leading-relaxed hero-fade-3">
                     GoHighLevel CRM systems, workflows, funnels, calendars, integrations and follow-up automations designed to help businesses convert more leads with less manual work.
                 </p>
                 <div class="flex flex-wrap gap-4 justify-center lg:justify-start hero-fade-4">
@@ -209,8 +242,66 @@
                 </div>
             </div>
 
-            <!-- Photo frame: drop your headshot in here -->
-            <div class="hero-fade-2 flex-shrink-0 relative">
+            <!-- Automation cascade: auto-scrolling grid of real project screenshots -->
+            <div class="hero-fade-2 flex-shrink-0 w-full max-w-md">
+                <div id="hero-cascade">
+                    <div class="cascade-mask">
+                        <div class="columns" id="cascade-columns"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-24 pt-12 border-t border-outline-variant text-center">
+            <p class="font-mono text-xs text-on-surface-variant tracking-wide mb-3">GoHighLevel &nbsp;&bull;&nbsp; Zapier &nbsp;&bull;&nbsp; CRM Automation &nbsp;&bull;&nbsp; Workflow Specialist &nbsp;&bull;&nbsp; Funnel Development &nbsp;&bull;&nbsp; AI Voice &amp; Chat</p>
+            <p class="font-mono text-xs text-primary tracking-wide">Automation &amp; CRM Workflow Trained</p>
+        </div>
+    </div>
+</header>
+
+<!-- ============ ABOUT ME ============ -->
+<section class="py-24 px-6 bg-surface section-reveal" id="about">
+    <div class="max-w-6xl mx-auto">
+        <div class="flex flex-col lg:flex-row items-center gap-16">
+            <div class="flex-1">
+                <span class="font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">ABOUT ME</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">The Person Behind Every <span class="text-primary">Working System</span></h2>
+                <p class="text-on-surface-variant text-base leading-relaxed mb-10">I'm <span class="text-on-surface font-bold">Abdul Wadood</span>. I don't sell GoHighLevel &mdash; I build inside it, every day, for agencies, clinics, and service businesses that are tired of leads slipping through the cracks. If it's a pipeline, a follow-up, or an AI agent that actually answers the phone, chances are I've shipped it, tested it, and handed it over running.</p>
+
+                <div class="grid sm:grid-cols-2 gap-5">
+                    <div class="bg-surface-variant border border-outline-variant p-5 rounded-2xl about-card">
+                        <div class="w-9 h-9 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center mb-3 about-card-icon">
+                            <span class="material-symbols-outlined text-primary text-lg">bolt</span>
+                        </div>
+                        <h4 class="font-bold text-lg mb-1">End-to-End GHL Builds</h4>
+                        <p class="text-[11px] text-on-surface-variant leading-relaxed">Pipelines, funnels, AI voice agents, SMS &mdash; every moving part lives inside one GoHighLevel account, built by one person who knows how it all connects.</p>
+                    </div>
+                    <div class="bg-surface-variant border border-outline-variant p-5 rounded-2xl about-card">
+                        <div class="w-9 h-9 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center mb-3 about-card-icon">
+                            <span class="material-symbols-outlined text-primary text-lg">target</span>
+                        </div>
+                        <h4 class="font-bold text-lg mb-1">No More Duct-Taped Tools</h4>
+                        <p class="text-[11px] text-on-surface-variant leading-relaxed">Trade the spreadsheet, the sticky notes, and the five different logins for one system that runs itself &mdash; and that you own outright.</p>
+                    </div>
+                    <div class="bg-surface-variant border border-outline-variant p-5 rounded-2xl about-card">
+                        <div class="w-9 h-9 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center mb-3 about-card-icon">
+                            <span class="material-symbols-outlined text-primary text-lg">explore</span>
+                        </div>
+                        <h4 class="font-bold text-lg mb-1">Journey First, Automation Second</h4>
+                        <p class="text-[11px] text-on-surface-variant leading-relaxed">I trace how a real lead moves through your business before I build a single workflow, so nothing gets automated just because it can be.</p>
+                    </div>
+                    <div class="bg-surface-variant border border-outline-variant p-5 rounded-2xl about-card">
+                        <div class="w-9 h-9 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center mb-3 about-card-icon">
+                            <span class="material-symbols-outlined text-primary text-lg">workspace_premium</span>
+                        </div>
+                        <h4 class="font-bold text-lg mb-1">Built to Actually Last</h4>
+                        <p class="text-[11px] text-on-surface-variant leading-relaxed">Every branch gets tested with real leads before launch, and I stay on afterward &mdash; no disappearing once the invoice clears.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photo frame with floating experience badge -->
+            <div class="flex-shrink-0 relative">
                 <div class="w-72 md:w-96 aspect-[896/1195] rounded-2xl border border-outline-variant bg-surface-variant/50 overflow-hidden flex items-center justify-center relative">
                     <!-- IMAGE PLACEHOLDER: replace src below with your headshot -->
                     <img src="My Image/Profile Image.jfif" alt="Abdul Wadood" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" />
@@ -222,13 +313,8 @@
                 </div>
             </div>
         </div>
-
-        <div class="mt-24 pt-12 border-t border-outline-variant text-center">
-            <p class="font-mono text-xs text-on-surface-variant tracking-wide mb-3">GoHighLevel &nbsp;&bull;&nbsp; Zapier &nbsp;&bull;&nbsp; CRM Automation &nbsp;&bull;&nbsp; Workflow Specialist &nbsp;&bull;&nbsp; Funnel Development &nbsp;&bull;&nbsp; AI Voice &amp; Chat</p>
-            <p class="font-mono text-xs text-primary tracking-wide">Automation &amp; CRM Workflow Trained</p>
-        </div>
     </div>
-</header>
+</section>
 
 <!-- ============ SKILLS ============ -->
 <section class="py-24 px-6 bg-background section-reveal" id="skills">
@@ -827,6 +913,34 @@
     </div>
 </section>
 
+<!-- ============ INTEGRATIONS ============ -->
+<section class="py-24 px-6 bg-surface section-reveal" id="integrations">
+    <div class="max-w-5xl mx-auto text-center">
+        <span class="font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">INTEGRATIONS</span>
+        <h2 class="text-3xl md:text-4xl font-bold mt-4">Plugs straight into your <span class="text-primary">existing stack</span></h2>
+        <p class="text-on-surface-variant text-base max-w-2xl mx-auto mt-4 mb-12 leading-relaxed">GoHighLevel becomes the hub, not another silo. Through native connections, webhooks, and custom API builds, every tool below stays in sync with your CRM &mdash; no double data entry, no manual exports.</p>
+
+        <div class="flex flex-wrap justify-center gap-3">
+            <span class="px-6 py-3 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">Stripe</span>
+            <span class="px-6 py-3 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">Twilio</span>
+            <span class="px-6 py-3 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">OpenAI</span>
+            <span class="px-6 py-3 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">Mailgun</span>
+            <span class="px-6 py-3 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">Google</span>
+            <span class="px-6 py-3 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">Facebook</span>
+            <span class="px-6 py-3 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">Instagram</span>
+            <span class="px-6 py-3 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">TikTok</span>
+            <span class="px-6 py-3 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">Zapier</span>
+            <span class="px-6 py-3 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">Make</span>
+            <span class="px-6 py-3 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">n8n</span>
+            <span class="px-6 py-3 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">Slack</span>
+            <span class="px-6 py-3 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">QuickBooks</span>
+            <span class="px-6 py-3 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">Calendly</span>
+            <span class="px-6 py-3 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">Webhook</span>
+            <span class="px-6 py-3 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">REST API</span>
+        </div>
+    </div>
+</section>
+
 <!-- ============ EXPERIENCE ============ -->
 <section class="py-24 px-6 bg-surface section-reveal" id="experience">
     <div class="max-w-4xl mx-auto">
@@ -1070,6 +1184,63 @@
             resize();
             step();
             window.addEventListener('resize', resize);
+        })();
+
+        // hero automation cascade — two columns of real project screenshots, auto-scrolling
+        (function heroCascade() {
+            const grid = document.getElementById('cascade-columns');
+            if (!grid) return;
+
+            const IMAGES = [
+                { src: './Element 6 Auto SPA/Screenshot_89.png', label: 'Element 6 Auto SPA' },
+                { src: './Noor Esthétique & Wellness/Screenshot_88.png', label: 'Noor Esthétique & Wellness' },
+                { src: 'Mustafa/Screenshot_92.png', label: 'VEGA MIDEIA CO.' },
+                { src: './RMJ Consultant/Screenshot_92.png', label: 'Webinar Registration' },
+                { src: 'New Mockups/FatBurns.jpg', label: 'FatBurns' },
+                { src: 'New Mockups/GHL_Course_Sales_Template.jpg', label: 'Course Funnel' },
+                { src: 'New Mockups/Laura Coaching Funnel.jpg', label: 'Coaching Funnel' }
+            ];
+
+            const COLUMN_CONFIG = [
+                { duration: 42, delay: 0, reverse: false },
+                { duration: 34, delay: -14, reverse: true }
+            ];
+
+            function shuffle(arr) {
+                const a = arr.slice();
+                for (let i = a.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [a[i], a[j]] = [a[j], a[i]];
+                }
+                return a;
+            }
+
+            function tileHTML(item) {
+                return `
+                    <div class="tile-image">
+                        <img src="${item.src}" alt="${item.label}" loading="lazy"
+                             onerror="this.parentElement.classList.add('is-broken')" />
+                        <span class="material-symbols-outlined tile-fallback">dashboard</span>
+                    </div>`;
+            }
+
+            COLUMN_CONFIG.forEach((cfg) => {
+                const columnImages = shuffle(IMAGES);
+                const doubled = columnImages.concat(columnImages);
+
+                const col = document.createElement('div');
+                col.className = 'column';
+
+                const track = document.createElement('div');
+                track.className = 'column-track';
+                track.style.animationDuration = cfg.duration + 's';
+                track.style.animationDelay = cfg.delay + 's';
+                track.style.animationDirection = cfg.reverse ? 'reverse' : 'normal';
+                track.innerHTML = doubled.map(tileHTML).join('');
+
+                col.appendChild(track);
+                grid.appendChild(col);
+            });
         })();
 
         // gallery slider arrow controls
