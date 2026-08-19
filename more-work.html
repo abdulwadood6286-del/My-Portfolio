@@ -117,7 +117,7 @@
     }
     .scroll-image-container:hover .hover-pill,
     .scroll-image-container:focus-visible .hover-pill { transform: translateY(0); }
-    .mockup-hint { text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #aeb9d0; letter-spacing: .05em; margin-top: 22px; }
+    .mockup-hint { display: flex; align-items: center; justify-content: center; gap: 6px; text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #aeb9d0; letter-spacing: .05em; margin-bottom: 22px; }
 
     /* --- large scrollable design preview modal (opens on click) --- */
     .design-modal-backdrop {
@@ -241,11 +241,15 @@
     <div class="max-w-7xl mx-auto">
         <span class="font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">WEBSITES &amp; LANDING PAGES</span>
         <h2 class="text-2xl md:text-3xl font-bold mt-4 mb-2">Built &amp; Shipped</h2>
-        <p class="text-on-surface-variant text-sm mb-10 max-w-2xl">Real websites and landing pages built for real clients &mdash; not concepts sitting in a folder. Hover a card to preview the full page, click to view it enlarged.</p>
+        <p class="text-on-surface-variant text-sm mb-6 max-w-2xl">Real websites and landing pages built for real clients &mdash; not concepts sitting in a folder.</p>
+
+        <div class="mockup-hint">
+            <span class="material-symbols-outlined text-primary text-base">ads_click</span>
+            Hover to preview &bull; Click to see the full build
+        </div>
 
         <!-- Scroll-on-hover preview cards -->
         <div class="mockup-grid" id="mockup-grid"><!-- cards injected by JS --></div>
-        <p class="mockup-hint">Hover to preview &bull; Click to view full design</p>
 
         <!-- Large scrollable design preview modal -->
         <div class="design-modal-backdrop" id="designModalBackdrop">
