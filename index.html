@@ -9,6 +9,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=JetBrains+Mono:wght@100..800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <style>
     html { font-size: 100%; }
+    /* --- nav link underline on hover, colors with the text --- */
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 2px; background: #0EA5E9; transition: width .25s ease; }
+    .nav-link:hover::after { width: 100%; }
+
     p.leading-relaxed { font-size: 18px !important; line-height: 1.5 !important; }
     .list-disc.pl-5 li { font-size: 16px !important; line-height: 1.5 !important; }
     p.text-xs.text-on-surface-variant.mt-1 { font-size: 16px !important; line-height: 1.5 !important; }
@@ -122,6 +127,15 @@
         .experience-badge .badge-label { font-size: 9.5px; }
     }
 
+    /* --- mobile safety net: prevent horizontal overflow, tighten spacing, keep long labels from breaking layout --- */
+    html, body { overflow-x: hidden; }
+    @media (max-width: 640px) {
+        section { padding-top: 3rem !important; padding-bottom: 3rem !important; }
+        header { padding-top: 6.5rem !important; padding-bottom: 2.5rem !important; }
+        .step-chip, .journey-node { white-space: normal; font-size: 10.5px; padding: 8px 12px; }
+        .journey-track { gap: 8px; }
+    }
+
     /* --- hero automation cascade: two-column auto-scrolling screenshot grid --- */
     #hero-cascade { display: block; width: 100%; }
     #hero-cascade .cascade-mask {
@@ -186,13 +200,13 @@
             <span class="font-mono text-sm uppercase tracking-widest font-bold">Abdul Wadood</span>
         </a>
         <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-            <a class="text-on-surface-variant hover:text-primary transition-colors" href="#about">About</a>
-            <a class="text-on-surface-variant hover:text-primary transition-colors" href="#skills">Skills</a>
-            <a class="text-on-surface-variant hover:text-primary transition-colors" href="#services">Services</a>
-            <a class="text-on-surface-variant hover:text-primary transition-colors" href="#work">Work</a>
-            <a class="text-on-surface-variant hover:text-primary transition-colors" href="#process">Process</a>
-            <a class="text-on-surface-variant hover:text-primary transition-colors" href="#integrations">Integrations</a>
-            <a class="text-on-surface-variant hover:text-primary transition-colors" href="#experience">Experience</a>
+            <a class="nav-link text-on-surface-variant hover:text-primary transition-colors" href="#about">About</a>
+            <a class="nav-link text-on-surface-variant hover:text-primary transition-colors" href="#skills">Skills</a>
+            <a class="nav-link text-on-surface-variant hover:text-primary transition-colors" href="#services">Services</a>
+            <a class="nav-link text-on-surface-variant hover:text-primary transition-colors" href="#work">Work</a>
+            <a class="nav-link text-on-surface-variant hover:text-primary transition-colors" href="#process">Process</a>
+            <a class="nav-link text-on-surface-variant hover:text-primary transition-colors" href="#integrations">Integrations</a>
+            <a class="nav-link text-on-surface-variant hover:text-primary transition-colors" href="#experience">Experience</a>
             <div class="flex items-center gap-4 ml-4">
                 <a href="#contact" class="px-4 py-2 border border-outline-variant hover:bg-surface-variant rounded-lg transition-all">Contact</a>
                 <a href="/booking" class="px-4 py-2 bg-primary text-background font-bold rounded-lg hover:opacity-90 transition-all">Book a Call</a>
@@ -228,12 +242,12 @@
     <div class="max-w-6xl mx-auto relative z-10">
         <div class="flex flex-col lg:flex-row items-center gap-12">
             <div class="flex-1 text-center lg:text-left">
-                <div class="inline-flex items-center px-3 py-1.5 bg-background/90 border border-primary/40 rounded-full mb-8 hero-fade-1 shadow-lg">
-                    <span class="w-2 h-2 rounded-full bg-primary mr-2 animate-pulse"></span>
-                    <span class="font-mono text-[14px] font-bold uppercase tracking-tighter" style="color:#B8D9FF;">GOHIGHLEVEL CRM &amp; AUTOMATION SPECIALIST</span>
+                <div class="inline-flex items-center px-3 py-1.5 bg-background/90 border border-primary/40 rounded-full mb-8 hero-fade-1 shadow-lg max-w-full">
+                    <span class="w-2 h-2 rounded-full bg-primary mr-2 flex-shrink-0 animate-pulse"></span>
+                    <span class="font-mono text-[10px] sm:text-[14px] font-bold uppercase tracking-tight sm:tracking-tighter whitespace-normal sm:whitespace-nowrap" style="color:#B8D9FF;">GOHIGHLEVEL CRM &amp; AUTOMATION SPECIALIST</span>
                 </div>
                 <h1 class="text-[30px] md:text-[44px] font-bold leading-[1.1] mb-8 hero-fade-2">
-                    I build powerful CRM systems<br/>that capture leads, <span class="text-primary">automate follow-ups</span><br/>and <span class="text-primary">drive more bookings.</span>
+                    I build powerful CRM systems<br class="hidden sm:inline"/>that capture leads, <span class="text-primary">automate follow-ups</span><br class="hidden sm:inline"/>and <span class="text-primary">drive more bookings.</span>
                 </h1>
                 <p class="text-on-surface-variant text-[18px] md:text-[20px] max-w-2xl mx-auto lg:mx-0 mb-12 leading-relaxed hero-fade-3">
                     GoHighLevel CRM systems, workflows, funnels, calendars, integrations and follow-up automations designed to help businesses convert more leads with less manual work.
@@ -304,7 +318,7 @@
 
             <!-- Photo frame with floating experience badge -->
             <div class="flex-shrink-0 relative">
-                <div class="w-96 md:w-[32rem] aspect-[896/1195] rounded-2xl border border-outline-variant bg-surface-variant/50 overflow-hidden flex items-center justify-center relative">
+                <div class="w-full max-w-[280px] sm:max-w-sm md:w-[32rem] mx-auto aspect-[896/1195] rounded-2xl border border-outline-variant bg-surface-variant/50 overflow-hidden flex items-center justify-center relative">
                     <!-- IMAGE PLACEHOLDER: replace src below with your headshot -->
                     <img src="My Image/Profile Image.jfif" alt="Abdul Wadood" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" />
                     <span class="material-symbols-outlined text-8xl text-primary/20">person</span>
