@@ -129,7 +129,10 @@
 
     /* --- mobile safety net: prevent horizontal overflow, tighten spacing, keep long labels from breaking layout --- */
     html, body { overflow-x: hidden; }
+    /* eyebrow badges: force them to wrap as ONE box, not a separate fragment per line */
+    .eyebrow-badge { display: inline-block; max-width: 100%; }
     @media (max-width: 640px) {
+        .eyebrow-badge { border-radius: 14px; line-height: 1.6; }
         section { padding-top: 3rem !important; padding-bottom: 3rem !important; }
         header { padding-top: 6.5rem !important; padding-bottom: 2.5rem !important; }
         .step-chip, .journey-node { white-space: normal; font-size: 10.5px; padding: 8px 12px; }
@@ -280,7 +283,7 @@
     <div class="max-w-6xl mx-auto">
         <div class="flex flex-col lg:flex-row items-center gap-16">
             <div class="flex-1">
-                <span class="font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">ABOUT ME</span>
+                <span class="eyebrow-badge font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">ABOUT ME</span>
                 <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">The Person Behind Every <span class="text-primary">Working System</span></h2>
                 <p class="text-on-surface-variant text-base leading-relaxed mb-10">I'm <span class="text-on-surface font-bold">Abdul Wadood</span>. I don't sell GoHighLevel &mdash; I build inside it, every day, for agencies, clinics, and service businesses that are tired of leads slipping through the cracks. If it's a pipeline, a follow-up, or an AI agent that actually answers the phone, chances are I've shipped it, tested it, and handed it over running.</p>
 
@@ -335,7 +338,7 @@
 <section class="py-24 px-6 bg-background section-reveal" id="skills">
     <div class="max-w-7xl mx-auto">
         <div class="mb-16">
-            <span class="font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">SKILLS</span>
+            <span class="eyebrow-badge font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">SKILLS</span>
             <h2 class="text-3xl font-bold mt-4">Tools I build with.</h2>
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
@@ -371,7 +374,7 @@
 <section class="py-24 px-6 bg-background section-reveal" id="services">
     <div class="max-w-6xl mx-auto">
         <div class="mb-16 text-center max-w-2xl mx-auto">
-            <span class="font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">SERVICES</span>
+            <span class="eyebrow-badge font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">SERVICES</span>
             <h2 class="text-3xl md:text-4xl font-bold mt-4">Everything your GoHighLevel setup <span class="text-primary">actually needs</span></h2>
             <p class="text-on-surface-variant text-base mt-4 leading-relaxed">Book these individually or roll them into one full build &mdash; whatever your account is missing right now.</p>
         </div>
@@ -512,7 +515,7 @@
 <!-- ============ FEATURED WORK INTRO ============ -->
 <section class="pt-8 pb-4 px-6 section-reveal" id="work">
     <div class="max-w-7xl mx-auto">
-        <span class="font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">FEATURED WORK</span>
+        <span class="eyebrow-badge font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">FEATURED WORK</span>
         <h2 class="text-3xl font-bold mt-4 max-w-2xl">Real CRM systems, built and shipped.</h2>
         <p class="text-on-surface-variant mt-4 max-w-2xl text-sm" style="font-size:16px;">Every project shown here was planned, built, tested, and launched as a complete GoHighLevel system &mdash; not just a template or theoretical concept.</p>
     </div>
@@ -524,7 +527,7 @@
 <section class="py-14 px-6 bg-surface" id="work-projects">
     <div class="max-w-7xl mx-auto space-y-10">
         <div class="glass-card rounded-3xl p-6 md:p-12 section-reveal">
-            <span class="font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">AUTOMOTIVE DETAILING &bull; GOHIGHLEVEL CRM &amp; AUTOMATION</span>
+            <span class="eyebrow-badge font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">AUTOMOTIVE DETAILING &bull; GOHIGHLEVEL CRM &amp; AUTOMATION</span>
             <h3 class="text-2xl md:text-3xl font-bold mt-4 mb-8">Element 6 Auto SPA</h3>
             <p class="text-on-surface-variant text-base max-w-4xl mb-12">Built a complete lead-to-customer automation system covering enquiries, appointment booking, invoicing, payments, follow-up, pipelines, and after-hours communication.</p>
 
@@ -625,7 +628,7 @@
 <!-- PROJECT 3: NOOR ESTHÉTIQUE & WELLNESS                         -->
 <!-- ============================================================ -->
         <div class="glass-card rounded-3xl p-6 md:p-12 section-reveal">
-            <span class="font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">MEDICAL WELLNESS &bull; CRM &bull; MEMBERSHIP AUTOMATION</span>
+            <span class="eyebrow-badge font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">MEDICAL WELLNESS &bull; CRM &bull; MEMBERSHIP AUTOMATION</span>
             <h3 class="text-2xl md:text-3xl font-bold mt-4 mb-8">Noor Esth&eacute;tique &amp; Wellness</h3>
             <p class="text-on-surface-variant text-base max-w-4xl mb-12">Built a complete patient lead, appointment, membership, communication, and reputation management system using GoHighLevel and Pabau.</p>
 
@@ -800,7 +803,7 @@
 <!-- PROJECT 4: VEGA MIDEIA CO.                                    -->
 <!-- ============================================================ -->
         <div class="glass-card rounded-3xl p-6 md:p-12 section-reveal">
-            <span class="font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">AGENCY OPERATIONS &bull; CRM &bull; CLIENT ONBOARDING</span>
+            <span class="eyebrow-badge font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">AGENCY OPERATIONS &bull; CRM &bull; CLIENT ONBOARDING</span>
             <h3 class="text-2xl md:text-3xl font-bold mt-4 mb-8">VEGA MIDEIA CO.</h3>
             <p class="text-on-surface-variant text-base max-w-4xl mb-12">Built a complete lead-to-active-client system connecting sales, contracts, invoicing, onboarding, project delivery, reporting, ClickUp, Google Workspace, and GoHighLevel.</p>
 
@@ -964,7 +967,7 @@
 <!-- PROJECT 2: WEBINAR REGISTRATION                               -->
 <!-- ============================================================ -->
         <div class="glass-card rounded-3xl p-6 md:p-12 section-reveal">
-            <span class="font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">WEBINAR FUNNEL &bull; GOHIGHLEVEL AUTOMATION</span>
+            <span class="eyebrow-badge font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">WEBINAR FUNNEL &bull; GOHIGHLEVEL AUTOMATION</span>
             <h3 class="text-2xl md:text-3xl font-bold mt-4 mb-8">Webinar Registration</h3>
             <p class="text-on-surface-variant text-base max-w-4xl mb-12">Built an automated webinar registration and post-event booking system that routes attendees into the correct consultation calendar.</p>
 
@@ -1057,7 +1060,7 @@
 <!-- ============ PROCESS (vertical timeline) ============ -->
 <section class="py-24 px-6 bg-surface section-reveal" id="process">
     <div class="max-w-2xl mx-auto text-center mb-14">
-        <span class="font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">MY PROCESS</span>
+        <span class="eyebrow-badge font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">MY PROCESS</span>
         <h2 class="text-3xl md:text-4xl font-bold mt-4 leading-tight">From first call to a system that <span class="text-primary">keeps paying off</span></h2>
         <p class="text-on-surface-variant text-base mt-4 leading-relaxed">Nothing happens behind closed doors. You always know what's being built, when it ships, and how it's performing.</p>
     </div>
@@ -1169,7 +1172,7 @@
 <!-- ============ INTEGRATIONS ============ -->
 <section class="py-24 px-6 bg-surface section-reveal" id="integrations">
     <div class="max-w-5xl mx-auto text-center">
-        <span class="font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">INTEGRATIONS</span>
+        <span class="eyebrow-badge font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">INTEGRATIONS</span>
         <h2 class="text-3xl md:text-4xl font-bold mt-4">Plugs straight into your <span class="text-primary">existing stack</span></h2>
         <p class="text-on-surface-variant text-base max-w-2xl mx-auto mt-4 mb-12 leading-relaxed">GoHighLevel becomes the hub, not another silo. Through native connections, webhooks, and custom API builds, every tool below stays in sync with your CRM &mdash; no double data entry, no manual exports.</p>
 
@@ -1197,7 +1200,7 @@
 <section class="py-24 px-6 bg-surface section-reveal" id="experience">
     <div class="max-w-4xl mx-auto">
         <div class="mb-16">
-            <span class="font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">CAREER TIMELINE</span>
+            <span class="eyebrow-badge font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">CAREER TIMELINE</span>
             <h2 class="text-3xl font-bold mt-4">Experience.</h2>
         </div>
 
@@ -1282,7 +1285,7 @@
 <section class="py-24 px-6 bg-surface section-reveal" id="contact">
     <div class="max-w-4xl mx-auto">
         <div class="mb-12 text-center">
-            <span class="font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">LET'S TALK</span>
+            <span class="eyebrow-badge font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">LET'S TALK</span>
             <h2 class="text-3xl font-bold mt-4">Let's automate your CRM.</h2>
             <p class="text-on-surface-variant mt-4 text-sm" style="font-size:18px;line-height:1.5;">Tell me a bit about your business and I'll get back to you within a day.</p>
         </div>
