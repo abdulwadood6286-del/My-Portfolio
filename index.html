@@ -132,13 +132,14 @@
 
     /* ===== SPACING SYSTEM: 100px desktop / 80px tablet / 60px mobile ===== */
     section { padding-top: 100px !important; padding-bottom: 100px !important; }
-    header { padding-top: 100px !important; padding-bottom: 100px !important; }
+    header { padding-top: 160px !important; padding-bottom: 100px !important; }
     @media (max-width: 1024px) and (min-width: 641px) {
-        section, header { padding-top: 80px !important; padding-bottom: 80px !important; }
+        section { padding-top: 80px !important; padding-bottom: 80px !important; }
+        header { padding-top: 130px !important; padding-bottom: 80px !important; }
     }
     @media (max-width: 640px) {
         section { padding-top: 60px !important; padding-bottom: 60px !important; }
-        header { padding-top: 92px !important; padding-bottom: 60px !important; } /* extra top clearance so content doesn't sit under the fixed nav */
+        header { padding-top: 110px !important; padding-bottom: 60px !important; } /* extra top clearance so content doesn't sit under the fixed nav */
     }
 
     /* ===== TYPOGRAPHY SYSTEM: body / small / button text ===== */
@@ -158,6 +159,32 @@
     .case-study-chevron { margin-left: auto; transition: transform .2s ease; color: #aeb9d0; }
     .case-study-details[open] .case-study-chevron { transform: rotate(180deg); color: #0EA5E9; }
     .case-study-content { padding-top: 24px; }
+
+    /* --- hero trust indicators: minimal, no cards, no borders, no glass --- */
+    .trust-indicators {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        row-gap: 16px;
+        column-gap: 48px;
+        opacity: 0;
+        transform: translateY(10px);
+        animation: trust-fade-in 0.6s ease 0.15s forwards;
+    }
+    .trust-indicator { display: flex; align-items: center; gap: 9px; }
+    .trust-indicator-icon { font-size: 20px; color: #0EA5E9; transition: opacity .25s ease; }
+    .trust-indicator-text { font-size: 15px; font-weight: 500; color: #aeb9d0; transition: color .25s ease; }
+    .trust-count { font-size: 22px; font-weight: 700; color: #0EA5E9; }
+    .trust-count-plus { font-size: 22px; font-weight: 700; color: #0EA5E9; }
+    .trust-indicator:hover .trust-indicator-icon { opacity: 0.7; }
+    .trust-indicator:hover .trust-indicator-text { color: #dae2fd; }
+    @keyframes trust-fade-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 640px) {
+        .trust-indicators { flex-direction: column; align-items: center; row-gap: 14px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+        .trust-indicators { animation: none; opacity: 1; transform: none; }
+    }
 
     /* --- FAQ accordion --- */
     .faq-item summary::-webkit-details-marker { display: none; }
@@ -282,18 +309,19 @@
         <div class="hero-orb three"></div>
     </div>
     <div class="max-w-6xl mx-auto relative z-10">
-        <div class="flex flex-col lg:flex-row items-center gap-12">
+        <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
             <div class="flex-1 text-center lg:text-left">
-                <div class="inline-flex items-center px-3 py-1.5 bg-background/90 border border-primary/40 rounded-full mb-8 hero-fade-1 shadow-lg max-w-full">
+                <div class="inline-flex items-center px-3 py-1.5 bg-background/90 border border-primary/40 rounded-full mb-6 sm:mb-8 hero-fade-1 shadow-lg max-w-full">
                     <span class="w-2 h-2 rounded-full bg-primary mr-2 flex-shrink-0 animate-pulse"></span>
                     <span class="font-mono text-[10px] sm:text-[14px] font-bold uppercase tracking-tight sm:tracking-tighter whitespace-normal sm:whitespace-nowrap" style="color:#B8D9FF;">GOHIGHLEVEL CRM &amp; AUTOMATION SPECIALIST</span>
                 </div>
-                <h1 class="text-[36px] md:text-[56px] font-bold leading-[1.1] mb-8 hero-fade-2">
+                <h1 class="text-[36px] md:text-[56px] font-bold leading-[1.1] mb-6 sm:mb-8 hero-fade-2">
                     I build powerful CRM systems<br class="hidden sm:inline"/>that capture leads, <span class="text-primary">automate follow-ups</span><br class="hidden sm:inline"/>and <span class="text-primary">drive more bookings.</span>
                 </h1>
-                <p class="body-copy text-on-surface-variant max-w-2xl mx-auto lg:mx-0 mb-12 hero-fade-3">
+                <p class="body-copy text-on-surface-variant max-w-2xl mx-auto lg:mx-0 mb-8 sm:mb-12 hero-fade-3">
                     GoHighLevel CRM systems, workflows, funnels, calendars, integrations and follow-up automations designed to help businesses convert more leads with less manual work.
                 </p>
+
                 <div class="flex flex-wrap gap-4 justify-center lg:justify-start hero-fade-4">
                     <a href="/booking" class="px-8 py-4 bg-primary text-background font-bold rounded-xl text-base shadow-lg shadow-primary/20 hover:scale-105 transition-transform">Book a Call</a>
                     <a href="#work" class="px-8 py-4 border border-outline-variant hover:bg-surface-variant font-bold rounded-xl text-base transition-all">View My Work</a>
@@ -310,9 +338,21 @@
             </div>
         </div>
 
-        <div class="mt-24 pt-12 border-t border-outline-variant text-center">
-            <p class="font-mono text-xs text-on-surface-variant tracking-wide mb-3">GoHighLevel &nbsp;&bull;&nbsp; Zapier &nbsp;&bull;&nbsp; CRM Automation &nbsp;&bull;&nbsp; Workflow Specialist &nbsp;&bull;&nbsp; Funnel Development &nbsp;&bull;&nbsp; AI Voice &amp; Chat</p>
-            <p class="font-mono text-xs text-primary tracking-wide">Automation &amp; CRM Workflow Trained</p>
+        <div class="mt-12 sm:mt-24 pt-6 sm:pt-12 border-t border-outline-variant">
+            <div class="trust-indicators justify-center">
+                <div class="trust-indicator">
+                    <span class="material-symbols-outlined trust-indicator-icon">work</span>
+                    <span class="trust-indicator-text"><span class="trust-count" data-target="5" data-duration="1500">0</span><span class="trust-count-plus">+</span> Years Experience</span>
+                </div>
+                <div class="trust-indicator">
+                    <span class="material-symbols-outlined trust-indicator-icon">bolt</span>
+                    <span class="trust-indicator-text"><span class="trust-count" data-target="100" data-duration="2000">0</span><span class="trust-count-plus">+</span> CRM Automations Built</span>
+                </div>
+                <div class="trust-indicator">
+                    <span class="material-symbols-outlined trust-indicator-icon">hub</span>
+                    <span class="trust-indicator-text">GoHighLevel &bull; Zapier &bull; AI Voice Agents</span>
+                </div>
+            </div>
         </div>
     </div>
 </header>
@@ -360,7 +400,7 @@
 
             <!-- Photo frame with floating experience badge -->
             <div class="flex-shrink-0 relative">
-                <div class="w-full max-w-[280px] sm:max-w-sm md:w-[32rem] mx-auto aspect-[896/1195] rounded-2xl border border-outline-variant bg-surface-variant/50 overflow-hidden flex items-center justify-center relative">
+                <div class="w-96 md:w-[32rem] aspect-[896/1195] rounded-2xl border border-outline-variant bg-surface-variant/50 overflow-hidden flex items-center justify-center relative">
                     <!-- IMAGE PLACEHOLDER: replace src below with your headshot -->
                     <img src="My Image/Profile Image.jfif" alt="Abdul Wadood" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" />
                     <span class="material-symbols-outlined text-8xl text-primary/20">person</span>
@@ -1549,6 +1589,33 @@
             }
         });
         mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+
+        // hero trust indicator count-up — smooth ease-out, runs once on page load
+        (function trustCountUp() {
+            const counters = document.querySelectorAll('.trust-count');
+            if (!counters.length) return;
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            counters.forEach((el) => {
+                const target = parseInt(el.dataset.target, 10) || 0;
+                const duration = parseInt(el.dataset.duration, 10) || 1500;
+
+                if (reduceMotion) {
+                    el.textContent = target;
+                    return;
+                }
+
+                const start = performance.now();
+                function tick(now) {
+                    const progress = Math.min((now - start) / duration, 1);
+                    const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic, no bounce
+                    el.textContent = Math.round(eased * target);
+                    if (progress < 1) requestAnimationFrame(tick);
+                    else el.textContent = target;
+                }
+                requestAnimationFrame(tick);
+            });
+        })();
 
         // hero live network animation — nodes connecting like a CRM automation flow
         (function heroNetwork() {
