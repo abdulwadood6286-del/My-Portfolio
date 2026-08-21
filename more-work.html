@@ -179,6 +179,12 @@
         section { padding-top: 3rem !important; padding-bottom: 3rem !important; }
         header { padding-top: 7rem !important; padding-bottom: 2.5rem !important; }
     }
+
+    /* --- social icons: hover with each platform's real brand color, not site blue --- */
+    .social-icon { transition: color .2s ease, border-color .2s ease, background-color .2s ease; }
+    .social-icon.social-email:hover { color: #EA4335; border-color: rgba(234,67,53,0.5); }
+    .social-icon.social-whatsapp:hover { color: #25D366; border-color: rgba(37,211,102,0.5); }
+    .social-icon.social-linkedin:hover { color: #0A66C2; border-color: rgba(10,102,194,0.5); }
 </style>
 <script id="tailwind-config">
     tailwind.config = {
@@ -514,13 +520,13 @@
                 <span class="font-mono text-sm uppercase tracking-widest font-bold">Abdul Wadood</span>
             </a>
             <div class="flex items-center gap-4">
-                <a class="w-10 h-10 rounded-full bg-surface-variant border border-outline-variant flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary/50 transition-colors" href="https://mail.google.com/mail/?view=cm&fs=1&to=abdulwadood6286@gmail.com" target="_blank" rel="noopener" aria-label="Email Abdul Wadood" title="abdulwadood6286@gmail.com">
+                <a class="w-10 h-10 rounded-full bg-surface-variant border border-outline-variant flex items-center justify-center text-on-surface-variant social-icon social-email transition-colors" href="https://mail.google.com/mail/?view=cm&fs=1&to=abdulwadood6286@gmail.com" target="_blank" rel="noopener" aria-label="Email Abdul Wadood" title="abdulwadood6286@gmail.com">
                     <span class="material-symbols-outlined text-lg">mail</span>
                 </a>
-                <a class="w-10 h-10 rounded-full bg-surface-variant border border-outline-variant flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary/50 transition-colors" href="https://wa.me/923352392000" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" title="WhatsApp: +92 335 2392000">
+                <a class="w-10 h-10 rounded-full bg-surface-variant border border-outline-variant flex items-center justify-center text-on-surface-variant social-icon social-whatsapp transition-colors" href="https://wa.me/923352392000" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" title="WhatsApp: +92 335 2392000">
                     <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.45 1.32 4.94L2 22l5.2-1.36c1.43.78 3.05 1.2 4.84 1.2 5.52 0 10-4.48 10-10s-4.48-10-10-10zm5.87 14.24c-.25.7-1.24 1.29-2.02 1.46-.54.11-1.24.2-3.62-.78-3.04-1.26-5-4.33-5.15-4.53-.15-.2-1.23-1.64-1.23-3.13s.77-2.22 1.05-2.52c.27-.3.6-.38.8-.38h.57c.18 0 .43-.07.67.51.25.6.85 2.08.92 2.23.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.18-.31.4-.44.53-.15.15-.3.31-.13.6.17.3.75 1.24 1.62 2.01 1.11.99 2.05 1.3 2.35 1.45.3.15.48.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.28.1 1.77.84 2.08 1 .3.15.5.23.58.35.07.13.07.75-.19 1.44z"/></svg>
                 </a>
-                <a class="w-10 h-10 rounded-full bg-surface-variant border border-outline-variant flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary/50 transition-colors" href="https://www.linkedin.com/in/abdul-wadood-0682b930b?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener" aria-label="Abdul Wadood on LinkedIn" title="LinkedIn">
+                <a class="w-10 h-10 rounded-full bg-surface-variant border border-outline-variant flex items-center justify-center text-on-surface-variant social-icon social-linkedin transition-colors" href="https://www.linkedin.com/in/abdul-wadood-0682b930b?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener" aria-label="Abdul Wadood on LinkedIn" title="LinkedIn">
                     <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 18v-8.4H5.67V18h2.67zM7 8.48a1.55 1.55 0 1 0 0-3.1 1.55 1.55 0 0 0 0 3.1zM18.34 18v-4.6c0-2.46-1.31-3.6-3.06-3.6-1.41 0-2.04.78-2.39 1.32V9.6h-2.67c.04.75 0 8.4 0 8.4h2.67v-4.69c0-.25.02-.5.09-.68.2-.5.66-1.03 1.44-1.03 1.02 0 1.42.77 1.42 1.9V18h2.5z"/></svg>
                 </a>
             </div>
