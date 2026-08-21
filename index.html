@@ -68,12 +68,9 @@
     .about-card:hover .about-card-icon { background-color: rgba(14,165,233,0.2); border-color: rgba(14,165,233,0.6); transform: scale(1.08); }
     .about-card-icon { transition: background-color .25s ease, border-color .25s ease, transform .25s ease; }
 
-    .journey-track { display: flex; flex-wrap: nowrap; gap: 10px; overflow-x: auto; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; padding-bottom: 10px; scrollbar-width: thin; scrollbar-color: #0EA5E9 transparent; }
-    .journey-track::-webkit-scrollbar { height: 6px; }
-    .journey-track::-webkit-scrollbar-track { background: rgba(14,165,233,0.12); border-radius: 999px; }
-    .journey-track::-webkit-scrollbar-thumb { background: #0EA5E9; border-radius: 999px; }
-    .journey-node { flex: 0 0 auto; scroll-snap-align: start; display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: #171f33; border: 1px solid #2d3449; border-left: 2px solid #0EA5E9; border-radius: 8px; font-size: 10.5px; white-space: nowrap; }
-    .journey-node .num { font-family: 'JetBrains Mono', monospace; color: #0EA5E9; font-weight: 700; }
+    .journey-track { display: flex; flex-direction: column; gap: 8px; }
+    .journey-node { display: flex; align-items: center; gap: 10px; padding: 11px 15px; background: #171f33; border: 1px solid #2d3449; border-radius: 8px; font-size: 12px; }
+    .journey-node .num { flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: rgba(14,165,233,0.15); font-family: 'JetBrains Mono', monospace; color: #0EA5E9; font-weight: 700; font-size: 10px; }
     .gallery-frame-label { font-size: 9px; font-family: 'JetBrains Mono', monospace; color: #aeb9d0; text-align: center; padding: 6px 4px; line-height: 1.25; }
 
     /* --- image slider --- */
@@ -158,6 +155,9 @@
     .case-study-summary:hover { border-color: rgba(14,165,233,0.5); background: #1c2540; }
     .case-study-chevron { margin-left: auto; transition: transform .2s ease; color: #aeb9d0; }
     .case-study-details[open] .case-study-chevron { transform: rotate(180deg); color: #0EA5E9; }
+    .case-study-label-open { display: none; }
+    .case-study-details[open] .case-study-label-open { display: inline; }
+    .case-study-details[open] .case-study-label-closed { display: none; }
     .case-study-content { padding-top: 24px; }
 
     /* --- hero trust indicators: minimal, no cards, no borders, no glass --- */
@@ -737,10 +737,28 @@
                 </div>
             </div>
 
+            <h4 class="font-mono text-xs uppercase tracking-widest text-primary mb-1">Featured Screenshots</h4>
+            <p class="text-xs text-on-surface-variant mb-6">A few highlights from this build. Click any image to enlarge.</p>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Element 6 Auto SPA/Screenshot_97.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">1. Workflow List</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Element 6 Auto SPA/Screenshot_95.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">2. Website Contact Form</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Element 6 Auto SPA/Screenshot_88.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">3. Welcome Email and Booking Link</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Element 6 Auto SPA/Screenshot_94.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">4. Appointment Booking Confirmation</p></div>
+            </div>
+
             <details class="case-study-details">
                 <summary class="case-study-summary">
                     <span class="material-symbols-outlined text-primary">photo_library</span>
-                    <span>View Full Gallery &amp; Customer Journey &mdash; Element 6 Auto SPA</span>
+                    <span class="case-study-label-closed">View Full Gallery &amp; Customer Journey &mdash; Element 6 Auto SPA</span>
+                    <span class="case-study-label-open">Hide Full Gallery &amp; Customer Journey &mdash; Element 6 Auto SPA</span>
                     <span class="material-symbols-outlined case-study-chevron">expand_more</span>
                 </summary>
                 <div class="case-study-content">
@@ -893,10 +911,28 @@
                 </div>
             </div>
 
+            <h4 class="font-mono text-xs uppercase tracking-widest text-primary mb-1">Featured Screenshots</h4>
+            <p class="text-xs text-on-surface-variant mb-6">A few highlights from this build. Click any image to enlarge.</p>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-[4/3] flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Noor Esthétique & Wellness/Screenshot_90.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">1. Noor Website Contact Form</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-[4/3] flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Noor Esthétique & Wellness/Screenshot_89.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">2. Noor Website Booking Page</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-[4/3] flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Noor Esthétique & Wellness/Screenshot_106.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">3. Contact Form Submission Workflow</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-[4/3] flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Noor Esthétique & Wellness/Screenshot_91.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">4. Service Form Submission Workflow</p></div>
+            </div>
+
             <details class="case-study-details">
                 <summary class="case-study-summary">
                     <span class="material-symbols-outlined text-primary">photo_library</span>
-                    <span>View Full Gallery &amp; Customer Journey &mdash; Noor Esthétique & Wellness</span>
+                    <span class="case-study-label-closed">View Full Gallery &amp; Customer Journey &mdash; Noor Esthétique & Wellness</span>
+                    <span class="case-study-label-open">Hide Full Gallery &amp; Customer Journey &mdash; Noor Esthétique & Wellness</span>
                     <span class="material-symbols-outlined case-study-chevron">expand_more</span>
                 </summary>
                 <div class="case-study-content">
@@ -1025,10 +1061,28 @@
                 </div>
             </div>
 
+            <h4 class="font-mono text-xs uppercase tracking-widest text-primary mb-1">Featured Screenshots</h4>
+            <p class="text-xs text-on-surface-variant mb-6">A few highlights from this build. Click any image to enlarge.</p>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="Mustafa/Screenshot_93.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-lg text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">1. Website Lead Capture Form</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="Mustafa/Screenshot_95.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-lg text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">2. VEGA Sales Pipeline</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="Mustafa/Screenshot_112.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-lg text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">3. Welcome Email With Booking Link</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="Mustafa/Screenshot_98.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-lg text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">4. Appointment Confirmation Workflow</p></div>
+            </div>
+
             <details class="case-study-details">
                 <summary class="case-study-summary">
                     <span class="material-symbols-outlined text-primary">photo_library</span>
-                    <span>View Full Gallery &amp; Customer Journey &mdash; VEGA MIDEIA CO.</span>
+                    <span class="case-study-label-closed">View Full Gallery &amp; Customer Journey &mdash; VEGA MIDEIA CO.</span>
+                    <span class="case-study-label-open">Hide Full Gallery &amp; Customer Journey &mdash; VEGA MIDEIA CO.</span>
                     <span class="material-symbols-outlined case-study-chevron">expand_more</span>
                 </summary>
                 <div class="case-study-content">
@@ -1208,10 +1262,28 @@
                 </div>
             </div>
 
+            <h4 class="font-mono text-xs uppercase tracking-widest text-primary mb-1">Featured Screenshots</h4>
+            <p class="text-xs text-on-surface-variant mb-6">A few highlights from this build. Click any image to enlarge.</p>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./RMJ Consultant/Screenshot_98.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">1. Workflow List</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./RMJ Consultant/Screenshot_94.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">2. Webinar Register Workflow</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./RMJ Consultant/Screenshot_97.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">3. Attendance Condition Workflow</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./RMJ Consultant/Screenshot_99.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">4. Service Selection Form</p></div>
+            </div>
+
             <details class="case-study-details">
                 <summary class="case-study-summary">
                     <span class="material-symbols-outlined text-primary">photo_library</span>
-                    <span>View Full Gallery &amp; Customer Journey &mdash; the Webinar Registration funnel</span>
+                    <span class="case-study-label-closed">View Full Gallery &amp; Customer Journey &mdash; the Webinar Registration funnel</span>
+                    <span class="case-study-label-open">Hide Full Gallery &amp; Customer Journey &mdash; the Webinar Registration funnel</span>
                     <span class="material-symbols-outlined case-study-chevron">expand_more</span>
                 </summary>
                 <div class="case-study-content">
@@ -1389,23 +1461,59 @@
         <h2 class="text-[28px] md:text-[42px] font-bold mt-4">Plugs straight into your <span class="text-primary">existing stack</span></h2>
         <p class="text-on-surface-variant text-base max-w-2xl mx-auto mt-4 mb-12 leading-relaxed">GoHighLevel becomes the hub, not another silo. Through native connections, webhooks, and custom API builds, every tool below stays in sync with your CRM &mdash; no double data entry, no manual exports.</p>
 
-        <div class="flex flex-wrap justify-center gap-3">
-            <span class="px-6 py-3 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">Stripe</span>
-            <span class="px-6 py-3 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">Twilio</span>
-            <span class="px-6 py-3 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">OpenAI</span>
-            <span class="px-6 py-3 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">Mailgun</span>
-            <span class="px-6 py-3 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">Google</span>
-            <span class="px-6 py-3 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">Facebook</span>
-            <span class="px-6 py-3 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">Instagram</span>
-            <span class="px-6 py-3 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">TikTok</span>
-            <span class="px-6 py-3 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">Zapier</span>
-            <span class="px-6 py-3 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">Make</span>
-            <span class="px-6 py-3 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">n8n</span>
-            <span class="px-6 py-3 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">Slack</span>
-            <span class="px-6 py-3 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">QuickBooks</span>
-            <span class="px-6 py-3 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">Calendly</span>
-            <span class="px-6 py-3 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">Webhook</span>
-            <span class="px-6 py-3 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">REST API</span>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-8 text-left mt-4">
+            <div>
+                <h3 class="font-mono text-[11px] text-primary uppercase tracking-widest mb-3">CRM &amp; Automation</h3>
+                <div class="flex flex-wrap gap-2.5">
+                    <span class="px-5 py-2.5 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">GoHighLevel</span>
+                    <span class="px-5 py-2.5 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">Zapier</span>
+                    <span class="px-5 py-2.5 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">Make</span>
+                    <span class="px-5 py-2.5 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">n8n</span>
+                </div>
+            </div>
+            <div>
+                <h3 class="font-mono text-[11px] text-primary uppercase tracking-widest mb-3">Communication</h3>
+                <div class="flex flex-wrap gap-2.5">
+                    <span class="px-5 py-2.5 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">Twilio</span>
+                    <span class="px-5 py-2.5 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">Mailgun</span>
+                    <span class="px-5 py-2.5 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">Slack</span>
+                </div>
+            </div>
+            <div>
+                <h3 class="font-mono text-[11px] text-primary uppercase tracking-widest mb-3">Payments</h3>
+                <div class="flex flex-wrap gap-2.5">
+                    <span class="px-5 py-2.5 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">Stripe</span>
+                    <span class="px-5 py-2.5 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">QuickBooks</span>
+                </div>
+            </div>
+            <div>
+                <h3 class="font-mono text-[11px] text-primary uppercase tracking-widest mb-3">AI</h3>
+                <div class="flex flex-wrap gap-2.5">
+                    <span class="px-5 py-2.5 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">OpenAI</span>
+                </div>
+            </div>
+            <div>
+                <h3 class="font-mono text-[11px] text-primary uppercase tracking-widest mb-3">Scheduling</h3>
+                <div class="flex flex-wrap gap-2.5">
+                    <span class="px-5 py-2.5 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">Calendly</span>
+                </div>
+            </div>
+            <div>
+                <h3 class="font-mono text-[11px] text-primary uppercase tracking-widest mb-3">Platforms &amp; Social</h3>
+                <div class="flex flex-wrap gap-2.5">
+                    <span class="px-5 py-2.5 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">Google</span>
+                    <span class="px-5 py-2.5 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">Facebook</span>
+                    <span class="px-5 py-2.5 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">Instagram</span>
+                    <span class="px-5 py-2.5 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">TikTok</span>
+                </div>
+            </div>
+            <div class="sm:col-span-2 lg:col-span-1">
+                <h3 class="font-mono text-[11px] text-primary uppercase tracking-widest mb-3">Development &amp; APIs</h3>
+                <div class="flex flex-wrap gap-2.5">
+                    <span class="px-5 py-2.5 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">Webhook</span>
+                    <span class="px-5 py-2.5 bg-surface-variant border border-outline-variant rounded-full text-sm font-semibold text-on-surface hover:border-primary/50 hover:text-primary transition-colors">REST API</span>
+                </div>
+            </div>
         </div>
     </div>
 </section>
