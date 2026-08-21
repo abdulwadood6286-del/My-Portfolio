@@ -68,8 +68,11 @@
     .about-card:hover .about-card-icon { background-color: rgba(14,165,233,0.2); border-color: rgba(14,165,233,0.6); transform: scale(1.08); }
     .about-card-icon { transition: background-color .25s ease, border-color .25s ease, transform .25s ease; }
 
-    .journey-track { display: flex; flex-wrap: wrap; gap: 10px; }
-    .journey-node { display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: #171f33; border: 1px solid #2d3449; border-left: 2px solid #0EA5E9; border-radius: 8px; font-size: 10.5px; white-space: nowrap; }
+    .journey-track { display: flex; flex-wrap: nowrap; gap: 10px; overflow-x: auto; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; padding-bottom: 10px; scrollbar-width: thin; scrollbar-color: #0EA5E9 transparent; }
+    .journey-track::-webkit-scrollbar { height: 6px; }
+    .journey-track::-webkit-scrollbar-track { background: rgba(14,165,233,0.12); border-radius: 999px; }
+    .journey-track::-webkit-scrollbar-thumb { background: #0EA5E9; border-radius: 999px; }
+    .journey-node { flex: 0 0 auto; scroll-snap-align: start; display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: #171f33; border: 1px solid #2d3449; border-left: 2px solid #0EA5E9; border-radius: 8px; font-size: 10.5px; white-space: nowrap; }
     .journey-node .num { font-family: 'JetBrains Mono', monospace; color: #0EA5E9; font-weight: 700; }
     .gallery-frame-label { font-size: 9px; font-family: 'JetBrains Mono', monospace; color: #aeb9d0; text-align: center; padding: 6px 4px; line-height: 1.25; }
 
@@ -127,16 +130,50 @@
         .experience-badge .badge-label { font-size: 9.5px; }
     }
 
-    /* --- mobile safety net: prevent horizontal overflow, tighten spacing, keep long labels from breaking layout --- */
+    /* ===== SPACING SYSTEM: 100px desktop / 80px tablet / 60px mobile ===== */
+    section { padding-top: 100px !important; padding-bottom: 100px !important; }
+    header { padding-top: 100px !important; padding-bottom: 100px !important; }
+    @media (max-width: 1024px) and (min-width: 641px) {
+        section, header { padding-top: 80px !important; padding-bottom: 80px !important; }
+    }
+    @media (max-width: 640px) {
+        section { padding-top: 60px !important; padding-bottom: 60px !important; }
+        header { padding-top: 92px !important; padding-bottom: 60px !important; } /* extra top clearance so content doesn't sit under the fixed nav */
+    }
+
+    /* ===== TYPOGRAPHY SYSTEM: body / small / button text ===== */
+    .body-copy { font-size: 18px; line-height: 1.8; }
+    .small-copy { font-size: 16px; line-height: 1.6; }
+    .btn-cta { font-size: 16px; font-weight: 600; }
+    @media (max-width: 640px) {
+        .body-copy { font-size: 16px; }
+        .small-copy { font-size: 14px; }
+    }
+
+    /* --- case study accordion (project Gallery + Customer Journey) --- */
+    .case-study-details { margin-top: 32px; border-top: 1px solid #2d3449; padding-top: 24px; }
+    .case-study-summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; color: #dae2fd; padding: 14px 18px; background: #171f33; border: 1px solid #2d3449; border-radius: 12px; transition: border-color .2s ease, background .2s ease; outline: none; }
+    .case-study-summary::-webkit-details-marker { display: none; }
+    .case-study-summary:hover { border-color: rgba(14,165,233,0.5); background: #1c2540; }
+    .case-study-chevron { margin-left: auto; transition: transform .2s ease; color: #aeb9d0; }
+    .case-study-details[open] .case-study-chevron { transform: rotate(180deg); color: #0EA5E9; }
+    .case-study-content { padding-top: 24px; }
+
+    /* --- FAQ accordion --- */
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary { outline: none; }
+    .faq-item[open] summary .material-symbols-outlined { transform: rotate(45deg); }
+    .faq-item { transition: border-color .2s ease; }
+    .faq-item[open] { border-color: rgba(14,165,233,0.4); }
+
+    /* --- mobile safety net: prevent horizontal overflow, keep long labels from breaking layout --- */
     html, body { overflow-x: hidden; }
     /* eyebrow badges: force them to wrap as ONE box, not a separate fragment per line */
     .eyebrow-badge { display: inline-block; max-width: 100%; }
     @media (max-width: 640px) {
         .eyebrow-badge { border-radius: 14px; line-height: 1.6; }
-        section { padding-top: 3rem !important; padding-bottom: 3rem !important; }
-        header { padding-top: 6.5rem !important; padding-bottom: 2.5rem !important; }
-        .step-chip, .journey-node { white-space: normal; font-size: 10.5px; padding: 8px 12px; }
-        .journey-track { gap: 8px; }
+        .step-chip { white-space: normal; font-size: 10.5px; padding: 8px 12px; }
+        .journey-node { font-size: 10px; padding: 8px 12px; }
     }
 
     /* --- hero automation cascade: two-column auto-scrolling screenshot grid --- */
@@ -205,11 +242,12 @@
         <div class="hidden md:flex items-center gap-8 text-sm font-medium">
             <a class="nav-link text-on-surface-variant hover:text-primary transition-colors" href="#about">About</a>
             <a class="nav-link text-on-surface-variant hover:text-primary transition-colors" href="#skills">Skills</a>
+            <a class="nav-link text-on-surface-variant hover:text-primary transition-colors" href="#experience">Experience</a>
             <a class="nav-link text-on-surface-variant hover:text-primary transition-colors" href="#services">Services</a>
             <a class="nav-link text-on-surface-variant hover:text-primary transition-colors" href="#work">Work</a>
             <a class="nav-link text-on-surface-variant hover:text-primary transition-colors" href="#process">Process</a>
             <a class="nav-link text-on-surface-variant hover:text-primary transition-colors" href="#integrations">Integrations</a>
-            <a class="nav-link text-on-surface-variant hover:text-primary transition-colors" href="#experience">Experience</a>
+            <a class="nav-link text-on-surface-variant hover:text-primary transition-colors" href="#faq">FAQ</a>
             <div class="flex items-center gap-4 ml-4">
                 <a href="#contact" class="px-4 py-2 border border-outline-variant hover:bg-surface-variant rounded-lg transition-all">Contact</a>
                 <a href="/booking" class="px-4 py-2 bg-primary text-background font-bold rounded-lg hover:opacity-90 transition-all">Book a Call</a>
@@ -223,11 +261,12 @@
         <div class="flex flex-col gap-1 px-6 pb-6 pt-2">
             <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#about">About</a>
             <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#skills">Skills</a>
+            <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#experience">Experience</a>
             <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#services">Services</a>
             <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#work">Work</a>
             <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#process">Process</a>
             <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#integrations">Integrations</a>
-            <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#experience">Experience</a>
+            <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#faq">FAQ</a>
             <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#contact">Contact</a>
             <a href="/booking" class="mt-4 px-4 py-3 bg-primary text-background font-bold rounded-lg text-center">Book a Call</a>
         </div>
@@ -249,15 +288,15 @@
                     <span class="w-2 h-2 rounded-full bg-primary mr-2 flex-shrink-0 animate-pulse"></span>
                     <span class="font-mono text-[10px] sm:text-[14px] font-bold uppercase tracking-tight sm:tracking-tighter whitespace-normal sm:whitespace-nowrap" style="color:#B8D9FF;">GOHIGHLEVEL CRM &amp; AUTOMATION SPECIALIST</span>
                 </div>
-                <h1 class="text-[30px] md:text-[44px] font-bold leading-[1.1] mb-8 hero-fade-2">
+                <h1 class="text-[36px] md:text-[56px] font-bold leading-[1.1] mb-8 hero-fade-2">
                     I build powerful CRM systems<br class="hidden sm:inline"/>that capture leads, <span class="text-primary">automate follow-ups</span><br class="hidden sm:inline"/>and <span class="text-primary">drive more bookings.</span>
                 </h1>
-                <p class="text-on-surface-variant text-[18px] md:text-[20px] max-w-2xl mx-auto lg:mx-0 mb-12 leading-relaxed hero-fade-3">
+                <p class="body-copy text-on-surface-variant max-w-2xl mx-auto lg:mx-0 mb-12 hero-fade-3">
                     GoHighLevel CRM systems, workflows, funnels, calendars, integrations and follow-up automations designed to help businesses convert more leads with less manual work.
                 </p>
                 <div class="flex flex-wrap gap-4 justify-center lg:justify-start hero-fade-4">
-                    <a href="#work" class="px-8 py-4 bg-primary text-background font-bold rounded-xl text-base hover:scale-105 transition-transform">View My Work</a>
-                    <a href="/booking" class="px-8 py-4 border border-outline-variant hover:bg-surface-variant font-bold rounded-xl text-base transition-all">Book a Call</a>
+                    <a href="/booking" class="px-8 py-4 bg-primary text-background font-bold rounded-xl text-base shadow-lg shadow-primary/20 hover:scale-105 transition-transform">Book a Call</a>
+                    <a href="#work" class="px-8 py-4 border border-outline-variant hover:bg-surface-variant font-bold rounded-xl text-base transition-all">View My Work</a>
                 </div>
             </div>
 
@@ -284,8 +323,8 @@
         <div class="flex flex-col lg:flex-row items-center gap-16">
             <div class="flex-1">
                 <span class="eyebrow-badge font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">ABOUT ME</span>
-                <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">The Person Behind Every <span class="text-primary">Working System</span></h2>
-                <p class="text-on-surface-variant text-base leading-relaxed mb-10">I'm <span class="text-on-surface font-bold">Abdul Wadood</span>. I don't sell GoHighLevel &mdash; I build inside it, every day, for agencies, clinics, and service businesses that are tired of leads slipping through the cracks. If it's a pipeline, a follow-up, or an AI agent that actually answers the phone, chances are I've shipped it, tested it, and handed it over running.</p>
+                <h2 class="text-[28px] md:text-[42px] font-bold mt-4 mb-6">The Person Behind Every <span class="text-primary">Working System</span></h2>
+                <p class="body-copy text-on-surface-variant mb-10">I'm <span class="text-on-surface font-bold">Abdul Wadood</span>. I don't sell GoHighLevel &mdash; I build inside it, every day, for agencies, clinics, and service businesses that are tired of leads slipping through the cracks. If it's a pipeline, a follow-up, or an AI agent that actually answers the phone, chances are I've shipped it, tested it, and handed it over running.</p>
 
                 <div class="grid sm:grid-cols-2 gap-5">
                     <div class="bg-surface-variant border border-outline-variant p-5 rounded-2xl about-card">
@@ -321,7 +360,8 @@
 
             <!-- Photo frame with floating experience badge -->
             <div class="flex-shrink-0 relative">
-<div class="w-96 md:w-[32rem] aspect-[896/1195] rounded-2xl border border-outline-variant bg-surface-variant/50 overflow-hidden flex items-center justify-center relative">                    <!-- IMAGE PLACEHOLDER: replace src below with your headshot -->
+                <div class="w-full max-w-[280px] sm:max-w-sm md:w-[32rem] mx-auto aspect-[896/1195] rounded-2xl border border-outline-variant bg-surface-variant/50 overflow-hidden flex items-center justify-center relative">
+                    <!-- IMAGE PLACEHOLDER: replace src below with your headshot -->
                     <img src="My Image/Profile Image.jfif" alt="Abdul Wadood" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" />
                     <span class="material-symbols-outlined text-8xl text-primary/20">person</span>
                 </div>
@@ -339,7 +379,7 @@
     <div class="max-w-7xl mx-auto">
         <div class="mb-16">
             <span class="eyebrow-badge font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">SKILLS</span>
-            <h2 class="text-3xl font-bold mt-4">Tools I build with.</h2>
+            <h2 class="text-[28px] md:text-[42px] font-bold mt-4">Tools I build with.</h2>
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
             <div class="lg:col-span-2">
@@ -370,13 +410,98 @@
     </div>
 </section>
 
+<!-- ============ EXPERIENCE ============ -->
+<section class="py-24 px-6 bg-surface section-reveal" id="experience">
+    <div class="max-w-4xl mx-auto">
+        <div class="mb-16">
+            <span class="eyebrow-badge font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">CAREER TIMELINE</span>
+            <h2 class="text-[28px] md:text-[42px] font-bold mt-4">Experience.</h2>
+        </div>
+
+        <div class="relative pl-8 md:pl-10">
+            <div class="absolute left-[7px] md:left-[9px] top-2 bottom-2 w-px bg-outline-variant"></div>
+
+            <!-- FNNLX -->
+            <div class="relative mb-4">
+                <div class="absolute -left-8 md:-left-10 top-1 w-4 h-4 rounded-full bg-primary/15 border-2 border-primary flex items-center justify-center">
+                    <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                </div>
+                <span class="font-mono text-[10px] text-primary uppercase tracking-widest">March 2021 &mdash; March 2025</span>
+                <h3 class="text-xl font-bold mt-1">FNNLX</h3>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 mb-10 ml-2">
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center pt-1">
+                            <div class="w-2 h-2 rounded-full bg-primary"></div>
+                            <div class="w-px flex-1 bg-outline-variant mt-1"></div>
+                        </div>
+                        <div class="pb-2">
+                            <span class="font-mono text-[10px] text-on-surface-variant uppercase tracking-widest">Mar 2021 &mdash; Mar 2022 &bull; 1 yr</span>
+                            <h4 class="font-bold text-sm mt-1">Funnel Builder</h4>
+                            <p class="text-xs text-on-surface-variant mt-1">Started here building sales funnels and landing pages, laying the foundation for what would grow into full CRM and automation work.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center pt-1">
+                            <div class="w-2 h-2 rounded-full bg-primary"></div>
+                            <div class="w-px flex-1 bg-outline-variant mt-1"></div>
+                        </div>
+                        <div class="pb-2">
+                            <span class="font-mono text-[10px] text-on-surface-variant uppercase tracking-widest">Mar 2022 &mdash; Sep 2023 &bull; 1.5 yrs</span>
+                            <h4 class="font-bold text-sm mt-1">Automation Specialist</h4>
+                            <p class="text-xs text-on-surface-variant mt-1">Promoted to focus on CRM workflows and automations, building the systems-thinking that now anchors my GoHighLevel work.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center pt-1">
+                            <div class="w-2 h-2 rounded-full bg-primary"></div>
+                        </div>
+                        <div>
+                            <span class="font-mono text-[10px] text-on-surface-variant uppercase tracking-widest">Sep 2023 &mdash; Mar 2025 &bull; 1.5 yrs</span>
+                            <h4 class="font-bold text-sm mt-1">Project Manager</h4>
+                            <p class="text-xs text-on-surface-variant mt-1">Moved into managing client projects end-to-end, overseeing delivery, timelines, and the automation systems built for each account.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Techbridge -->
+            <div class="relative mb-4">
+                <div class="absolute -left-8 md:-left-10 top-1 w-4 h-4 rounded-full bg-primary/15 border-2 border-primary flex items-center justify-center">
+                    <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                </div>
+                <div class="flex items-center gap-3 flex-wrap">
+                    <span class="font-mono text-[10px] text-primary uppercase tracking-widest">April 2025 &mdash; Present</span>
+                    <span class="font-mono text-[9px] uppercase tracking-widest text-primary bg-primary/10 border border-primary/30 px-2 py-0.5 rounded-full">Current</span>
+                </div>
+                <h3 class="text-xl font-bold mt-1">Techbridge</h3>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 ml-2">
+                <div class="flex gap-4">
+                    <div class="flex flex-col items-center pt-1">
+                        <div class="w-2 h-2 rounded-full bg-primary"></div>
+                    </div>
+                    <div>
+                        <span class="font-mono text-[10px] text-on-surface-variant uppercase tracking-widest">Apr 2025 &mdash; Present</span>
+                        <h4 class="font-bold text-sm mt-1">CRM Specialist &amp; Team Leader</h4>
+                        <p class="text-xs text-on-surface-variant mt-1">Currently building and managing advanced GoHighLevel CRM systems, automations, and AI-powered workflows for clients.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- ============ SERVICES ============ -->
 <section class="py-24 px-6 bg-background section-reveal" id="services">
     <div class="max-w-6xl mx-auto">
         <div class="mb-16 text-center max-w-2xl mx-auto">
             <span class="eyebrow-badge font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">SERVICES</span>
-            <h2 class="text-3xl md:text-4xl font-bold mt-4">Everything your GoHighLevel setup <span class="text-primary">actually needs</span></h2>
-            <p class="text-on-surface-variant text-base mt-4 leading-relaxed">Book these individually or roll them into one full build &mdash; whatever your account is missing right now.</p>
+            <h2 class="text-[28px] md:text-[42px] font-bold mt-4">Everything your GoHighLevel setup <span class="text-primary">actually needs</span></h2>
+            <p class="body-copy text-on-surface-variant mt-4">Book these individually or roll them into one full build &mdash; whatever your account is missing right now.</p>
         </div>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -516,7 +641,7 @@
 <section class="pt-8 pb-4 px-6 section-reveal" id="work">
     <div class="max-w-7xl mx-auto">
         <span class="eyebrow-badge font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">FEATURED WORK</span>
-        <h2 class="text-3xl font-bold mt-4 max-w-2xl">Real CRM systems, built and shipped.</h2>
+        <h2 class="text-[28px] md:text-[42px] font-bold mt-4 max-w-2xl">Real CRM systems, built and shipped.</h2>
         <p class="text-on-surface-variant mt-4 max-w-2xl text-sm" style="font-size:16px;">Every project shown here was planned, built, tested, and launched as a complete GoHighLevel system &mdash; not just a template or theoretical concept.</p>
     </div>
 </section>
@@ -525,11 +650,14 @@
 <!-- PROJECT 1: ELEMENT 6 AUTO SPA                                 -->
 <!-- ============================================================ -->
 <section class="py-14 px-6 bg-surface" id="work-projects">
-    <div class="max-w-7xl mx-auto space-y-10">
+    <div class="max-w-7xl mx-auto space-y-16">
         <div class="glass-card rounded-3xl p-6 md:p-12 section-reveal">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="font-mono text-xs font-bold text-primary bg-primary/10 border border-primary/30 rounded-lg px-2.5 py-1">CASE STUDY 01</span>
+            </div>
             <span class="eyebrow-badge font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">AUTOMOTIVE DETAILING &bull; GOHIGHLEVEL CRM &amp; AUTOMATION</span>
-            <h3 class="text-2xl md:text-3xl font-bold mt-4 mb-8">Element 6 Auto SPA</h3>
-            <p class="text-on-surface-variant text-base max-w-4xl mb-12">Built a complete lead-to-customer automation system covering enquiries, appointment booking, invoicing, payments, follow-up, pipelines, and after-hours communication.</p>
+            <h3 class="text-[24px] md:text-[30px] font-semibold mt-4 mb-8">Element 6 Auto SPA</h3>
+            <p class="body-copy text-on-surface-variant max-w-4xl mb-12">Built a complete lead-to-customer automation system covering enquiries, appointment booking, invoicing, payments, follow-up, pipelines, and after-hours communication.</p>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12 items-start">
                 <div class="space-y-6 order-2 lg:order-1">
@@ -569,7 +697,14 @@
                 </div>
             </div>
 
-            <h4 class="font-mono text-xs uppercase tracking-widest text-primary mb-1">Project Gallery &mdash; Website, CRM, Workflows &amp; Automations</h4>
+            <details class="case-study-details">
+                <summary class="case-study-summary">
+                    <span class="material-symbols-outlined text-primary">photo_library</span>
+                    <span>View Full Gallery &amp; Customer Journey &mdash; Element 6 Auto SPA</span>
+                    <span class="material-symbols-outlined case-study-chevron">expand_more</span>
+                </summary>
+                <div class="case-study-content">
+                    <h4 class="font-mono text-xs uppercase tracking-widest text-primary mb-1">Project Gallery &mdash; Website, CRM, Workflows &amp; Automations</h4>
             <p class="text-xs text-on-surface-variant mb-6">Drag or use the arrows to scroll through the gallery. Click any image to enlarge.</p>
             <div class="gallery-slider-wrap mb-16">
                 <button class="gallery-nav-btn prev" aria-label="Scroll gallery left" data-dir="-1"><span class="material-symbols-outlined">chevron_left</span></button>
@@ -622,15 +757,20 @@
                 <div class="flex items-center gap-2"><span class="glow-point"></span>No booking &rarr; No-Response Nurture Workflow</div>
                 <div class="flex items-center gap-2"><span class="glow-point"></span>Message outside business hours &rarr; After-Hours Automatic Response</div>
             </div>
+                </div>
+            </details>
         </div>
 
 <!-- ============================================================ -->
 <!-- PROJECT 3: NOOR ESTHÉTIQUE & WELLNESS                         -->
 <!-- ============================================================ -->
         <div class="glass-card rounded-3xl p-6 md:p-12 section-reveal">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="font-mono text-xs font-bold text-primary bg-primary/10 border border-primary/30 rounded-lg px-2.5 py-1">CASE STUDY 02</span>
+            </div>
             <span class="eyebrow-badge font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">MEDICAL WELLNESS &bull; CRM &bull; MEMBERSHIP AUTOMATION</span>
-            <h3 class="text-2xl md:text-3xl font-bold mt-4 mb-8">Noor Esth&eacute;tique &amp; Wellness</h3>
-            <p class="text-on-surface-variant text-base max-w-4xl mb-12">Built a complete patient lead, appointment, membership, communication, and reputation management system using GoHighLevel and Pabau.</p>
+            <h3 class="text-[24px] md:text-[30px] font-semibold mt-4 mb-8">Noor Esth&eacute;tique &amp; Wellness</h3>
+            <p class="body-copy text-on-surface-variant max-w-4xl mb-12">Built a complete patient lead, appointment, membership, communication, and reputation management system using GoHighLevel and Pabau.</p>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12 items-start">
                 <div class="browser-frame">
@@ -713,7 +853,14 @@
                 </div>
             </div>
 
-            <h4 class="font-mono text-xs uppercase tracking-widest text-primary mb-1">Project Gallery &mdash; CRM, Forms, Bookings, Membership &amp; Automations</h4>
+            <details class="case-study-details">
+                <summary class="case-study-summary">
+                    <span class="material-symbols-outlined text-primary">photo_library</span>
+                    <span>View Full Gallery &amp; Customer Journey &mdash; Noor Esthétique & Wellness</span>
+                    <span class="material-symbols-outlined case-study-chevron">expand_more</span>
+                </summary>
+                <div class="case-study-content">
+                    <h4 class="font-mono text-xs uppercase tracking-widest text-primary mb-1">Project Gallery &mdash; CRM, Forms, Bookings, Membership &amp; Automations</h4>
             <p class="text-xs text-on-surface-variant mb-6">Drag or use the arrows to scroll through the gallery. Click any image to enlarge.</p>
             <div class="gallery-slider-wrap mb-16">
                 <button class="gallery-nav-btn prev" aria-label="Scroll gallery left" data-dir="-1"><span class="material-symbols-outlined">chevron_left</span></button>
@@ -797,15 +944,20 @@
                 <div class="flex items-center gap-2"><span class="glow-point"></span>Membership cancelled in Pabau &rarr; Cancellation Webhook &rarr; Membership Cancelled Workflow</div>
                 <div class="flex items-center gap-2"><span class="glow-point"></span>Communication Preference Form &rarr; Phone, Text, or Email Preference Saved</div>
             </div>
+                </div>
+            </details>
         </div>
 
 <!-- ============================================================ -->
 <!-- PROJECT 4: VEGA MIDEIA CO.                                    -->
 <!-- ============================================================ -->
         <div class="glass-card rounded-3xl p-6 md:p-12 section-reveal">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="font-mono text-xs font-bold text-primary bg-primary/10 border border-primary/30 rounded-lg px-2.5 py-1">CASE STUDY 03</span>
+            </div>
             <span class="eyebrow-badge font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">AGENCY OPERATIONS &bull; CRM &bull; CLIENT ONBOARDING</span>
-            <h3 class="text-2xl md:text-3xl font-bold mt-4 mb-8">VEGA MIDEIA CO.</h3>
-            <p class="text-on-surface-variant text-base max-w-4xl mb-12">Built a complete lead-to-active-client system connecting sales, contracts, invoicing, onboarding, project delivery, reporting, ClickUp, Google Workspace, and GoHighLevel.</p>
+            <h3 class="text-[24px] md:text-[30px] font-semibold mt-4 mb-8">VEGA MIDEIA CO.</h3>
+            <p class="body-copy text-on-surface-variant max-w-4xl mb-12">Built a complete lead-to-active-client system connecting sales, contracts, invoicing, onboarding, project delivery, reporting, ClickUp, Google Workspace, and GoHighLevel.</p>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12 items-start">
                 <div class="browser-frame order-1 lg:order-2">
@@ -833,7 +985,14 @@
                 </div>
             </div>
 
-            <h4 class="font-mono text-xs uppercase tracking-widest text-primary mb-1">Project Gallery &mdash; Sales, Operations, Onboarding &amp; Reporting</h4>
+            <details class="case-study-details">
+                <summary class="case-study-summary">
+                    <span class="material-symbols-outlined text-primary">photo_library</span>
+                    <span>View Full Gallery &amp; Customer Journey &mdash; VEGA MIDEIA CO.</span>
+                    <span class="material-symbols-outlined case-study-chevron">expand_more</span>
+                </summary>
+                <div class="case-study-content">
+                    <h4 class="font-mono text-xs uppercase tracking-widest text-primary mb-1">Project Gallery &mdash; Sales, Operations, Onboarding &amp; Reporting</h4>
             <p class="text-xs text-on-surface-variant mb-6">Drag or use the arrows to scroll through the gallery. Click any image to enlarge.</p>
             <div class="gallery-slider-wrap mb-16">
                 <button class="gallery-nav-btn prev" aria-label="Scroll gallery left" data-dir="-1"><span class="material-symbols-outlined">chevron_left</span></button>
@@ -961,15 +1120,20 @@
                 <div class="flex items-center gap-2"><span class="glow-point"></span>Contract not signed &rarr; Contract Follow-Up Stage</div>
                 <div class="flex items-center gap-2"><span class="glow-point"></span>Appointment not attended &rarr; Appointment Follow-Up Path</div>
             </div>
+                </div>
+            </details>
         </div>
 
 <!-- ============================================================ -->
 <!-- PROJECT 2: WEBINAR REGISTRATION                               -->
 <!-- ============================================================ -->
         <div class="glass-card rounded-3xl p-6 md:p-12 section-reveal">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="font-mono text-xs font-bold text-primary bg-primary/10 border border-primary/30 rounded-lg px-2.5 py-1">CASE STUDY 04</span>
+            </div>
             <span class="eyebrow-badge font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">WEBINAR FUNNEL &bull; GOHIGHLEVEL AUTOMATION</span>
-            <h3 class="text-2xl md:text-3xl font-bold mt-4 mb-8">Webinar Registration</h3>
-            <p class="text-on-surface-variant text-base max-w-4xl mb-12">Built an automated webinar registration and post-event booking system that routes attendees into the correct consultation calendar.</p>
+            <h3 class="text-[24px] md:text-[30px] font-semibold mt-4 mb-8">Webinar Registration</h3>
+            <p class="body-copy text-on-surface-variant max-w-4xl mb-12">Built an automated webinar registration and post-event booking system that routes attendees into the correct consultation calendar.</p>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12 items-start">
                 <div class="browser-frame">
@@ -1004,7 +1168,14 @@
                 </div>
             </div>
 
-            <h4 class="font-mono text-xs uppercase tracking-widest text-primary mb-1">Project Gallery &mdash; Webinar Funnel &amp; Booking Automations</h4>
+            <details class="case-study-details">
+                <summary class="case-study-summary">
+                    <span class="material-symbols-outlined text-primary">photo_library</span>
+                    <span>View Full Gallery &amp; Customer Journey &mdash; the Webinar Registration funnel</span>
+                    <span class="material-symbols-outlined case-study-chevron">expand_more</span>
+                </summary>
+                <div class="case-study-content">
+                    <h4 class="font-mono text-xs uppercase tracking-widest text-primary mb-1">Project Gallery &mdash; Webinar Funnel &amp; Booking Automations</h4>
             <p class="text-xs text-on-surface-variant mb-6">Drag or use the arrows to scroll through the gallery. Click any image to enlarge.</p>
             <div class="gallery-slider-wrap mb-16">
                 <button class="gallery-nav-btn prev" aria-label="Scroll gallery left" data-dir="-1"><span class="material-symbols-outlined">chevron_left</span></button>
@@ -1046,6 +1217,8 @@
                 <div class="journey-node"><span class="num">6</span>Correct Booking Workflow Triggered</div>
                 <div class="journey-node"><span class="num">7</span>Appointment Booked</div>
             </div>
+                </div>
+            </details>
         </div>
 
     </div>
@@ -1061,8 +1234,8 @@
 <section class="py-24 px-6 bg-surface section-reveal" id="process">
     <div class="max-w-2xl mx-auto text-center mb-14">
         <span class="eyebrow-badge font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">MY PROCESS</span>
-        <h2 class="text-3xl md:text-4xl font-bold mt-4 leading-tight">From first call to a system that <span class="text-primary">keeps paying off</span></h2>
-        <p class="text-on-surface-variant text-base mt-4 leading-relaxed">Nothing happens behind closed doors. You always know what's being built, when it ships, and how it's performing.</p>
+        <h2 class="text-[28px] md:text-[42px] font-bold mt-4 leading-tight">From first call to a system that <span class="text-primary">keeps paying off</span></h2>
+        <p class="body-copy text-on-surface-variant mt-4">Nothing happens behind closed doors. You always know what's being built, when it ships, and how it's performing.</p>
     </div>
 
     <div class="max-w-xl mx-auto relative">
@@ -1173,7 +1346,7 @@
 <section class="py-24 px-6 bg-surface section-reveal" id="integrations">
     <div class="max-w-5xl mx-auto text-center">
         <span class="eyebrow-badge font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">INTEGRATIONS</span>
-        <h2 class="text-3xl md:text-4xl font-bold mt-4">Plugs straight into your <span class="text-primary">existing stack</span></h2>
+        <h2 class="text-[28px] md:text-[42px] font-bold mt-4">Plugs straight into your <span class="text-primary">existing stack</span></h2>
         <p class="text-on-surface-variant text-base max-w-2xl mx-auto mt-4 mb-12 leading-relaxed">GoHighLevel becomes the hub, not another silo. Through native connections, webhooks, and custom API builds, every tool below stays in sync with your CRM &mdash; no double data entry, no manual exports.</p>
 
         <div class="flex flex-wrap justify-center gap-3">
@@ -1196,87 +1369,63 @@
         </div>
     </div>
 </section>
-<!-- ============ EXPERIENCE ============ -->
-<section class="py-24 px-6 bg-surface section-reveal" id="experience">
-    <div class="max-w-4xl mx-auto">
-        <div class="mb-16">
-            <span class="eyebrow-badge font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">CAREER TIMELINE</span>
-            <h2 class="text-3xl font-bold mt-4">Experience.</h2>
+
+<!-- ============ FAQ ============ -->
+<section class="py-24 px-6 bg-background section-reveal" id="faq">
+    <div class="max-w-3xl mx-auto">
+        <div class="mb-14 text-center">
+            <span class="eyebrow-badge font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">FAQ</span>
+            <h2 class="text-[28px] md:text-[42px] font-bold mt-4">Questions you might have.</h2>
         </div>
 
-        <div class="relative pl-8 md:pl-10">
-            <div class="absolute left-[7px] md:left-[9px] top-2 bottom-2 w-px bg-outline-variant"></div>
+        <div class="flex flex-col gap-3">
+            <details class="faq-item bg-surface-variant border border-outline-variant rounded-2xl p-5 group">
+                <summary class="font-bold text-base cursor-pointer list-none flex items-center justify-between gap-4">
+                    Do you work only with GoHighLevel?
+                    <span class="material-symbols-outlined text-primary flex-shrink-0 transition-transform group-open:rotate-45">add</span>
+                </summary>
+                <p class="text-on-surface-variant text-sm leading-relaxed mt-3">GoHighLevel is my main platform and where most of my build experience lives, but I also work with Zapier, Make, and direct API/webhook integrations when a project calls for connecting outside tools.</p>
+            </details>
 
-            <!-- FNNLX -->
-            <div class="relative mb-4">
-                <div class="absolute -left-8 md:-left-10 top-1 w-4 h-4 rounded-full bg-primary/15 border-2 border-primary flex items-center justify-center">
-                    <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
-                </div>
-                <span class="font-mono text-[10px] text-primary uppercase tracking-widest">March 2021 &mdash; March 2025</span>
-                <h3 class="text-xl font-bold mt-1">FNNLX</h3>
-            </div>
+            <details class="faq-item bg-surface-variant border border-outline-variant rounded-2xl p-5 group">
+                <summary class="font-bold text-base cursor-pointer list-none flex items-center justify-between gap-4">
+                    Can you improve an existing CRM setup?
+                    <span class="material-symbols-outlined text-primary flex-shrink-0 transition-transform group-open:rotate-45">add</span>
+                </summary>
+                <p class="text-on-surface-variant text-sm leading-relaxed mt-3">Yes. I regularly audit existing GoHighLevel accounts, fix broken or incomplete automations, and rebuild pipelines and workflows that have grown messy over time &mdash; without starting from scratch unless that's genuinely the faster path.</p>
+            </details>
 
-            <div class="glass-card rounded-2xl p-6 mb-10 ml-2">
-                <div class="space-y-6">
-                    <div class="flex gap-4">
-                        <div class="flex flex-col items-center pt-1">
-                            <div class="w-2 h-2 rounded-full bg-primary"></div>
-                            <div class="w-px flex-1 bg-outline-variant mt-1"></div>
-                        </div>
-                        <div class="pb-2">
-                            <span class="font-mono text-[10px] text-on-surface-variant uppercase tracking-widest">Mar 2021 &mdash; Mar 2022 &bull; 1 yr</span>
-                            <h4 class="font-bold text-sm mt-1">Funnel Builder</h4>
-                            <p class="text-xs text-on-surface-variant mt-1">Started here building sales funnels and landing pages, laying the foundation for what would grow into full CRM and automation work.</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-4">
-                        <div class="flex flex-col items-center pt-1">
-                            <div class="w-2 h-2 rounded-full bg-primary"></div>
-                            <div class="w-px flex-1 bg-outline-variant mt-1"></div>
-                        </div>
-                        <div class="pb-2">
-                            <span class="font-mono text-[10px] text-on-surface-variant uppercase tracking-widest">Mar 2022 &mdash; Sep 2023 &bull; 1.5 yrs</span>
-                            <h4 class="font-bold text-sm mt-1">Automation Specialist</h4>
-                            <p class="text-xs text-on-surface-variant mt-1">Promoted to focus on CRM workflows and automations, building the systems-thinking that now anchors my GoHighLevel work.</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-4">
-                        <div class="flex flex-col items-center pt-1">
-                            <div class="w-2 h-2 rounded-full bg-primary"></div>
-                        </div>
-                        <div>
-                            <span class="font-mono text-[10px] text-on-surface-variant uppercase tracking-widest">Sep 2023 &mdash; Mar 2025 &bull; 1.5 yrs</span>
-                            <h4 class="font-bold text-sm mt-1">Project Manager</h4>
-                            <p class="text-xs text-on-surface-variant mt-1">Moved into managing client projects end-to-end, overseeing delivery, timelines, and the automation systems built for each account.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <details class="faq-item bg-surface-variant border border-outline-variant rounded-2xl p-5 group">
+                <summary class="font-bold text-base cursor-pointer list-none flex items-center justify-between gap-4">
+                    How long does a CRM implementation take?
+                    <span class="material-symbols-outlined text-primary flex-shrink-0 transition-transform group-open:rotate-45">add</span>
+                </summary>
+                <p class="text-on-surface-variant text-sm leading-relaxed mt-3">It depends on scope. A focused build (one funnel plus its automations) can take about a week; a full CRM system with multiple pipelines, integrations, and AI agents usually runs 3&ndash;5 weeks. You'll get a specific timeline after the discovery call.</p>
+            </details>
 
-            <!-- Techbridge -->
-            <div class="relative mb-4">
-                <div class="absolute -left-8 md:-left-10 top-1 w-4 h-4 rounded-full bg-primary/15 border-2 border-primary flex items-center justify-center">
-                    <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
-                </div>
-                <div class="flex items-center gap-3 flex-wrap">
-                    <span class="font-mono text-[10px] text-primary uppercase tracking-widest">April 2025 &mdash; Present</span>
-                    <span class="font-mono text-[9px] uppercase tracking-widest text-primary bg-primary/10 border border-primary/30 px-2 py-0.5 rounded-full">Current</span>
-                </div>
-                <h3 class="text-xl font-bold mt-1">Techbridge</h3>
-            </div>
+            <details class="faq-item bg-surface-variant border border-outline-variant rounded-2xl p-5 group">
+                <summary class="font-bold text-base cursor-pointer list-none flex items-center justify-between gap-4">
+                    Do you provide ongoing support?
+                    <span class="material-symbols-outlined text-primary flex-shrink-0 transition-transform group-open:rotate-45">add</span>
+                </summary>
+                <p class="text-on-surface-variant text-sm leading-relaxed mt-3">Every build includes a support window after launch to catch anything real usage turns up. Beyond that, several clients keep me on for ongoing maintenance and iteration &mdash; happy to set that up if it's useful for you.</p>
+            </details>
 
-            <div class="glass-card rounded-2xl p-6 ml-2">
-                <div class="flex gap-4">
-                    <div class="flex flex-col items-center pt-1">
-                        <div class="w-2 h-2 rounded-full bg-primary"></div>
-                    </div>
-                    <div>
-                        <span class="font-mono text-[10px] text-on-surface-variant uppercase tracking-widest">Apr 2025 &mdash; Present</span>
-                        <h4 class="font-bold text-sm mt-1">CRM Specialist &amp; Team Leader</h4>
-                        <p class="text-xs text-on-surface-variant mt-1">Currently building and managing advanced GoHighLevel CRM systems, automations, and AI-powered workflows for clients.</p>
-                    </div>
-                </div>
-            </div>
+            <details class="faq-item bg-surface-variant border border-outline-variant rounded-2xl p-5 group">
+                <summary class="font-bold text-base cursor-pointer list-none flex items-center justify-between gap-4">
+                    Can you build custom automations?
+                    <span class="material-symbols-outlined text-primary flex-shrink-0 transition-transform group-open:rotate-45">add</span>
+                </summary>
+                <p class="text-on-surface-variant text-sm leading-relaxed mt-3">Yes &mdash; that's most of what I do. Multi-step workflows, conditional branching, webhook-triggered actions, cross-platform syncing with tools like ClickUp or Google Sheets, all built around how your business actually operates.</p>
+            </details>
+
+            <details class="faq-item bg-surface-variant border border-outline-variant rounded-2xl p-5 group">
+                <summary class="font-bold text-base cursor-pointer list-none flex items-center justify-between gap-4">
+                    Do you set up AI Voice Agents?
+                    <span class="material-symbols-outlined text-primary flex-shrink-0 transition-transform group-open:rotate-45">add</span>
+                </summary>
+                <p class="text-on-surface-variant text-sm leading-relaxed mt-3">Yes. I've built and deployed live AI voice and chat agents that run real conversations, qualify leads, and write answers straight into GoHighLevel contact fields &mdash; not a demo, actively running on real contacts.</p>
+            </details>
         </div>
     </div>
 </section>
@@ -1286,7 +1435,7 @@
     <div class="max-w-4xl mx-auto">
         <div class="mb-12 text-center">
             <span class="eyebrow-badge font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">LET'S TALK</span>
-            <h2 class="text-3xl font-bold mt-4">Let's automate your CRM.</h2>
+            <h2 class="text-[28px] md:text-[42px] font-bold mt-4">Let's automate your CRM.</h2>
             <p class="text-on-surface-variant mt-4 text-sm" style="font-size:18px;line-height:1.5;">Tell me a bit about your business and I'll get back to you within a day.</p>
         </div>
 
@@ -1308,6 +1457,28 @@
             <div class="flex flex-col gap-2">
                 <label class="text-xs font-mono uppercase tracking-widest text-on-surface-variant" for="email">Email</label>
                 <input class="bg-surface-variant border border-outline-variant rounded-lg px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 text-sm" id="email" name="email" placeholder="jane@company.com" required type="email"/>
+            </div>
+            <div class="flex flex-col gap-2">
+                <label class="text-xs font-mono uppercase tracking-widest text-on-surface-variant" for="company">Company Name</label>
+                <input class="bg-surface-variant border border-outline-variant rounded-lg px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 text-sm" id="company" name="company" placeholder="Acme Inc." type="text"/>
+            </div>
+            <div class="flex flex-col gap-2">
+                <label class="text-xs font-mono uppercase tracking-widest text-on-surface-variant" for="website">Website</label>
+                <input class="bg-surface-variant border border-outline-variant rounded-lg px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 text-sm" id="website" name="website" placeholder="yourcompany.com" type="text"/>
+            </div>
+            <div class="flex flex-col gap-2">
+                <label class="text-xs font-mono uppercase tracking-widest text-on-surface-variant" for="monthly_leads">Monthly Leads</label>
+                <select class="bg-surface-variant border border-outline-variant rounded-lg px-4 py-3 text-on-surface text-sm" id="monthly_leads" name="monthly_leads">
+                    <option value="">Select a range</option>
+                    <option value="0-25">0 &ndash; 25</option>
+                    <option value="26-100">26 &ndash; 100</option>
+                    <option value="101-500">101 &ndash; 500</option>
+                    <option value="500+">500+</option>
+                </select>
+            </div>
+            <div class="flex flex-col gap-2">
+                <label class="text-xs font-mono uppercase tracking-widest text-on-surface-variant" for="crm_challenge">Biggest CRM Challenge</label>
+                <input class="bg-surface-variant border border-outline-variant rounded-lg px-4 py-3 text-on-surface placeholder:text-on-surface-variant/50 text-sm" id="crm_challenge" name="crm_challenge" placeholder="e.g. leads going cold" type="text"/>
             </div>
             <div class="flex flex-col gap-2 md:col-span-2">
                 <label class="text-xs font-mono uppercase tracking-widest text-on-surface-variant" for="message">What do you need automated?</label>
