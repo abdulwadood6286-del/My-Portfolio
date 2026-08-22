@@ -220,6 +220,12 @@
     }
 
     /* --- case study accordion (project Gallery + Customer Journey) --- */
+    /* --- about-card style, reused for the AI Agents grid --- */
+    .about-card { transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease, background-color .25s ease; }
+    .about-card:hover { border-color: rgba(14,165,233,0.5); transform: translateY(-4px); box-shadow: 0 12px 28px rgba(14,165,233,0.15); background-color: rgba(23,31,51,0.9); }
+    .about-card:hover .about-card-icon { background-color: rgba(14,165,233,0.2); border-color: rgba(14,165,233,0.6); transform: scale(1.08); }
+    .about-card-icon { transition: background-color .25s ease, border-color .25s ease, transform .25s ease; }
+
     .case-study-details { margin-top: 32px; border-top: 1px solid #2d3449; padding-top: 24px; }
     .case-study-summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; color: #dae2fd; padding: 14px 18px; background: #171f33; border: 1px solid #2d3449; border-radius: 12px; transition: border-color .2s ease, background .2s ease; outline: none; }
     .case-study-summary::-webkit-details-marker { display: none; }
@@ -262,6 +268,7 @@
         <div class="hidden md:flex items-center gap-8 text-sm font-medium">
             <a class="nav-link text-on-surface-variant hover:text-primary transition-colors" href="/#case-study">Case Study</a>
             <a class="nav-link text-on-surface-variant hover:text-primary transition-colors" href="#websites">Websites</a>
+            <a class="nav-link text-on-surface-variant hover:text-primary transition-colors" href="#ai-agents">AI Agents</a>
             <a class="nav-link text-on-surface-variant hover:text-primary transition-colors" href="#a2p">A2P Registrations</a>
             <a class="nav-link text-on-surface-variant hover:text-primary transition-colors" href="#live-sites">Live Sites</a>
             <div class="flex items-center gap-4 ml-4">
@@ -277,6 +284,7 @@
         <div class="flex flex-col gap-1 px-6 pb-6 pt-2">
             <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="/#case-study">Case Study</a>
             <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#design">Design</a>
+            <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#ai-agents">AI Agents</a>
             <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#a2p">A2P Registrations</a>
             <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#live-sites">Live Sites</a>
             <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="/#contact">Contact</a>
@@ -590,6 +598,89 @@
                 <div class="design-modal-scroll">
                     <img id="designModalImg" src="" alt="" />
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ AI AGENTS ============ -->
+<section class="py-16 px-6 bg-surface section-reveal" id="ai-agents">
+    <div class="max-w-7xl mx-auto">
+        <span class="eyebrow-badge font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">AI AGENTS</span>
+        <h2 class="text-2xl md:text-3xl font-bold mt-4 mb-2 max-w-2xl">AI Agents That Keep Working Your Leads <span class="text-primary">After Hours</span></h2>
+        <p class="text-on-surface-variant text-sm mb-10 max-w-2xl">Nine ready-to-deploy agents, each built with safety rules, escalation paths, and a clean handoff to your team whenever a human needs to step in.</p>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div class="bg-surface-variant border border-outline-variant p-5 rounded-2xl about-card">
+                <div class="w-9 h-9 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center mb-3 about-card-icon">
+                    <span class="material-symbols-outlined text-primary text-lg">chat</span>
+                </div>
+                <h4 class="font-bold text-base mb-1">Website &amp; SMS Chat Agent</h4>
+                <p class="text-[11px] text-on-surface-variant leading-relaxed">Responds to inbound messages the moment they land, in your brand's voice, whether it's 2pm or 2am.</p>
+            </div>
+
+            <div class="bg-surface-variant border border-outline-variant p-5 rounded-2xl about-card">
+                <div class="w-9 h-9 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center mb-3 about-card-icon">
+                    <span class="material-symbols-outlined text-primary text-lg">mic</span>
+                </div>
+                <h4 class="font-bold text-base mb-1">AI Voice Agent</h4>
+                <p class="text-[11px] text-on-surface-variant leading-relaxed">Picks up the calls you'd otherwise miss, qualifies the caller, and books them straight onto your calendar.</p>
+            </div>
+
+            <div class="bg-surface-variant border border-outline-variant p-5 rounded-2xl about-card">
+                <div class="w-9 h-9 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center mb-3 about-card-icon">
+                    <span class="material-symbols-outlined text-primary text-lg">summarize</span>
+                </div>
+                <h4 class="font-bold text-base mb-1">Call Summary Agent</h4>
+                <p class="text-[11px] text-on-surface-variant leading-relaxed">Turns every recorded call into clean notes, next steps, and CRM field updates &mdash; automatically.</p>
+            </div>
+
+            <div class="bg-surface-variant border border-outline-variant p-5 rounded-2xl about-card">
+                <div class="w-9 h-9 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center mb-3 about-card-icon">
+                    <span class="material-symbols-outlined text-primary text-lg">leaderboard</span>
+                </div>
+                <h4 class="font-bold text-base mb-1">Lead Scoring Agent</h4>
+                <p class="text-[11px] text-on-surface-variant leading-relaxed">Ranks incoming leads by budget, intent, and timeline, so your strongest prospects surface first.</p>
+            </div>
+
+            <div class="bg-surface-variant border border-outline-variant p-5 rounded-2xl about-card">
+                <div class="w-9 h-9 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center mb-3 about-card-icon">
+                    <span class="material-symbols-outlined text-primary text-lg">mood</span>
+                </div>
+                <h4 class="font-bold text-base mb-1">Conversation Sentiment Agent</h4>
+                <p class="text-[11px] text-on-surface-variant leading-relaxed">Flags frustrated or at-risk conversations early, before they quietly turn into a lost deal.</p>
+            </div>
+
+            <div class="bg-surface-variant border border-outline-variant p-5 rounded-2xl about-card">
+                <div class="w-9 h-9 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center mb-3 about-card-icon">
+                    <span class="material-symbols-outlined text-primary text-lg">menu_book</span>
+                </div>
+                <h4 class="font-bold text-base mb-1">Knowledge Base Agent</h4>
+                <p class="text-[11px] text-on-surface-variant leading-relaxed">Trained on your docs, offers, and FAQs so it answers accurately instead of guessing.</p>
+            </div>
+
+            <div class="bg-surface-variant border border-outline-variant p-5 rounded-2xl about-card">
+                <div class="w-9 h-9 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center mb-3 about-card-icon">
+                    <span class="material-symbols-outlined text-primary text-lg">mail</span>
+                </div>
+                <h4 class="font-bold text-base mb-1">Email Drafting Agent</h4>
+                <p class="text-[11px] text-on-surface-variant leading-relaxed">Writes on-brand campaigns and replies directly inside your existing workflows.</p>
+            </div>
+
+            <div class="bg-surface-variant border border-outline-variant p-5 rounded-2xl about-card">
+                <div class="w-9 h-9 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center mb-3 about-card-icon">
+                    <span class="material-symbols-outlined text-primary text-lg">sms</span>
+                </div>
+                <h4 class="font-bold text-base mb-1">SMS Drafting Agent</h4>
+                <p class="text-[11px] text-on-surface-variant leading-relaxed">Produces compliant, high-converting short-form messages at scale, ready to send.</p>
+            </div>
+
+            <div class="bg-surface-variant border border-outline-variant p-5 rounded-2xl about-card">
+                <div class="w-9 h-9 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center mb-3 about-card-icon">
+                    <span class="material-symbols-outlined text-primary text-lg">autorenew</span>
+                </div>
+                <h4 class="font-bold text-base mb-1">Follow-Up Sequencing Agent</h4>
+                <p class="text-[11px] text-on-surface-variant leading-relaxed">Builds personalized, multi-touch follow-up sequences based on where each lead sits in your pipeline.</p>
             </div>
         </div>
     </div>
