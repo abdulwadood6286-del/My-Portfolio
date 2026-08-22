@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>More Work | Abdul Wadood &mdash; GoHighLevel CRM &amp; Automation Specialist</title>
-<link rel="icon" type="image/png" href="LOGO/Header.png"/>
+<title>Complete Portfolio | Abdul Wadood &mdash; GoHighLevel CRM &amp; Automation Specialist</title>
+<link rel="icon" type="image/png" href="LOGO/favicon.png"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=JetBrains+Mono:wght@100..800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -185,6 +185,51 @@
     .social-icon.social-email:hover { color: #EA4335; border-color: rgba(234,67,53,0.5); }
     .social-icon.social-whatsapp:hover { color: #25D366; border-color: rgba(37,211,102,0.5); }
     .social-icon.social-linkedin:hover { color: #0A66C2; border-color: rgba(10,102,194,0.5); }
+    /* --- moved-in from index.html: classes the relocated case studies depend on --- */
+    .glow-point { position: relative; }
+    .glow-point::after { content: ''; position: absolute; width: 8px; height: 8px; background: #0EA5E9; border-radius: 50%; box-shadow: 0 0 15px #0EA5E9; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    .workflow-line { height: 1px; background: linear-gradient(90deg, transparent, #2d3449, transparent); position: relative; }
+    .workflow-line::after { content: ''; position: absolute; left: 50%; top: 50%; width: 4px; height: 4px; background: #0EA5E9; border-radius: 50%; box-shadow: 0 0 10px #0EA5E9; transform: translate(-50%, -50%); }
+    .step-chip { display: inline-flex; align-items: center; gap: 7px; padding: 11px 16px; background: #171f33; border: 1px solid #2d3449; border-radius: 9px; font-family: 'JetBrains Mono', monospace; font-size: 12.5px; line-height: 1.3; white-space: nowrap; color: #dae2fd; transition: border-color .2s ease, transform .2s ease; }
+    .step-chip:hover { border-color: rgba(14,165,233,0.5); transform: translateY(-1px); }
+    .step-chip .material-symbols-outlined { font-size: 16px; color: #0EA5E9; }
+    .step-chip.is-integration { border-style: dashed; border-color: rgba(14,165,233,0.35); }
+    .step-chip.is-result { background: #0EA5E9; color: #060e20; font-weight: 700; border-color: #0EA5E9; }
+    .step-chip.is-result .material-symbols-outlined { color: #060e20; }
+    .journey-track { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 4px; }
+    .journey-node { display: inline-flex; align-items: center; padding: 7px 12px; background: #171f33; border: 1px solid #2d3449; border-radius: 999px; font-size: 11.5px; white-space: nowrap; }
+    .journey-node .num { display: none; }
+    .journey-arrow { display: inline-flex; align-items: center; color: #0EA5E9; opacity: 0.7; }
+    .journey-arrow .material-symbols-outlined { font-size: 15px; }
+    .gallery-slider { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 16px; scrollbar-width: thin; scrollbar-color: #0EA5E9 transparent; }
+    .gallery-slider .browser-frame { flex: 0 0 220px; scroll-snap-align: start; }
+    .gallery-slider::-webkit-scrollbar { height: 6px; }
+    .gallery-slider::-webkit-scrollbar-track { background: rgba(14,165,233,0.12); border-radius: 999px; }
+    .gallery-slider::-webkit-scrollbar-thumb { background: #0EA5E9; border-radius: 999px; }
+    .gallery-slider::-webkit-scrollbar-thumb:hover { background: #a5c2ff; }
+    .gallery-slider-wrap { position: relative; }
+    .gallery-nav-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 34px; height: 34px; border-radius: 50%; background: rgba(23,31,51,0.9); border: 1px solid #2d3449; color: #0EA5E9; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; transition: background .2s ease, border-color .2s ease; }
+    .gallery-nav-btn:hover { background: #171f33; border-color: rgba(14,165,233,0.6); }
+    .gallery-nav-btn.prev { left: -6px; }
+    .gallery-nav-btn.next { right: -6px; }
+    @media (max-width: 640px) {
+        .gallery-nav-btn { display: none; }
+        .step-chip { white-space: normal; font-size: 10.5px; padding: 8px 12px; }
+        .journey-node { font-size: 10.5px; padding: 6px 10px; }
+        .journey-arrow .material-symbols-outlined { font-size: 13px; }
+    }
+
+    /* --- case study accordion (project Gallery + Customer Journey) --- */
+    .case-study-details { margin-top: 32px; border-top: 1px solid #2d3449; padding-top: 24px; }
+    .case-study-summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; color: #dae2fd; padding: 14px 18px; background: #171f33; border: 1px solid #2d3449; border-radius: 12px; transition: border-color .2s ease, background .2s ease; outline: none; }
+    .case-study-summary::-webkit-details-marker { display: none; }
+    .case-study-summary:hover { border-color: rgba(14,165,233,0.5); background: #1c2540; }
+    .case-study-chevron { margin-left: auto; transition: transform .2s ease; color: #aeb9d0; }
+    .case-study-details[open] .case-study-chevron { transform: rotate(180deg); color: #0EA5E9; }
+    .case-study-label-open { display: none; }
+    .case-study-details[open] .case-study-label-open { display: inline; }
+    .case-study-details[open] .case-study-label-closed { display: none; }
+    .case-study-content { padding-top: 24px; }
 </style>
 <script id="tailwind-config">
     tailwind.config = {
@@ -215,7 +260,7 @@
             <img src="LOGO/Header.png" alt="Abdul Wadood" class="h-9 w-auto" />
         </a>
         <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-            <a class="nav-link text-on-surface-variant hover:text-primary transition-colors" href="/#work">CRM Work</a>
+            <a class="nav-link text-on-surface-variant hover:text-primary transition-colors" href="/#work">Portfolio</a>
             <a class="nav-link text-on-surface-variant hover:text-primary transition-colors" href="#websites">Websites</a>
             <a class="nav-link text-on-surface-variant hover:text-primary transition-colors" href="#a2p">A2P Registrations</a>
             <a class="nav-link text-on-surface-variant hover:text-primary transition-colors" href="#live-sites">Live Sites</a>
@@ -230,7 +275,7 @@
     </div>
     <div class="md:hidden max-h-0 overflow-hidden opacity-0" id="mobile-menu">
         <div class="flex flex-col gap-1 px-6 pb-6 pt-2">
-            <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="/#work">CRM Work</a>
+            <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="/#work">Portfolio</a>
             <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#design">Design</a>
             <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#a2p">A2P Registrations</a>
             <a class="py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant" href="#live-sites">Live Sites</a>
@@ -254,6 +299,266 @@
         <p class="text-on-surface-variant text-base max-w-2xl mx-auto leading-relaxed">Websites and landing pages I've actually built and shipped, AI voice and chat agents running for real clients, live sites and funnels currently online, and A2P 10DLC registrations approved and keeping SMS campaigns deliverable.</p>
     </div>
 </header>
+
+<!-- ============ FEATURED CASE STUDIES ============ -->
+<section class="pt-8 pb-4 px-6 section-reveal">
+    <div class="max-w-7xl mx-auto">
+        <span class="eyebrow-badge font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">MORE CASE STUDIES</span>
+        <h2 class="text-[28px] md:text-[42px] font-bold mt-4 max-w-2xl">More systems, more proof.</h2>
+        <p class="text-on-surface-variant mt-4 max-w-2xl text-sm" style="font-size:16px;">Two more complete GoHighLevel builds, each with full case-study detail, screenshots, and the customer journey behind it.</p>
+    </div>
+</section>
+
+<section class="py-14 px-6 bg-surface" id="work-projects">
+    <div class="max-w-7xl mx-auto space-y-16">
+<!-- ============================================================ -->
+<!-- PROJECT: ELEMENT 6 AUTO SPA                                    -->
+<!-- ============================================================ -->
+        <div class="glass-card rounded-3xl p-6 md:p-12 section-reveal">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="font-mono text-xs font-bold text-primary bg-primary/10 border border-primary/30 rounded-lg px-2.5 py-1">CASE STUDY 01</span>
+            </div>
+            <span class="eyebrow-badge font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">AUTOMOTIVE DETAILING &bull; GOHIGHLEVEL CRM &amp; AUTOMATION</span>
+            <h3 class="text-[24px] md:text-[30px] font-semibold mt-4 mb-8">Element 6 Auto SPA</h3>
+            <p class="body-copy text-on-surface-variant max-w-4xl mb-12">Built a complete lead-to-customer automation system covering enquiries, appointment booking, invoicing, payments, follow-up, pipelines, and after-hours communication.</p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12 items-start">
+                <div class="space-y-6 order-2 lg:order-1">
+                    <div class="bg-surface-variant border border-outline-variant p-6 rounded-2xl">
+                        <h4 class="text-primary font-bold mb-3 flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-sm">report_problem</span>Problem</h4>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">Element 6 Auto SPA needed a connected system to capture website enquiries, respond to new leads, encourage appointment booking, manage pipeline movement, send invoices, track payments, and follow up with contacts who did not book. The business also needed an automated response for customers who sent messages outside normal business hours.</p>
+                    </div>
+                    <div class="bg-surface-variant border border-outline-variant p-6 rounded-2xl">
+                        <h4 class="text-primary font-bold mb-3 flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-sm">lightbulb</span>Solution</h4>
+                        <p class="text-on-surface-variant text-sm leading-relaxed mb-3">Built a complete GoHighLevel customer journey beginning from the website contact form. The system includes:</p>
+                        <ul class="text-xs text-on-surface-variant space-y-1.5 list-disc pl-5">
+                            <li>Website lead capture</li>
+                            <li>Welcome email with appointment booking link</li>
+                            <li>Appointment booking confirmation</li>
+                            <li>CRM pipeline management</li>
+                            <li>Invoice delivery</li>
+                            <li>Invoice payment tracking</li>
+                            <li>No-response nurture follow-up</li>
+                            <li>After-business-hours messaging workflow</li>
+                        </ul>
+                    </div>
+                    <div class="bg-surface-variant border border-outline-variant p-6 rounded-2xl">
+                        <h4 class="text-primary font-bold mb-3 flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-sm">check_circle</span>Result</h4>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">Every new enquiry now enters one connected system. Leads receive an immediate response, are guided toward booking, move through the CRM pipeline, receive invoices, and continue through the correct follow-up path based on their actions. The business can manage the full customer journey with less manual work and more consistent communication.</p>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2">
+                    <div class="browser-frame">
+                        <div class="browser-header"><span class="browser-dot bg-red-500"></span><span class="browser-dot bg-yellow-500"></span><span class="browser-dot bg-green-500"></span></div>
+                        <div class="aspect-video flex items-center justify-center bg-surface-variant/50 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Element 6 Auto SPA/Screenshot_89.png"  alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" />
+                            <span class="material-symbols-outlined text-6xl text-primary/20">dashboard</span>
+                        </div>
+                        <p class="gallery-frame-label border-t border-outline-variant">Element 6 Auto SPA Home Page</p>
+                    </div>
+                </div>
+            </div>
+
+            <h4 class="font-mono text-xs uppercase tracking-widest text-primary mb-1">Featured Screenshots</h4>
+            <p class="text-xs text-on-surface-variant mb-6">A few highlights from this build. Click any image to enlarge.</p>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Element 6 Auto SPA/Screenshot_97.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">1. Workflow List</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Element 6 Auto SPA/Screenshot_95.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">2. Website Contact Form</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Element 6 Auto SPA/Screenshot_88.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">3. Welcome Email and Booking Link</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Element 6 Auto SPA/Screenshot_94.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">4. Appointment Booking Confirmation</p></div>
+            </div>
+
+            <details class="case-study-details">
+                <summary class="case-study-summary">
+                    <span class="material-symbols-outlined text-primary">photo_library</span>
+                    <span class="case-study-label-closed">View Full Gallery &amp; Customer Journey &mdash; Element 6 Auto SPA</span>
+                    <span class="case-study-label-open">Hide Full Gallery &amp; Customer Journey &mdash; Element 6 Auto SPA</span>
+                    <span class="material-symbols-outlined case-study-chevron">expand_more</span>
+                </summary>
+                <div class="case-study-content">
+                    <h4 class="font-mono text-xs uppercase tracking-widest text-primary mb-1">Project Gallery &mdash; Website, CRM, Workflows &amp; Automations</h4>
+            <p class="text-xs text-on-surface-variant mb-6">Drag or use the arrows to scroll through the gallery. Click any image to enlarge.</p>
+            <div class="gallery-slider-wrap mb-16">
+                <button class="gallery-nav-btn prev" aria-label="Scroll gallery left" data-dir="-1"><span class="material-symbols-outlined">chevron_left</span></button>
+                <div class="gallery-slider">
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Element 6 Auto SPA/Screenshot_97.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">1. Workflow List</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Element 6 Auto SPA/Screenshot_95.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">2. Website Contact Form</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Element 6 Auto SPA/Screenshot_88.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">3. Welcome Email and Booking Link</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Element 6 Auto SPA/Screenshot_94.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">4. Appointment Booking Confirmation</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Element 6 Auto SPA/Screenshot_98.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">5. CRM Sales Pipeline</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Element 6 Auto SPA/Screenshot_92.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">6. Invoice Sent Workflow</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Element 6 Auto SPA/Screenshot_93.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">7. Invoice Paid Workflow</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Element 6 Auto SPA/Screenshot_91.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">8. No-Response Nurture Workflow</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./Element 6 Auto SPA/Screenshot_90.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">9. After-Business-Hours Workflow</p></div>
+                </div>
+                <button class="gallery-nav-btn next" aria-label="Scroll gallery right" data-dir="1"><span class="material-symbols-outlined">chevron_right</span></button>
+            </div>
+
+            <h4 class="text-xs font-mono text-primary uppercase tracking-widest mb-6">Customer Journey Timeline</h4>
+            <div class="journey-track mb-6">
+                <div class="journey-node"><span class="num">1</span>Website Visit</div>
+                <div class="journey-node"><span class="num">2</span>Contact Form Submitted</div>
+                <div class="journey-node"><span class="num">3</span>Welcome Email Sent</div>
+                <div class="journey-node"><span class="num">4</span>Booking Link Opened</div>
+                <div class="journey-node"><span class="num">5</span>Appointment Booked</div>
+                <div class="journey-node"><span class="num">6</span>Confirmation Sent</div>
+                <div class="journey-node"><span class="num">7</span>Pipeline Updated</div>
+                <div class="journey-node"><span class="num">8</span>Invoice Sent</div>
+                <div class="journey-node"><span class="num">9</span>Invoice Paid</div>
+                <div class="journey-node"><span class="num">10</span>Customer Completed</div>
+            </div>
+            <div class="flex flex-wrap gap-6 text-xs text-on-surface-variant font-mono">
+                <div class="flex items-center gap-2"><span class="glow-point"></span>No booking &rarr; No-Response Nurture Workflow</div>
+                <div class="flex items-center gap-2"><span class="glow-point"></span>Message outside business hours &rarr; After-Hours Automatic Response</div>
+            </div>
+                </div>
+            </details>
+        </div>
+
+<!-- ============================================================ -->
+<!-- PROJECT 2: WEBINAR REGISTRATION                               -->
+<!-- ============================================================ -->
+        <div class="glass-card rounded-3xl p-6 md:p-12 section-reveal">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="font-mono text-xs font-bold text-primary bg-primary/10 border border-primary/30 rounded-lg px-2.5 py-1">CASE STUDY 02</span>
+            </div>
+            <span class="eyebrow-badge font-mono text-[10px] text-primary uppercase tracking-widest bg-primary/10 border border-primary/30 px-3 py-1.5 rounded-full">WEBINAR FUNNEL &bull; GOHIGHLEVEL AUTOMATION</span>
+            <h3 class="text-[24px] md:text-[30px] font-semibold mt-4 mb-8">Webinar Registration</h3>
+            <p class="body-copy text-on-surface-variant max-w-4xl mb-12">Built an automated webinar registration and post-event booking system that routes attendees into the correct consultation calendar.</p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12 items-start">
+                <div class="browser-frame">
+                    <div class="browser-header"><span class="browser-dot bg-red-500"></span><span class="browser-dot bg-yellow-500"></span><span class="browser-dot bg-green-500"></span></div>
+                    <div class="aspect-video bg-surface-variant/50 flex items-center justify-center relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./RMJ Consultant/Screenshot_92.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-6xl text-primary/20">video_library</span></div>
+                    <p class="gallery-frame-label border-t border-outline-variant">Webinar Registration</p>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-surface-variant border border-outline-variant p-6 rounded-2xl">
+                        <h4 class="text-primary font-bold mb-3 text-sm">Problem</h4>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Webinar leads needed a structured journey from registration to attendance follow-up and consultation booking. Without automation, it was difficult to consistently welcome registrants, identify attendees, collect their service preference, and direct them to the correct booking calendar.</p>
+                    </div>
+                    <div class="bg-surface-variant border border-outline-variant p-6 rounded-2xl">
+                        <h4 class="text-primary font-bold mb-3 text-sm">Solution</h4>
+                        <p class="text-sm text-on-surface-variant leading-relaxed mb-2">Built a complete GoHighLevel webinar automation system. The system:</p>
+                        <ul class="text-xs text-on-surface-variant space-y-1.5 list-disc pl-5">
+                            <li>Captures webinar registrations</li>
+                            <li>Sends an immediate welcome email</li>
+                            <li>Checks whether the contact attended the webinar</li>
+                            <li>Sends attendees a consultation-selection form</li>
+                            <li>Allows the attendee to choose between a Strategy Call and a Funding Call</li>
+                            <li>Triggers the correct booking workflow based on the selected service</li>
+                            <li>Sends the relevant calendar link and booking communication</li>
+                        </ul>
+                    </div>
+                    <div class="bg-surface-variant border border-outline-variant p-6 rounded-2xl">
+                        <h4 class="text-primary font-bold mb-3 text-sm">Result</h4>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Each webinar contact follows the correct automated path based on attendance and service selection. Attendees receive a clear next step, while Strategy Call and Funding Call leads are automatically separated and directed into the appropriate booking journey.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h4 class="font-mono text-xs uppercase tracking-widest text-primary mb-1">Featured Screenshots</h4>
+            <p class="text-xs text-on-surface-variant mb-6">A few highlights from this build. Click any image to enlarge.</p>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./RMJ Consultant/Screenshot_98.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">1. Workflow List</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./RMJ Consultant/Screenshot_94.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">2. Webinar Register Workflow</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./RMJ Consultant/Screenshot_97.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">3. Attendance Condition Workflow</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./RMJ Consultant/Screenshot_99.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">4. Service Selection Form</p></div>
+            </div>
+
+            <details class="case-study-details">
+                <summary class="case-study-summary">
+                    <span class="material-symbols-outlined text-primary">photo_library</span>
+                    <span class="case-study-label-closed">View Full Gallery &amp; Customer Journey &mdash; the Webinar Registration funnel</span>
+                    <span class="case-study-label-open">Hide Full Gallery &amp; Customer Journey &mdash; the Webinar Registration funnel</span>
+                    <span class="material-symbols-outlined case-study-chevron">expand_more</span>
+                </summary>
+                <div class="case-study-content">
+                    <h4 class="font-mono text-xs uppercase tracking-widest text-primary mb-1">Project Gallery &mdash; Webinar Funnel &amp; Booking Automations</h4>
+            <p class="text-xs text-on-surface-variant mb-6">Drag or use the arrows to scroll through the gallery. Click any image to enlarge.</p>
+            <div class="gallery-slider-wrap mb-16">
+                <button class="gallery-nav-btn prev" aria-label="Scroll gallery left" data-dir="-1"><span class="material-symbols-outlined">chevron_left</span></button>
+                <div class="gallery-slider">
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./RMJ Consultant/Screenshot_98.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">1. Workflow List</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./RMJ Consultant/Screenshot_94.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">2. Webinar Register Workflow</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./RMJ Consultant/Screenshot_97.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">3. Attendance Condition Workflow</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./RMJ Consultant/Screenshot_99.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">4. Service Selection Form</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./RMJ Consultant/Screenshot_95.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">5. Strategy Call Booking Workflow</p></div>
+                    <div class="browser-frame"><div class="browser-header"><span class="browser-dot bg-white/20"></span></div><div class="aspect-video flex items-center justify-center bg-surface-variant/30 relative">
+<!-- IMAGE PLACEHOLDER: replace src below with your image link -->
+<img src="./RMJ Consultant/Screenshot_96.png" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" /><span class="material-symbols-outlined text-2xl text-primary/30">image</span></div><p class="gallery-frame-label border-t border-outline-variant">6. Funding Call Booking Workflow</p></div>
+                </div>
+                <button class="gallery-nav-btn next" aria-label="Scroll gallery right" data-dir="1"><span class="material-symbols-outlined">chevron_right</span></button>
+            </div>
+
+            <h4 class="text-xs font-mono text-primary uppercase tracking-widest mb-6">Customer Journey</h4>
+            <div class="journey-track mb-2">
+                <div class="journey-node"><span class="num">1</span>Webinar Form Submitted</div>
+                <div class="journey-node"><span class="num">2</span>Welcome Email Sent</div>
+                <div class="journey-node"><span class="num">3</span>Webinar Attended</div>
+                <div class="journey-node"><span class="num">4</span>Consultation Form Sent</div>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-3 max-w-lg mb-2">
+                <div class="journey-node"><span class="num">5a</span>Service Selected: Strategy Call</div>
+                <div class="journey-node"><span class="num">5b</span>Service Selected: Funding Call</div>
+            </div>
+            <div class="journey-track">
+                <div class="journey-node"><span class="num">6</span>Correct Booking Workflow Triggered</div>
+                <div class="journey-node"><span class="num">7</span>Appointment Booked</div>
+            </div>
+                </div>
+            </details>
+        </div>
+
+    </div>
+</section>
 
 <!-- ============ WEBSITES BUILT ============ -->
 <section class="py-16 px-6 section-reveal" id="websites">
@@ -555,6 +860,30 @@
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('is-visible'); });
         }, { threshold: 0.08 });
         document.querySelectorAll('.section-reveal').forEach(el => observer.observe(el));
+
+        // customer journey: insert a small arrow between each step instead of numbering
+        document.querySelectorAll('.journey-track').forEach(track => {
+            const nodes = Array.from(track.children).filter(el => el.classList.contains('journey-node'));
+            nodes.forEach((node, i) => {
+                if (i < nodes.length - 1) {
+                    const arrow = document.createElement('span');
+                    arrow.className = 'journey-arrow';
+                    arrow.innerHTML = '<span class="material-symbols-outlined">arrow_forward</span>';
+                    node.insertAdjacentElement('afterend', arrow);
+                }
+            });
+        });
+
+        // gallery slider arrow controls (for the moved case-study galleries)
+        document.querySelectorAll('.gallery-slider-wrap').forEach(wrap => {
+            const slider = wrap.querySelector('.gallery-slider');
+            const prev = wrap.querySelector('.prev');
+            const next = wrap.querySelector('.next');
+            if (!slider || !prev || !next) return;
+            const scrollAmount = () => (slider.querySelector('.browser-frame')?.offsetWidth || 220) + 16;
+            prev.addEventListener('click', () => slider.scrollBy({ left: -scrollAmount() * 2, behavior: 'smooth' }));
+            next.addEventListener('click', () => slider.scrollBy({ left: scrollAmount() * 2, behavior: 'smooth' }));
+        });
 
         const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
